@@ -1,0 +1,46 @@
+
+.container
+{
+	background: no-repeat;
+	height: 100%;
+	width: 100%;
+	position: absolute; 
+	animation-duration: 8s;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+.layer1 
+{
+	background-image: url("images/layer_1.png");
+	z-index: 1;
+	animation-name: keyframes1;
+}
+.layer2 
+{
+	background-image: url("images/layer_2.png");
+	z-index: 2;
+	animation-name: keyframes2;
+}
+.layer3 
+{
+	background-image: url("images/layer_3.png");
+	z-index: 3;
+	animation-name: keyframes3;
+}
+
+@keyframes keyframes1 {
+	from {transform: translateX(0px);}
+	to {transform: translateX(-20px);}
+}
+  
+@keyframes keyframes2 {
+		from {transform: translateX(0px);}
+		to {transform: translateX(40px);}
+}	
+  
+@keyframes keyframes3 {
+  from {transform: translateX(0px);}
+  to {transform: translateX(150px);}
+}
