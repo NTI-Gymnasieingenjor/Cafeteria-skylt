@@ -26,7 +26,7 @@ Note: Images should have a width between 950-1000px and a height of 600-700px.
 
 ### data-interval
 
-    data-interval="10000" determines how many miliseconds have to pass before it changes to the next slide, 10000ms is 10 seconds
+    data-interval="10000" determines how many milliseconds have to pass before it changes to the next slide, 10000ms is 10 seconds
 
 ***
 
@@ -39,7 +39,7 @@ Note: Images should have a width between 950-1000px and a height of 600-700px.
 
 ### src
 
-    To add a new image save it in .png format and put it in the images folder, then change the src in the code to your new image:
+    To add a new image save it as .png format and put it in the images folder, then change the src in the code to your new image:
         src="images/yourImage.png"
 
 ***
