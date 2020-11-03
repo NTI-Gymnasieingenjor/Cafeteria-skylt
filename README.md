@@ -19,59 +19,61 @@ Development (features that are not finished) is pushed to development branch
 
 The first div-tag tells you that this is a slide (class="carousel-item slide), everything within this tag is a part of the slide.
 
-To create a new slide, copy the code above and put it under the existing "carousel-item" tags
+To create a new slide, copy the code above and put it under the existing "carousel-item" tags <br>
 Note: Images should have a width between 950-1000px and a height of 600-700px.
 
+***
 
-##### data-interval
+### data-interval
 
-    data-interval="10000" är hur långt tid det tar innan sliden byts till nästa.
     data-interval="10000" determines how many miliseconds have to pass before it changes to the next slide, 10000ms is 10 seconds
 
-##### style
+***
+
+### style
 
     style="background-color: #190f27" is only used for the dark purple background color.
     It's recommended to use the same color on all slides for the sake of cohesion.
 
 ***
 
-##### src
+### src
 
     To add a new image save it in .png format and put it in the images folder, then change the src in the code to your new image:
-        src="images/your-image.png"
+        src="images/yourImage.png"
 
+***
 
-##### class
+### class
 
     class="toastslide" is used to make sure that all objects on the slide has "position: absolute;" so that their positions are not affected by other objects
-    It's recommended that every slide has its own class"toastslide".
+    It's recommended that every slide has its own class="toastslide".
 
+***
 
-##### alt
+### alt
 
-    The alt tag is used to describe an image in case its not loaded correctly, every img-tag should have a alt attribute.
+    The alt tag is used to describe an image in case its not loaded correctly, every img-tag should have an alt attribute.
 
-##### id
+***
+
+### id
 
     id="ImageName" is only used to position images.
     The id for dot.png and money-dot.png is recommended to be used for all slides as they position the purple bubbles with the price on.
     Id:s that are used to position a product can be created and adjusted but make sure that the whole image is within the bubble.
-    Make sure that the products id has "z-index: 1;" so that its on the correct layer. 
-
+    Make sure that the products id has "z-index: 1;" so that it is on the correct layer. 
 
     id="pricetoast" is used to position the text and to put the text on the top layer.
     This should not be changed although depending on the length on the text a new id may be necessary.
     Make sure that the price always is in the bubble.
 
-
 ***
 
-
-##### class
+### class
 
     class="carousel-caption d-none d-md-block" is used to add text and contains all text on the slide.
     Text should be in its own <p>-tag within the <div class="carousel-caption d-none d-md-block">-tag.
-
 
     class="toast-text" and class"price" determines what font-size the text is.
     The same font-size should be used on all products and prices.
