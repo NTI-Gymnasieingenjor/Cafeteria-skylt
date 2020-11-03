@@ -2,7 +2,7 @@ import os
 
 #Creates symlinks on Raspberry Pi
 
-repository = "/home/pi/Git/prislista/RaspberryPi/configuration"
+repository = "/home/pi/Git/Cafeteria-Skylt/RaspberryPi/configuration"
 
 commands = ["sudo rm -r /usr/share/plymouth/themes/pix",
             "sudo ln -s " + repository + "/pix /usr/share/plymouth/themes/pix",
