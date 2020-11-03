@@ -32,7 +32,7 @@ def Alt_Tab():
 
     time.sleep(72000)
 
-    subprocess.Popen(['python3', "/home/pi/Git/prislista/RaspberryPi/python/tab_loop.py"])
+    subprocess.Popen(['python3', "/home/pi/Git/Cafeteria-Skylt/RaspberryPi/python/tab_loop.py"])
 
 time.sleep(30)
 # Utför det som står över

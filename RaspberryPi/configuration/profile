@@ -36,4 +36,4 @@ fi
 rm -r .cache/chromium/
 
 
-python3 /home/pi/Git/prislista/RaspberryPi/python/loop.py &
+python3 /home/pi/Git/Cafeteria-Skylt/RaspberryPi/python/loop.py &

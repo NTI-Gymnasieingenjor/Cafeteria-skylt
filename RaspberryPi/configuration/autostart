@@ -5,5 +5,5 @@
 @xset -dpms
 @xset s noblank
 @xset s off
-@chromium-browser --kiosk --new-window  /home/pi/Git/prislista/public/index.html --incognito
+@chromium-browser --kiosk --new-window  /home/pi/Git/Cafeteria-Skylt/public/index.html --incognito
 @unclutter -idle 3
