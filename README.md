@@ -1,8 +1,8 @@
-﻿# Instruktioner för användning
+﻿# Instructions for usage
 
-Development (inte klara features) pushas till development branch
+Development (features that are not finished) is pushed to development branch
 
-### Hur du lägger in en slide:
+### How to add a slide:
 
 ```html
 <div class="carousel-item slide" data-interval="10000" style= "background-color: #190f27;">
@@ -17,120 +17,67 @@ Development (inte klara features) pushas till development branch
 </div>
 ```
 
-Den första div-taggen säger detta är en slide (se class="carousel-item slide), allt som ligger i denna div-tagg är en del av sliden.
+The first div-tag tells you that this is a slide (class="carousel-item slide), everything within this tag is a part of the slide.
 
-För att skapa en ny slide kan du kopiera denna kod och lägga den under de redan existerande "carousel-item" div taggarna.
-Lägg den nya bilden till sliden i image mappen. Ändra sedan den första "img" taggens source till "images/namnetpåbilden.png".
-Note: Bilder borde vara mellan 950-1000px breda och 600-700px höga.
-Det du kommer behöva göra är att ett nytt id för den nya bilden:
+To create a new slide, copy the code above and put it under the existing "carousel-item" tags
+Note: Images should have a width between 950-1000px and a height of 600-700px.
 
-```css
-#korv{
-    z-index:1;
-    bottom:675px;
-    left: 50px;
-}
-```
-
-Kopiera denna kod och lägg längst ner i prislista.css dokumentet. Döp om den från korv till ett mer passande namn.
-I samma rad som du ändrade "img" taggen behöver du nu ändra id till det nya id namnet du skapade.
-"bottom" innebär hur många pixlar från botten bilden är och "left" hur långt från vänster.
-Ändra dessa värden för att positionera bilden.
-
-I "p" taggarna ska du byta ut namnet och priset.
-
-### En förklaring och användingen av alla klasser samt JavaScript;
-
-***
-
-
-#### div-tagg för slide
 
 ##### data-interval
 
     data-interval="10000" är hur långt tid det tar innan sliden byts till nästa.
-    Denna tid mäts i ms (millisekunder)där 10000ms är ekvalent med 10 sekunder. 
-    För att förändra antalet sekunder en slide visas ändra data-interval="" till önskad tid i millisekunder.
-
+    data-interval="10000" determines how many miliseconds have to pass before it changes to the next slide, 10000ms is 10 seconds
 
 ##### style
 
-    style="background-color: #190f27" är endast för den mörklila bakgrundsfärgen och bör inte ändras.
-    Alla slides rekommenderas att använda samma färg för sammanhållningens skull. 
-    Om denna ändras se till att ändra alla andra slides till samma eller snarlika färger.
+    style="background-color: #190f27" is only used for the dark purple background color.
+    It's recommended to use the same color on all slides for the sake of cohesion.
 
 ***
 
-
-
-#### img-tagg
-
-
 ##### src
 
-    src="images/small-toast.png" detta säger vilken bild på varan som kommer att visas på en slide.
-    För att lägga till ny bild för en  slide; spara den i .png format, namnge den till ett passande namn och lägg den sedan i images mappen. 
+    To add a new image save it in .png format and put it in the images folder, then change the src in the code to your new image:
+        src="images/your-image.png"
 
 
 ##### class
 
-    class="toastslide" används för att se til att alla objekt på sliden har "position: absolute;".
-    Detta för att deras position inte ska påverkas av varandra eller andra statiska objekt.
-    Det är rekommenderat att varje slide får en egen klass som gör samma sak; dvs endast sätter position: absolute; på sliden. 
+    class="toastslide" is used to make sure that all objects on the slide has "position: absolute;" so that their positions are not affected by other objects
+    It's recommended that every slide has its own class"toastslide".
 
 
 ##### alt
 
-    alt="..." används huvudsakligen för att beskriva en bild när den inte laddats in korrekt på en hemsida. Taggen ska finnas på alla <img>-taggar, den ska inte ändras. 
+    The alt tag is used to describe an image in case its not loaded correctly, every img-tag should have a alt attribute.
 
 ##### id
 
-    id="NamnPåImageFilen" används endas för att positionera bilderna. Från Exempelkoden Toast syns det att varje <img>- tagg har ett unikt id, detta bestämmer positionen på det objektet.
-    Id för dot.png samt money-dot.png rekommenderas att användas för alla slides, dessa två positionerar de lila bubblorna som bilden på varan och priser ligger i.
-    Små förändringar på dessa får ej göras. Dessa ska vara samma på alla slides.
-    Id som används för att positionera en vara (se id="toast") får skapas och justeras men se till att hela bilden ligger i bubblan, detta måste göras manuellt.
-    Se till att varans id innehåller "z-index: 1;" för att lägga varan på rätt lager. 
+    id="ImageName" is only used to position images.
+    The id for dot.png and money-dot.png is recommended to be used for all slides as they position the purple bubbles with the price on.
+    Id:s that are used to position a product can be created and adjusted but make sure that the whole image is within the bubble.
+    Make sure that the products id has "z-index: 1;" so that its on the correct layer. 
+
+
+    id="pricetoast" is used to position the text and to put the text on the top layer.
+    This should not be changed although depending on the length on the text a new id may be necessary.
+    Make sure that the price always is in the bubble.
 
 
 ***
 
-
-
-
-#### div-tagg för text i slide
 
 ##### class
 
-    class="carousel-caption d-none d-md-block" används för att lägga in text, all text som ska finnas på sliden (se <p>-tagg).
-    Varje text del ska ligga i en egen <p>-tagg i <div class="carousel-caption d-none d-md-block">-taggen. 
-    
-
-##### id
+    class="carousel-caption d-none d-md-block" is used to add text and contains all text on the slide.
+    Text should be in its own <p>-tag within the <div class="carousel-caption d-none d-md-block">-tag.
 
 
-    id="pricetoast" används för att positionera texten och för att lägga texten på det översta lagret.
-    Denna bör inte ändras men beroende på länged på varans namn (se <p class="toast-text">) så kan ett nytt id behövas att skapas manuellt med ett relevant namn.
-    Se till att priset (se <p class="price">) alltid ligger i bubblan.
+    class="toast-text" and class"price" determines what font-size the text is.
+    The same font-size should be used on all products and prices.
     
 
 ***
-
-
-
-
-#### p-tagg för text
-
-##### class
-
-
-    class="toast-text" samt class="price" säger vilken font-size texten ska ha.
-    Denna storlek på texten ska användas på alla varunamn respektive priser. Den får inte ändras.
-    
-
-
-***
-
-
 
 
 ## Development:
