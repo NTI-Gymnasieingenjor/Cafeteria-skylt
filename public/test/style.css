@@ -45,13 +45,13 @@ div .percentage {
     font-size: 30px;
     z-index: 100;
 }
-#test25 {
+#test40 {
     grid-area: div5;
 }
-#test40 {
+#test50 {
     grid-area: div4;
 }
-#test50 {
+#test60 {
     grid-area: div3;
 }
 #test75 {
