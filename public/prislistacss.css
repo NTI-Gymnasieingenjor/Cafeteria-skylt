@@ -73,6 +73,14 @@ body{
 	bottom: 550px;
 }
 
+#clock {
+	position: absolute;
+	left: 25px;
+	bottom: 0;
+	color: white;
+	font-size: 50px;
+}
+
 #toast{
 	z-index:1;
 	bottom:550px;
