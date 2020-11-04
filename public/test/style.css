@@ -7,12 +7,13 @@ img, video {
 }
 #gifSmoke, video {
     z-index: 10;
+    max-width: 750px;
 }
 
 #coffee {
     z-index: 20;
-    top: 460px;
-    left: 10px;
+    top: 850px;
+    left: 30px;
 }
 #gifSmoke {
     top: 280px;
