@@ -182,7 +182,7 @@ Use these lines to link to bootstraps Javascript in the following order:
 ***
 ### Configuration
 
-To start Configuring your Raspberry Pi 3B+, Create a directory named "Git" in /home/pi/. 
+To start configuring your Raspberry Pi 3B+, Create a directory named "Git" in /home/pi/. 
 
 Change active directory to the Git directory with the command 
     "cd /home/pi/Git"
