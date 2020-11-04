@@ -1,18 +1,22 @@
 body {
     background-color: black;
 }
-img {
+img, video {
     position: absolute;
 
 }
-img:nth-of-type(1) {
+#gifSmoke, video {
     z-index: 10;
 }
 
-img:nth-of-type(2) {
+#coffee {
     z-index: 20;
-    top: 650px;
-    left: 222px;
+    top: 460px;
+    left: 10px;
+}
+#gifSmoke {
+    top: 280px;
+    left: -45px
 }
 /* a {
     z-index: 30;
