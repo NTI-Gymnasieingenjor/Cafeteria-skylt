@@ -6,24 +6,19 @@
 body {
     position: relative;
     background-color: black;
-    /* display: flex;
-    flex-wrap: wrap; */
-    /* align-items: center;*/
-    /* justify-content: center; */
-    display: grid;
-    grid-template-columns: 800px auto 800px auto 800px;
-    grid-template-rows: 691px 691px 691px;
-    grid-template-areas: 
-    "div1 . div2 . div3"
-    "div4 . div5 . div6";
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
     z-index: 0;
 }
 div {
-    min-width: 400px;
+    width: 800px;
+    height: 700px;
     z-index: 8;
     position: relative;
     border-bottom: 1px solid white;
-    background: black;
+    background: #000000;
 }
 img {
     position: absolute;
@@ -45,23 +40,7 @@ div .percentage {
     font-size: 30px;
     z-index: 100;
 }
-#test40 {
-    grid-area: div5;
-}
-#test50 {
-    grid-area: div4;
-}
-#test60 {
-    grid-area: div3;
-}
-#test75 {
-    grid-area: div2;
-}
-#test100 {
-    grid-area: div1;
-}
 #iframe {
-    grid-area: div6;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -74,5 +53,4 @@ div .percentage {
 }
 #iframe p {
     color: white;
-    /* font-size: 50px; */
 }
