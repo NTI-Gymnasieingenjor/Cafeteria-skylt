@@ -162,7 +162,7 @@ Use these lines to link to bootstraps Javascript in the following order:
 
 *Tool and OS that are necessary:*
 
-[SD formating tool](https://www.sdcard.org/downloads/formatter/eula_windows/)
+[SD formatting tool](https://www.sdcard.org/downloads/formatter/eula_windows/)
 
 [NOOBS OS](https://www.raspberrypi.org/downloads/noobs/)
 
@@ -170,7 +170,7 @@ Use these lines to link to bootstraps Javascript in the following order:
 
 ***
 ### Tutorial for NOOBS installation:
-		1. Install SD card formating tool
+		1. Install SD card formatting tool
 		2. Insert SD card in computer
 		3. Format SD card with installed tool	
 		4. Download NOOBS from raspberry website
@@ -208,7 +208,7 @@ to run a script that will configure your Raspberry Pi 3B+.
 #### Rotating screen:
 		1. On the taskbar, navigate to Preferences and click Screen Configuration
 		2. Under Configure, click screens, choose HDMI 1, then orientation and choose left.
-		3. Then agian under Configure, click screens, choose HDMI 1, then click Orientation and choose 1920x1080.
+		3. Then again under Configure, click screens, choose HDMI 1, then click Orientation and choose 1920x1080.
 
 ***
 ### Remove Chromium offer to Translate Page
@@ -249,7 +249,7 @@ Already done if you followed the configuration step
 			Edge = Right
 			Alignment = Bottom
 
-		3. In the advanced  tab, turn on automatic hiding with "size when minimized" at 0 pixels.
+		3. In the advanced tab, turn on automatic hiding with "size when minimized" at 0 pixels.
 		4. In the appearance tab select solid color for taskbar.
 
 ***
