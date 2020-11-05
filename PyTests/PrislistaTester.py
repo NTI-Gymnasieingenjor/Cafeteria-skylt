@@ -15,7 +15,7 @@ optionsChrome = webdriver.ChromeOptions()  # define options for chrome
 optionsChrome.add_argument("headless")  # pass headless argument to the options (no ui)
 browser = webdriver.Chrome(options=optionsChrome)
 
-website = "file:///C:/Git/prislista/public/index.html"   # website all test run on
+website = "file:///C:/Git/Cafeteria-skylt/public/index.html"   # website all test run on
 res = 1080, 1920
 
 
@@ -57,7 +57,7 @@ class TestChrome(unittest.TestCase):
 class TestValidateWebsiteOffline(unittest.TestCase):
 
     def testValidatorOffline(self):
-        cmd = "html5validator -root ../../prislista/public/index.html"
+        cmd = "html5validator -root ../../Cafeteria-skylt/public/index.html"
         returned_value = os.system(cmd)  # returns the exit code in unix
 
         print('returned value:', returned_value)
