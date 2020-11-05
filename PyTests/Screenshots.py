@@ -55,17 +55,6 @@ class TestChrome(unittest.TestCase):
     def tearDownClass(self):
         self.browser.close()
 
-
-# # runs html5validator offline in CMD
-# class TestValidateWebsiteOffline(unittest.TestCase):
-
-#     def testValidatorOffline(self):
-#         cmd = "html5validator -root ../../Cafeteria-skylt/public/index.html"
-#         returned_value = os.system(cmd)  # returns the exit code in unix
-
-#         print('returned value:', returned_value)
-#         assert returned_value == 0
-
 # starts test
 if __name__ == '__main__':
     unittest.main()
