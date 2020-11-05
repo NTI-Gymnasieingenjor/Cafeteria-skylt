@@ -1,76 +1,74 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
-<head>
-	<meta charset="utf-8">
+	<head>
+		<meta charset="utf-8">
 
-	<title>Prislista</title>
-	<meta name="Lazy Lounge" content="Prislista">
-	<meta http-equiv="refresh" content="3600"/>
-	<!-- CSS -->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="prislistacss.css">
-	<link rel="stylesheet" href="animation.css">
-	
-	<!-- JavaScript -->
-	<script type='text/javascript' src="js/jquery-3.3.1.slim.min.js"></script>
-	<script type='text/javascript' src="js/popper.min.js"></script>
-	<script type='text/javascript' src="js/bootstrap.min.js"></script>
-
-</head>
-
-<body>
-<nav class="navbar" style="background-color: #190f27; height: 5vh;">
-	<a class="navbar-brand" href="#">
-		<img src="images/NTI-logo-transparent.png" width="258" height="60" alt="">
-		  <a class="navbar-brand" href="#">
-		  <img src="images/TE4-logo-transparent.png" height="60" alt="">
-		  </a>
-  	</a>
-
-</nav>
-
-<div class="carousel slide" data-ride="carousel">
-	<div class="carousel-inner">
-
-		<div class="carousel-item slide active" data-interval="10000" style="background-color: #190f27;">
-			<div class="carousel-caption d-none d-md-block" id ="cafeteria">
-				<p class="openhourshead">Caféterian</p>
-				<p class="openhours">08:30 - 12:00</p>
-				<p class="openhours">13:00 - 16:00</p>
-			</div>
-			
-			<div class="container layer1"></div>
-			<div class="container layer2"></div>
-			<div class="container layer3"></div>
-		</div>
+		<title>Prislista</title>
+		<meta name="Lazy Lounge" content="Prislista">
+		<meta http-equiv="refresh" content="3600"/>
+		<!-- CSS -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="prislistacss.css">
+		<link rel="stylesheet" href="animation.css">
 		
-		<div class="carousel-item slide" data-interval="5000" style="background-color: #190f27;">
-			<img src="images/small-toast.png" alt="..." class="productslide" id="toast" >
-			<img src="images/dot.png" alt="..." class="productslide dot">
-			<img src="images/money-dot.png" alt="..." class="productslide moneydot">
-			<div class="carousel-caption d-none d-md-block productprice">
-				<p class="toast-text">Toast</p>
-				<p class="price">15 kr</p>
-			</div>
+		<!-- JavaScript -->
+		<script type='text/javascript' src="js/jquery-3.3.1.slim.min.js"></script>
+		<script type='text/javascript' src="js/popper.min.js"></script>
+		<script type='text/javascript' src="js/bootstrap.min.js"></script>
 
+	</head>
+
+	<body>
+		<nav class="navbar" style="background-color: #190f27; height: 5vh;">
+			<a class="navbar-brand" href="#">
+				<img src="images/NTI-logo-transparent.png" width="258" height="60" alt="">
+			</a>
+			<a class="navbar-brand" href="#">
+				<img src="images/TE4-logo-transparent.png" height="60" alt="">
+			</a>
+		</nav>
+
+		<div class="carousel slide" data-ride="carousel">
+			<div class="carousel-inner">
+
+				<div class="carousel-item slide active" data-interval="10000" style="background-color: #190f27;">
+					<div class="carousel-caption d-none d-md-block" id ="cafeteria">
+						<p class="openhourshead">Caféterian</p>
+						<p class="openhours">08:30 - 12:00</p>
+						<p class="openhours">13:00 - 16:00</p>
+					</div>
+					
+					<div class="container layer1"></div>
+					<div class="container layer2"></div>
+					<div class="container layer3"></div>
+				</div>
+				
+				<div class="carousel-item slide" data-interval="5000" style="background-color: #190f27;">
+					<img src="images/small-toast.png" alt="..." class="productslide" id="toast" >
+					<img src="images/dot.png" alt="..." class="productslide dot">
+					<img src="images/money-dot.png" alt="..." class="productslide moneydot">
+					<div class="carousel-caption d-none d-md-block productprice">
+						<p class="toast-text">Toast</p>
+						<p class="price">15 kr</p>
+					</div>
+
+				</div>
+
+				<div class="carousel-item slide" data-interval="5000" style="background-color: #190f27;">
+					<img src="images/korv.png" alt="..." class="productslide " id="korv" >
+					<img src="images/dot.png" alt="..." class="productslide dot">
+					<img src="images/money-dot.png" alt="..." class="productslide moneydot">
+					<div class="carousel-caption d-none d-md-block productprice">
+						<p class="toast-text">Varmkorv</p>
+						<p class="price">10 kr</p>
+					</div>
+				</div>
+			</div>
+			<p id="clock">00:00</p>
 		</div>
 
-		<div class="carousel-item slide" data-interval="5000" style="background-color: #190f27;">
-			<img src="images/korv.png" alt="..." class="productslide " id="korv" >
-			<img src="images/dot.png" alt="..." class="productslide dot">
-			<img src="images/money-dot.png" alt="..." class="productslide moneydot">
-			<div class="carousel-caption d-none d-md-block productprice">
-				<p class="toast-text">Varmkorv</p>
-				<p class="price">10 kr</p>
-			</div>
-		</div>
-	</div>
-	<p id="clock">00:00</p>
-</div>
-
-	
-<script src="main.js"></script>
-</body>
-
+			
+		<script src="main.js"></script>
+	</body>
 </html>
