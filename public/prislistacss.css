@@ -1,0 +1,99 @@
+
+/* Tags */
+
+/* Classes */
+body{
+	background-color: #190f27;
+}
+
+.logo{
+	height: 60px;
+	width: 258px;
+}
+
+.carousel-item {
+  	height: 100vh;
+}
+
+.openhourshead {
+	color: white;
+	text-align: center;
+	font-size: 100px;
+	font-family: arial;
+}
+	
+.openhours {
+	color: white;
+	text-align: center;
+	font-size: 60px;
+	font-family: arial;
+}
+
+
+.productslide{
+	position:absolute;
+
+}
+
+.slide{
+	height: 95vh;
+}
+
+.toast-text{
+	font-size: 78px;
+}
+
+.price{
+	font-size: 50px;
+}
+
+.productprice{
+	bottom:230px;
+	left: 620px;	
+	z-index:4;
+}
+
+.moneydot{
+	z-index:2;
+	bottom:105px;
+	right:50px;
+}
+
+.dot{
+	z-index:0;
+}
+
+/* Id's */
+
+#cafeteria {
+	top: 550px;
+}
+
+#lunch {
+	bottom: 550px;
+}
+
+#clock {
+	position: absolute;
+	left: 25px;
+	bottom: 0;
+	color: white;
+	font-size: 50px;
+}
+
+#toast{
+	z-index:1;
+	bottom:550px;
+	left: 50px;
+	
+}
+
+#korv{
+	z-index:1;
+	bottom:675px;
+	left: 50px;
+	
+}
+
+
+
