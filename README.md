@@ -218,6 +218,13 @@ to run a script that will configure your Raspberry Pi 3B+.
         4. Exit Browser 
 
 ***
+#### Remove Chromium auto update
+This has to be done every 365 days to prevent an update prompt <br>
+	
+		1. Paste this command in the terminal:	
+		sudo touch /etc/chromium-browser/customizations/01-disable-update-check;echo CHROMIUM_FLAGS="${CHROMIUM_FLAGS} --check-for-update-interval=31536000" | sudo tee /etc/chromium-browser/customizations/01-disable-update-check
+
+***
 #### Browser autostart:
 Already done if you followed the configuration step
 
