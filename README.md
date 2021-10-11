@@ -86,7 +86,7 @@ Note: Images should have a width between 950-1000px and a height of 600-700px.
 
 Windows 10 Education
 
-[GitBash 2.23.0 64-bit](https://git-scm.com/download/win)
+[GitBash 2.33.0 64-bit](https://git-scm.com/download/win)
 
 Type in these commands in GitBash to clone down the files onto your computer:
    
@@ -95,12 +95,10 @@ Type in these commands in GitBash to clone down the files onto your computer:
 ***
 ## Tests:
     Programs: 
-    
-[Jetbrains Pycharm Community Edition 2019.2.1](https://www.jetbrains.com/pycharm/download/other.html)
 
-[Python 3.7.4](https://www.python.org/downloads/)
+[Python 3.9.7](https://www.python.org/downloads/)
 
-[chromedriver 77.0.3865.40](https://chromedriver.chromium.org/downloads)
+[chromedriver 94.0.4606.61](https://chromedriver.chromium.org/downloads)
 
 [Java 8 update 221](https://www.java.com/sv/download/)		
 
@@ -115,27 +113,17 @@ Type in these commands in GitBash to clone down the files onto your computer:
 ## Coding Language:
 	Python
 
-*Download Chromedriver.exe and save it in the same folder as the tests.*
-    Automatically run tests at each commit:
-    
-		1. Open File Explorer, click view and turn on hidden items.
-		2. Navigate to the ".git" folder then naviagate to the "hooks" folder.
-		3. Rename the file "pre-commit.sample" to "pre-commit" and replace all code with the following lines:
-               For Git/cafeteria-skylt:
-                    #!/bin/sh
-                
-                    cd PyTests
-                    python PrislistaTester.py
 ***
 ## Website:
 
 Programs:
 
-[Notepad++ 7.7.1](https://notepad-plus-plus.org/download/v7.7.1.html)
+[Visual Studio Code - (Version 1.59.1)](https://code.visualstudio.com/updates/v1_59)
 	
 Browser:
         
-        Google Chrome	77.0.3865.40
+        Google Chrome - (Version 94.0.4606.81)
+        Microsoft Edge - (Version 94.0.992.38)
 
 Coding Language:
         
