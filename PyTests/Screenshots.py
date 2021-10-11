@@ -21,9 +21,6 @@ website = parentPath + "\Cafeteria-skylt\public\index.html"   # website all test
 print(website)
 res = 1080, 1920
 
-
-
-
 # Runs tests in Chrome
 class TestChrome(unittest.TestCase):
 
