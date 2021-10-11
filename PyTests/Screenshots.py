@@ -17,7 +17,7 @@ browser = webdriver.Chrome(options=optionsChrome)
 
 parentPath = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
 
-website = parentPath + "\Cafeteria-skylt\public\index.html"   # website all test run on
+website = parentPath + "\public\index.html"   # website all test run on
 print(website)
 res = 1080, 1920
 

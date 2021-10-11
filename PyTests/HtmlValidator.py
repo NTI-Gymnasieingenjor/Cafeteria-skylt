@@ -10,8 +10,7 @@ errorExit = False
 parentPath = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
 
 # Where we want to go from the parent directory => index
-desiredPath = "\Cafeteria-skylt\public\index.html"
-
+desiredPath = "\public\index.html"
 
 # Creates a variable "options" with the Options() class attributes
 options = webdriver.ChromeOptions()
@@ -51,7 +50,7 @@ try:
     print("Success! The code is validated.\n")
 # Else
 except:
-    print("Failure! The code i NOT validated.\n Errors:\n")
+    print("Failure! The code is NOT validated.\n Errors:\n")
     # Looks in the "ol" tag and prints out the content aka the errors
     for mistakes in driver.find_elements_by_tag_name('ol'):
        print(mistakes.text, "\n")
