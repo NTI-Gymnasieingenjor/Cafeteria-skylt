@@ -2,13 +2,14 @@
 .container
 {
 	background: no-repeat;
-	height: 100%;
+	height: 90%;
 	width: 100%;
 	position: absolute; 
 	animation-duration: 8s;
 	animation-direction: alternate;
 	animation-timing-function: ease-in-out;
 	animation-iteration-count: infinite;
+	overflow: hidden;
 }
 
 .layer1 
@@ -42,5 +43,5 @@
   
 @keyframes keyframes3 {
   from {transform: translateX(0px);}
-  to {transform: translateX(150px);}
+  to {transform: translateX(110px);}
 }

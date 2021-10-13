@@ -14,7 +14,8 @@ function checkTime(i) {
 }
 function closedDisplay(){
     var d = new Date();
-    if((d.getHours() <= 8 && d.getMinutes() < 30) || (d.getHours() <= 7) || d.getHours() == 12 || (d.getHours() >= 16)){ // If time is during cafe closed hours, show closed sign
+    // If time is during cafe closed hours, show closed sign and hide slide carousel
+    if((d.getHours() <= 8 && d.getMinutes() < 30) || (d.getHours() <= 7) || d.getHours() == 12 || (d.getHours() >= 16)){ 
         document.getElementById("closed").classList.remove('hidden');
         
         document.getElementById("open").classList.add('hidden');
@@ -27,7 +28,7 @@ function closedDisplay(){
         console.log("cafe open");
     }
 
-    var t = setTimeout(closedDisplay, 10000);
+    var t = setTimeout(closedDisplay, 10000); // Calls closedDisplay() again after 10 seconds to update
 }
 startTime();
 closedDisplay();
