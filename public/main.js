@@ -6,7 +6,7 @@ function startTime() {
     m = checkTime(m);
 
     document.getElementById("clock").innerHTML = h + ":" + m;
-    var t = setTimeout(startTime, 500);
+    var t = setTimeout(startTime, 1000);
 }
 function checkTime(i) {
     if (i < 10) { i = "0" + i }; //Adds a zero infront of numbers < 10
@@ -14,8 +14,14 @@ function checkTime(i) {
 }
 function closedDisplay(){
     var d = new Date();
+    var hour = d.getHours();
+    var min = d.getMinutes();
+
+    // hour = 8;
+    // min = 35;
+
     // If time is during cafe closed hours, show closed sign and hide slide carousel
-    if((d.getHours() <= 8 && d.getMinutes() < 30) || (d.getHours() <= 7) || d.getHours() == 12 || (d.getHours() >= 16)){ 
+    if((hour <= 7) || (hour <= 8 && min < 30) || (hour == 11 && min >= 30) || (hour == 15 && min >= 45) || (hour >= 16)){ 
         document.getElementById("closed").classList.remove('hidden');
         
         document.getElementById("open").classList.add('hidden');

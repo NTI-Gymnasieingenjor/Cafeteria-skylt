@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 /* Tags */
 
 /* Classes */
@@ -19,14 +19,14 @@ body{
 	color: white;
 	text-align: center;
 	font-size: 100px;
-	font-family: arial;
+	font-family: 'Bebas Neue', cursive;;
 }
 	
 .openhours {
 	color: white;
 	text-align: center;
 	font-size: 60px;
-	font-family: arial;
+	font-family: 'Bebas Neue', cursive;;
 }
 
 
@@ -41,10 +41,12 @@ body{
 
 .toast-text{
 	font-size: 78px;
+	font-family: 'Bebas Neue', cursive;
 }
 
 .price{
 	font-size: 50px;
+	font-family: 'Bebas Neue', cursive;
 }
 
 .productprice{
@@ -79,6 +81,7 @@ body{
 	bottom: 0;
 	color: white;
 	font-size: 50px;
+	font-family: 'Bebas Neue', cursive;
 }
 
 #toast{
@@ -97,9 +100,10 @@ body{
 
 .closed{
 	text-align: center;
-	margin-top: 700px;
+	margin-top: 750px;
 	color: white;
 	font-size: 64px;
+	font-family: 'Bebas Neue', cursive;
 }
 
 .hidden{
