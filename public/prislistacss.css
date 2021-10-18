@@ -110,3 +110,19 @@ body{
 	display: none;
 }
 
+.price-list{
+	position: static;
+	font-size: 32px;
+	font-family: 'Bebas Neue', cursive;
+	text-align: left;
+	margin-left: 10px;
+}
+
+.price-list h2{
+	font-size: 46px;
+	margin: 0px;
+}
+
+.price-list p{
+	margin: 0px 0px 0px 20px;
+}
