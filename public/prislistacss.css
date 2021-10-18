@@ -84,16 +84,9 @@ body{
 	font-family: 'Bebas Neue', cursive;
 }
 
-#toast{
+.product-image{
 	z-index:1;
-	bottom:550px;
-	left: 50px;
-	
-}
-
-#korv{
-	z-index:1;
-	bottom:675px;
+	bottom:600px;
 	left: 50px;
 	
 }
