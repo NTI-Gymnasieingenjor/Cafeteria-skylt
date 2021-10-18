@@ -17,8 +17,8 @@ function closedDisplay(){
     var hour = d.getHours();
     var min = d.getMinutes();
 
-    hour = 8;
-    min = 35;
+    // hour = 8;
+    // min = 35;
 
     // If time is during cafe closed hours, show closed sign and hide slide carousel
     if((hour <= 7) || (hour <= 8 && min < 30) || (hour == 11 && min >= 30) || (hour == 15 && min >= 45) || (hour >= 16)){ 
