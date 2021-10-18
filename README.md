@@ -24,6 +24,11 @@ Note: Images should have a width between 950-1000px and a height of 600-700px.
 
 ***
 
+### Change Timezone on Pi
+
+    Open Terminal -> type: sudo raspi-config -> Select Timezone -> Press Finish -> Reboot Pi
+
+***
 ### data-interval
 
     data-interval="10000" determines how many milliseconds have to pass before it changes to the next slide, 10000ms is 10 seconds
