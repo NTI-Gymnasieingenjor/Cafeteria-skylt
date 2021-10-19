@@ -25,13 +25,11 @@ function closedDisplay(){
         document.getElementById("closed").classList.remove('hidden');
         
         document.getElementById("open").classList.add('hidden');
-        console.log("cafe closed");
     }
     else{
         document.getElementById("closed").classList.add('hidden');
         
         document.getElementById("open").classList.remove('hidden');
-        console.log("cafe open");
     }
 
     var t = setTimeout(closedDisplay, 10000); // Calls closedDisplay() again after 10 seconds to update
