@@ -34,5 +34,6 @@ function closedDisplay(){
 
     var t = setTimeout(closedDisplay, 10000); // Calls closedDisplay() again after 10 seconds to update
 }
+
 startTime();
 closedDisplay();

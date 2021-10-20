@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "cafeteria-skylt",
+  "private_key_id": "640b9cf87faed281bb1bf804f205e675e2f7d530",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCLR0g1xFSrbR1J\ngr1u6oDVPt3rsHNa6e1P4uFcXHgsjK8ANmsmlEFD9KiPhaRxmTp9dCgrRjNLv3u4\nDJYPWARr09TgTjXhDixMZhlLR6w/BZAVUv6IzfCJ+3alp9n43K1GeI1eG0QqK1ET\nm7y7u6ChQ5X7tTSDcZzuza4DIeInD8k+6ciNDmANUk70sk4tjWYPlpovaZPstANA\nalqTlMVQME/BQ+/mXcBTP86zu2t9lTrMPmiVF//NCwQ8sbazqf39k6vjwpwwZ4xr\nx/fLxUwacQen/eL/Mc1hQwui+84qqDmZ38zpGma+MpSKqaFSlG6dfbhRLk/PLtbJ\nbgfb/gAvAgMBAAECggEAB0WkWw5SX2sAkEyFEzannbq9FT0ZdiHoU/dOzfw+rWYh\nDbFJsfIkCuYfgPLjjaeIUBw8Vq9r0TorvbCGi0GMuuE3aF4dCRBXjBuj7sl3ZbOm\n0hOLGl3U/9dYhWNjXvo4Com+foSM8BNildQCrDNVOpD6p/GjpB35VCylYnYmm+Ru\n4mABAIEueiV1RixnjDn5lY0CW/zixC0glYNPWC0sYhDgc82Bf1+FEn7nkiTO45S7\n7Zw0aTihlSi7hwvGAwFXwmm53IPUvvcOKSkWCc0+8DdUC3u31cYIb6LACUkassu8\nX4u2iebdcmqIjfgSNBP3z6IcWLoLcNRN+C24oIsPCQKBgQDDKYhuR4OP+wYoIFvC\niEig5waqK4yOeAUHPG+1MBtjUzmXaZOp8Ue5AVnaACIwUK8E+mZuU4E9qtcp860Q\nbFKlsvVQoxtH1X8dOQTJ051fjqq9Xo10l6rcK4+hCbxEYy8JWXtFMVWLMFuwGq2Y\nLmJXEHb57RdH9q/954XlAjEX2QKBgQC2shLOtMBkqhMJkURGPv8h/OOWA7IFlptm\ns6ytCHZC1dRHjCYIUedS8WPst8KAPJnWVOhF3Gml23SAr/055xRN8rN7t1THLAbv\nvKzriw5rZTzwCcpbw5H/vGbE9Vu4Hww43xdNuoglKYQGoIqq5wKbJy+RjWUvmyrV\ngS7v2HCbRwKBgESGObwW6g/M4O2H5xAX0ACG/aUUY2bGp2VSCBsDSCqI10jdrhZW\nfItt+QF9WIPEYJ+L2BlWwqNHcALv501D64T4n//vNS30vYwiMBc5cSFTM4oIP/y3\nICvsM6MkivEsLiDHRWwXFWUo1piv1VIAv1C4nD3GzIzdBhBNkYrGSTyJAoGALM2u\n3xJkvEsZMBd37uI0H1mtVnTBi61LnvwhNK4Gko1t6b3s9c1gNW8NWlgWUuyJrY5V\nCAztu8b94zFFoJWS3SrP6V8kY1Pgv5o9reYEO0Iwl41PGwHzJAxIB7VEMPssPCY5\nyM4d5T8xKY7lctQER5hsif1q+ynKb2Gm6RrjQrECgYEAh3vy5KEb23zp7UUwEWbN\nNe4CC9mG4mDJtl4C62J+KNXEwhv1A2zJo7NxF1xxsI0H+JxTBczH6HdFmzWDBfTm\nzrPPnjeLi+pRF7yQSIJlBxrh6KiV1VgEhVXV+QMyFbOxfwDuC+kElPHrJws7sRNp\nr0WdeDClybmZr8nRAm2j7iY=\n-----END PRIVATE KEY-----\n",
+  "client_email": "starving-errand-boy@cafeteria-skylt.iam.gserviceaccount.com",
+  "client_id": "106696510471130101546",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/starving-errand-boy%40cafeteria-skylt.iam.gserviceaccount.com"
+}
