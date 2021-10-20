@@ -126,5 +126,6 @@ body{
 	width: 700px;
 	height: 600px;
 	overflow: hidden;
-	margin: 300px 0 0 125px;
+	margin: 300px 0px 0px 125px;
+	opacity: 30%;
 }
