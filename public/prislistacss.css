@@ -119,3 +119,11 @@ body{
 .price-list p{
 	margin: 0px 0px 0px 20px;
 }
+
+
+.coffee-smoke{
+	width: 700px;
+	height: 600px;
+	overflow: hidden;
+	margin: 300px 0 0 125px;
+}
