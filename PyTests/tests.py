@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from __future__ import print_function
-import re
 from googleapiclient.discovery import build
 from google.oauth2 import service_account
 import json
