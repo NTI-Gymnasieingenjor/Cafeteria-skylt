@@ -3,6 +3,7 @@ from __future__ import print_function
 from googleapiclient.discovery import build
 from google.oauth2 import service_account
 import json
+#Download with the command  pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
 
 
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
