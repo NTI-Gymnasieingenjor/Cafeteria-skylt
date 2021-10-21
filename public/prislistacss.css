@@ -4,6 +4,7 @@
 /* Classes */
 body{
 	background-color: #190f27;
+	overflow: hidden;
 }
 
 .logo{
