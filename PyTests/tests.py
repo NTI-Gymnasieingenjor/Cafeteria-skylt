@@ -41,7 +41,6 @@ def Call_sheets_api():
     result = sheet.values().get(spreadsheetId=spreadsheet_id, range="B4:E8").execute()
     listed_result = json.dumps(result)
     final_result = Convert_to_usable_list(listed_result)
-    print(final_result)
 
     return final_result
 
@@ -65,18 +64,20 @@ def TestWeekday():
     driver.get(codePath)
     timeList = Call_sheets_api()
 
-    for i in range(5):
-        dayIndex = i * 4
-        driver.execute_script("day = " + str(i + 1) + "; GetOpenHours();")
-        time.sleep(1)
+    for i in range(7):
+        if i <= 4:
+            dayIndex = i * 4
+            driver.execute_script("day = " + str(i + 1) + "; GetOpenHours();")
+            time.sleep(1)
 
-        day_start = str(timeList[dayIndex] + " - " + timeList[dayIndex+1])
-        day_end = str(timeList[dayIndex+2] + " - " + timeList[dayIndex+3])
-        print(day_start, i+1)
-        checkForText(day_start)
-        checkForText(day_end)
-
-
+            day_start = str(timeList[dayIndex] + " - " + timeList[dayIndex+1])
+            day_end = str(timeList[dayIndex+2] + " - " + timeList[dayIndex+3])
+            checkForText(day_start)
+            checkForText(day_end)
+        else:
+            checkForText("Måndag - Fredag")
+        
+        driver.refresh()
     driver.close()
 
 TestWeekday()
