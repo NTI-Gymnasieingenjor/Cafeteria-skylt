@@ -57,27 +57,26 @@ cwd = Path(os.getcwd()).parent
 # gets code file path way
 codePath = str(cwd) + '/public/index.html'
 
-driver.get(codePath)
-
 # checking for text on site
 def checkForText(text):
     assert text in driver.find_element_by_xpath("/html/body").text
 
 def TestWeekday():
+    driver.get(codePath)
     timeList = Call_sheets_api()
-    weekdays = ["monday", "tuesday", "wednesday", "thursday", "friday"]
 
-    for i in range(len(weekdays)):
+    for i in range(5):
         dayIndex = i * 4
-        driver.execute_script("day = " + weekdays[i] + ";")
-        time.sleep(10)
+        driver.execute_script("day = " + str(i + 1) + "; GetOpenHours();")
+        time.sleep(1)
 
         day_start = str(timeList[dayIndex] + " - " + timeList[dayIndex+1])
         day_end = str(timeList[dayIndex+2] + " - " + timeList[dayIndex+3])
+        print(day_start, i+1)
         checkForText(day_start)
         checkForText(day_end)
 
 
-driver.close()
+    driver.close()
 
 TestWeekday()
