@@ -41,6 +41,7 @@ def Call_sheets_api():
     result = sheet.values().get(spreadsheetId=spreadsheet_id, range="B4:E8").execute()
     listed_result = json.dumps(result)
     final_result = Convert_to_usable_list(listed_result)
+    print(final_result)
 
     return final_result
 
@@ -62,22 +63,21 @@ driver.get(codePath)
 def checkForText(text):
     assert text in driver.find_element_by_xpath("/html/body").text
 
-monday = True
-tuesday = True
-wednesday = True
+def TestWeekday():
+    timeList = Call_sheets_api()
+    weekdays = ["monday", "tuesday", "wednesday", "thursday", "friday"]
 
-if monday:
-    monday_start = str(Call_sheets_api()[0] + " - " + Call_sheets_api()[1])
-    monday_end = str(Call_sheets_api()[2] + " - " + Call_sheets_api()[3])
-    print(monday_start)
-    checkForText(monday_start)
-    checkForText(monday_end)
+    for i in range(len(weekdays)):
+        dayIndex = i * 4
+        driver.execute_script("day = " + weekdays[i] + ";")
+        time.sleep(10)
 
-elif tuesday:
-    tuesday_start = str(Call_sheets_api()[4] + " - " + Call_sheets_api()[5])
-    tuesday_end = str(Call_sheets_api()[6] + " - " + Call_sheets_api()[7])
+        day_start = str(timeList[dayIndex] + " - " + timeList[dayIndex+1])
+        day_end = str(timeList[dayIndex+2] + " - " + timeList[dayIndex+3])
+        checkForText(day_start)
+        checkForText(day_end)
 
-elif wednesday:
-    print()
 
 driver.close()
+
+TestWeekday()
