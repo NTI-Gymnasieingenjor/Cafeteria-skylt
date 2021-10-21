@@ -3,6 +3,14 @@ from __future__ import print_function
 from googleapiclient.discovery import build
 from google.oauth2 import service_account
 import json
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.chrome.options import Options
+from datetime import datetime
+import time
+from pathlib import Path
+import os
+
 #Download with the command  pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
 
 
@@ -35,9 +43,44 @@ def Call_sheets_api():
 
     return final_result
 
+print(Call_sheets_api())
 
-monday = Call_sheets_api()
 
-monday_start = monday[0]
-monday_lunch_start = monday[1]
 
+
+# removes non critical bug with browser and visualstudio
+options = webdriver.ChromeOptions()
+options.add_experimental_option('excludeSwitches', ['enable-logging'])
+driver = webdriver.Chrome( options = options)
+
+# gets current parent directory
+cwd = Path(os.getcwd()).parent
+
+# gets code file path way
+codePath = str(cwd) + '/public/index.html'
+
+driver.get(codePath)
+
+# checking for text on site
+def checkForText(text):
+    assert text in driver.find_element_by_xpath("/html/body").text
+
+monday = True
+tuesday = True
+wednesday = True
+
+if monday:
+    monday_start = str(Call_sheets_api()[0] + " - " + Call_sheets_api()[1])
+    monday_end = str(Call_sheets_api()[2] + " - " + Call_sheets_api()[3])
+    print(monday_start)
+    checkForText(monday_start)
+    checkForText(monday_end)
+
+elif tuesday:
+    tuesday_start = str(Call_sheets_api()[4] + " - " + Call_sheets_api()[5])
+    tuesday_end = str(Call_sheets_api()[6] + " - " + Call_sheets_api()[7])
+
+elif wednesday:
+    print()
+
+driver.close()
