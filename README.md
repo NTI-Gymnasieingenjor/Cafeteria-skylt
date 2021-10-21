@@ -335,6 +335,9 @@ The autopull script will still run as intended.
                  5 10 * * * vcgencmd display_power 1
                  this will turn of HDMI output at 10:00 and start it agian at 10:05
 ***
+### USB and autostart
+All memory is stored on a USB-stick. If the autostart feature doesn't work, find the index file there and start it manually.
+***
 ## Coding Standard:
 	Standard for indents , one indents 
 	<html>
