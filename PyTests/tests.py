@@ -11,8 +11,9 @@ import time
 from pathlib import Path
 import os
 
-#Download with the command  pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
-
+#Download the following extensions with these commands:
+#pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
+#pip install selenium
 
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 SERVICE_ACCOUNT_FILE = '../keys.json'
@@ -42,10 +43,6 @@ def Call_sheets_api():
     final_result = Convert_to_usable_list(listed_result)
 
     return final_result
-
-print(Call_sheets_api())
-
-
 
 
 # removes non critical bug with browser and visualstudio
