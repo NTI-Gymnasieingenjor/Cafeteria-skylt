@@ -1,28 +1,4 @@
-﻿# Instructions for usage
-
-Development (features that are not finished) is pushed to development branch
-
-### How to add a slide:
-
-```html
-<div class="carousel-item slide" data-interval="10000" style= "background-color: #190f27;">
-	<img src="images/small-toast.png" alt="..." class="productslide " id="toast" >
-	<img src="images/dot.png" alt="..." class="productslide" id="dot">
-	<img src="images/money-dot.png" alt="..." class="productslide" id="moneydot">
-	<div class="carousel-caption d-none d-md-block" id="productprice">
-		<p class="toast-text">Toast</p>
-		<p class="price">15 kr</p>
-	</div>
-
-</div>
-```
-
-The first div-tag tells you that this is a slide (class="carousel-item slide), everything within this tag is a part of the slide.
-
-To create a new slide, copy the code above and put it under the existing "carousel-item" tags <br>
-Note: Images should have a width between 950-1000px and a height of 600-700px.
-
-***
+# Instructions for usage
 
 ## Introduction
 
@@ -73,6 +49,31 @@ Some basic commands include:
 
 ***
 
+## Enviroments and Languages 
+[Documentation](https://github.com/NTIG-Uppsala/Cafeteria-skylt/blob/main/Documentations/Enviroment&Languages.md)
+***
+
+### How to add a slide:
+
+```html
+<div class="carousel-item slide" data-interval="10000" style= "background-color: #190f27;">
+	<img src="images/small-toast.png" alt="..." class="productslide " id="toast" >
+	<img src="images/dot.png" alt="..." class="productslide" id="dot">
+	<img src="images/money-dot.png" alt="..." class="productslide" id="moneydot">
+	<div class="carousel-caption d-none d-md-block" id="productprice">
+		<p class="toast-text">Toast</p>
+		<p class="price">15 kr</p>
+	</div>
+
+</div>
+```
+
+The first div-tag tells you that this is a slide (class="carousel-item slide), everything within this tag is a part of the slide.
+
+To create a new slide, copy the code above and put it under the existing "carousel-item" tags <br>
+Note: Images should have a width between 950-1000px and a height of 600-700px.
+
+***
 ### Change Timezone on Pi
 
     Open Terminal -> type: sudo raspi-config -> Select Timezone -> Press Finish -> Reboot Pi
@@ -141,73 +142,6 @@ Some basic commands include:
     
 
 ***
-
-
-## Development:
-
-Windows 10 Education
-
-[GitBash 2.33.0 64-bit](https://git-scm.com/download/win)
-
-Type in these commands in GitBash to clone down the files onto your computer:
-   
-     git clone https://github.com/NTI-Gymnasieingenjor/Cafeteria-skylt
-
-***
-## Tests:
-    Programs: 
-
-[Python 3.9.7](https://www.python.org/downloads/)
-
-[chromedriver 94.0.4606.61](https://chromedriver.chromium.org/downloads)
-
-[Java 8 update 221](https://www.java.com/sv/download/)		
-
-***
-## Plugins:
-        Selenium 3.141.0				
-    	        pip install selenium==3.141.0
-    	Unittest
-    	html5validator 0.3.1				
-    	        pip install html5validator==0.3.1
-***    
-## Coding Language:
-	Python
-
-***
-## Website:
-
-Programs:
-
-[Visual Studio Code - (Version 1.59.1)](https://code.visualstudio.com/updates/v1_59)
-	
-Browser:
-        
-        Google Chrome - (Version 94.0.4606.81)
-        Microsoft Edge - (Version 94.0.992.38)
-
-Coding Language:
-        
-        HTML5
-        CSS3
-	
-Framework:  (Compiled CSS and JS)
-        
-[Bootstrap 4.3.1](https://getbootstrap.com/docs/4.3/getting-started/download/)  
-
-For the website to work you need to link to bootstraps css.
-    Using these lines:
-        
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-        
-
-Use these lines to link to bootstraps Javascript in the following order:
-
-    <script type='text/javascript' src="js/jquery-3.3.1.slim.min.js"></script>
-    <script type='text/javascript' src="js/popper.min.js"></script>
-    <script type='text/javascript' src="js/bootstrap.min.js"></script>
-***
-
 ### Disable Black Border around Screen
         1. Open the Command Line Interface and type the following command:
                 sudo nano /boot/config.txt
@@ -351,37 +285,6 @@ The autopull script will still run as intended.
         example: 0 10 * * * vcgencmd display_power 0
                  5 10 * * * vcgencmd display_power 1
                  this will turn of HDMI output at 10:00 and start it agian at 10:05
-***
-## Coding Standard:
-	Standard for indents , one indents 
-	<html>
-
-	    <body> 
-		    <div>
-	            </div>
-	    </body>
-	    
-	</html>
-
-The standard language for variable names, class names and such is english.
-
-Comments in html are written this way:
-    \<!-- this is a comment -->.
-
-Comments in css are written this way:
-    /* this is a comment */
-
-Comments in Python are written with hashtags at the beginning of the line.
-    #This is a comment
-
-HTML5 Style Guide is to be followed.
-
- [W3Schools HTML5 STyle Guide](https://www.w3schools.com/html/html5_syntax.asp)
-
-
-Variables should match in indentation.
-    if (var1, var2,
-        var3, var4)
 
 
 
