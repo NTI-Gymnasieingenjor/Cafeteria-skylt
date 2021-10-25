@@ -68,6 +68,11 @@ Some basic commands include:
 
 ***
 
+## Getting started with the Raspberry Pi
+[Instructions](https://github.com/NTIG-Uppsala/Cafeteria-skylt/blob/main/Documentations/raspberrySetup.md)
+
+***
+
 ### Change Timezone on Pi
 
     Open Terminal -> type: sudo raspi-config -> Select Timezone -> Press Finish -> Reboot Pi
