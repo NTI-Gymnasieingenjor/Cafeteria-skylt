@@ -202,46 +202,7 @@ Use these lines to link to bootstraps Javascript in the following order:
     <script type='text/javascript' src="js/popper.min.js"></script>
     <script type='text/javascript' src="js/bootstrap.min.js"></script>
 ***
-## Raspberry:
 
-*Tool and OS that are necessary:*
-
-[SD formatting tool](https://www.sdcard.org/downloads/formatter/eula_windows/)
-
-[NOOBS OS](https://www.raspberrypi.org/downloads/noobs/)
-
-[Vnc Viewer](https://www.realvnc.com/en/connect/download/viewer/)
-
-***
-### Tutorial for NOOBS installation:
-		1. Install SD card formatting tool
-		2. Insert SD card in computer
-		3. Format SD card with installed tool	
-		4. Download NOOBS from raspberry website
-		5. Unzip and transfer NOOBS directory content to SD card boot folder
-		6. Plug in SD card into raspberry pi and connect to a Wi-Fi
-		7. After connecting select Raspian and select install
-		8. Follow install wizard to install Raspian on SD card
-
-***
-### Configuration
-
-To start configuring your Raspberry Pi 3B+, Create a directory named "Git" in /home/pi/. 
-
-Change active directory to the Git directory with the command 
-    "cd /home/pi/Git"
-
-and then clone the git repostitory with the command
-    "git clone https://github.com/NTI-Gymnasieingenjor/Cafeteria-skylt"
-
-change directory to python using the command 
-    "cd /home/pi/Git/cafeteria-skylt/Raspberry/python"
-
-and then enter the command 
-    "python symconfig.py"
-to run a script that will configure your Raspberry Pi 3B+. 
-
-***
 ### Disable Black Border around Screen
         1. Open the Command Line Interface and type the following command:
                 sudo nano /boot/config.txt
