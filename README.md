@@ -56,8 +56,8 @@ The folder location: '/home/pi/Git/Cafeteria-skylt'
 'Terminal' is the command prompt of Pi, here you will use many useful commands.  
 Some basic commands include:
 - sudo raspi-config (opens up base configuration)
-- cd "<path>" (changes directory)
-- ls "<path>" (lists the directory)
+- cd <*path*> (changes directory)
+- ls <*path*> (lists the directory)
 - hostname -I (shows the IP-address of the Pi)
 
 #### Basics of 'Logout'
