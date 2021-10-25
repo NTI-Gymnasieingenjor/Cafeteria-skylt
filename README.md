@@ -33,9 +33,10 @@ The Pi's micro-HDMI port also needs to be connected to a screen as to make sure 
 #### Basics of interface
 To access the interface, press your '⊞ Win' or homekey button.  
 From here you can select three relevant categories (all listed below) of the Pi when making changes.  
+| 'Preferences' | 'Accessories' | 'Logout' |  
 
 #### Basics of 'Preferences'
-in 'Preferences' you will find 'Raspberry Pi Configuration'.  
+In 'Preferences' you will find 'Raspberry Pi Configuration'.  
 In 'Raspberry Pi Configuration', you have: | System | Interfaces | Performance | Localisation |  
 
 System is primarily for changing the username and password.
