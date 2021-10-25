@@ -50,7 +50,7 @@ Some basic commands include:
 ***
 
 ## Enviroments and Languages 
-[Documentation](https://github.com/NTIG-Uppsala/Cafeteria-skylt/blob/main/Documentations/Enviroment&Languages.md)
+[Documentation](https://github.com/NTIG-Uppsala/Cafeteria-skylt/blob/main/Documentations/Enviroments_Languages.md)
 ***
 
 ### How to add a slide:
