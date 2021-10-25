@@ -67,24 +67,24 @@ To keep the cloned repo in Rasberry Pi up to date with the Github repo:
 ## Commands-tips: 
 
 ### Change Timezone on Pi
-    ```
-    Open Terminal -> type: sudo raspi-config -> Select Timezone -> Press Finish -> Reboot Pi
-    ```
+```
+Open Terminal -> type: sudo raspi-config -> Select Timezone -> Press Finish -> Reboot Pi
+```
 
 ### Disable Black Border around Screen
-        ```
-        1. Open the Command Line Interface and type the following command:
-                sudo nano /boot/config.txt
-        2. Find the disable_overscan line and change it to:
-                disable_overscan=1
-        ```
+```
+1. Open the Command Line Interface and type the following command:
+	sudo nano /boot/config.txt
+2. Find the disable_overscan line and change it to:
+	disable_overscan=1
+```
 
 ### Rotating screen:
-        ```
-		1. On the taskbar, navigate to Preferences and click Screen Configuration
-		2. Under Configure, click screens, choose HDMI 1, then orientation and choose left.
-		3. Then again under Configure, click screens, choose HDMI 1, then click Orientation and choose 1920x1080.
-        ```
+```
+	1. On the taskbar, navigate to Preferences and click Screen Configuration
+	2. Under Configure, click screens, choose HDMI 1, then orientation and choose left.
+	3. Then again under Configure, click screens, choose HDMI 1, then click Orientation and choose 1920x1080.
+```
 
 ### Remove Chromium auto update
 ```
@@ -95,12 +95,12 @@ This has to be done every 365 days to prevent an update prompt
 ```
 
 ### Remove Raspberry Icons:
-        ```
-		1. Open Command Line Interface and type in the following command:
-                sudo nano /boot/cmdline.txt
-		2. In the editor, at the end of the line add:
-                logo.nologo
-        ```
+```
+	1. Open Command Line Interface and type in the following command:
+	sudo nano /boot/cmdline.txt
+	2. In the editor, at the end of the line add:
+	logo.nologo
+```
 
 ### Replace Boot Image:
 ```
@@ -132,7 +132,8 @@ Already done if you followed the configuration step
 Notice: You will get an error each time the autopull script runs that is as follows (Fatal: unable to get credential storage lock: File exists)
 
 The autopull script will still run as intended.     
-```		
+```
+
 ### Remove HDMI output at certain times:
 ```
         1. Open the Command Line Interface and enter the following command:
