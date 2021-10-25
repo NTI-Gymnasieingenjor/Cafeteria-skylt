@@ -24,18 +24,18 @@ Note: Images should have a width between 950-1000px and a height of 600-700px.
 
 ***
 
-### Introduction
+## Introduction
 
-##### Basics of booting up RaspberryPi.
+#### Basics of booting up RaspberryPi.
 The Pi's power cable uses a USB-C port so make sure it is connected to the electrical grid you are using.  
 The Pi's micro-HDMI port also needs to be connected to a screen as to make sure the Pi's boot-up script goes accordingly.  
 
-##### Basics of interface
+#### Basics of interface
 To access the interface, press your '⊞ Win' or homekey button.  
 From here you can select three relevant categories (all listed below) of the Pi when making changes.  
 | Preferences | Accessories | Logout |  
 
-##### Basics of 'Preferences'
+#### Basics of 'Preferences'
 In 'Preferences' you will find 'Raspberry Pi Configuration'.  
 In 'Raspberry Pi Configuration' you have: | System | Interfaces | Performance | Localisation |  
 
@@ -48,7 +48,7 @@ which may be adjusted accordingly in order to avoid overheating.
 
 Localisation allows you to set the Locale, Timezone, Keyboard and WiFi Country, not relevant in this example.  
 
-##### Basics of 'Accessories'
+#### Basics of 'Accessories'
 In 'Accessories' you will find 'File Manager' and 'Terminal'.  
 'File Manager' is where you access the 'Cafeteria-skylt' folder, which is located on the SD-card of this Pi.   
 The folder location: '/home/pi/Git/Cafeteria-skylt'
@@ -60,7 +60,7 @@ Some basic commands include:
 - ls <path> (lists the directory)
 - hostname -I (shows the IP-address of the Pi)
 
-##### Basics of 'Logout'
+#### Basics of 'Logout'
 'Logout' uses | Shutdown | Reboot | Logout |  
 'Shutdown' shuts down the Pi, allowing you to safely pull the cable, or you can write 'sudo shutdown -h now' in 'Terminal'.  
 'Reboot' reboots the Pi, or you can write 'sudo shutdown -r now' in 'Terminal'.  
