@@ -71,7 +71,10 @@ Some basic commands include: Lorem Ipsum...
 
 ### API key
 
-    If the tests or the opening hours on the website aren't working, it's possible that you will need to generate a new API key. To do so, enter the google developers console (https://console.cloud.google.com/), log into a non-school google account, create a project and go to credentials. Click on create credentials and select API key. After this go into the search bar, search for google sheets api and enable it. When this is done, all you need to do is copy the API key and put it after ?key= in the links found in main.js and tests.py, making sure to replace the previous key.
+    If the tests or the opening hours on the website aren't working, it's possible that you will need to generate a new API key.
+    To do so, enter the google developers console (https://console.cloud.google.com/), log into a non-school google account, create a project and go to credentials.
+    Click on create credentials and select API key. After this go into the search bar, search for google sheets api and enable it.
+    When this is done, all you need to do is copy the API key and put it after ?key= in the links found in main.js and tests.py, making sure to replace the previous key.
 
 ***
 
