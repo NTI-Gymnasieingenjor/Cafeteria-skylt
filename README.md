@@ -1,6 +1,57 @@
 ﻿# Instructions for usage
 
-Development (features that are not finished) is pushed to development branch
+## Introduction
+
+#### Basics of booting up RaspberryPi.
+The Pi's power cable uses a USB-C port so make sure it is connected to the electrical grid you are using.  
+The Pi's micro-HDMI port also needs to be connected to a screen as to make sure the Pi's boot-up script goes accordingly.  
+
+#### Basics of interface
+To access the interface, press your '⊞ Win' or homekey button.  
+From here you can select three relevant categories (all listed below) of the Pi when making changes.  
+| Preferences | Accessories | Logout |  
+
+#### Basics of 'Preferences'
+In 'Preferences' you will find 'Raspberry Pi Configuration'.  
+In 'Raspberry Pi Configuration' you have: | System | Interfaces | Performance | Localisation |  
+
+System is primarily for changing the username and password.  
+
+Interfaces, in this example, is used for toggling VNC, which allows screen connect through other devices via IP.  
+
+Performance has the selection of overclocking (*NOT RECOMMENDED*) and GPU memory,  
+which may be adjusted accordingly in order to avoid overheating.  
+
+Localisation allows you to set the Locale, Timezone, Keyboard and WiFi Country, not relevant in this example.  
+
+#### Basics of 'Accessories'
+In 'Accessories' you will find 'File Manager' and 'Terminal'.  
+'File Manager' is where you access the 'Cafeteria-skylt' folder, which is located on the SD-card of this Pi.   
+The folder location: '/home/pi/Git/Cafeteria-skylt'
+
+'Terminal' is the command prompt of Pi, here you will use many useful commands.  
+Some basic commands include:
+- sudo raspi-config (opens up base configuration)
+- cd <*path*> (changes directory)
+- ls <*path*> (lists the directory)
+- hostname -I (shows the IP-address of the Pi)
+
+#### Basics of 'Logout'
+'Logout' uses | Shutdown | Reboot | Logout |  
+'Shutdown' shuts down the Pi, allowing you to safely pull the cable, or you can write 'sudo shutdown -h now' in 'Terminal'.  
+'Reboot' reboots the Pi, or you can write 'sudo shutdown -r now' in 'Terminal'.  
+'Logout' logs you out from the currently active user.  
+
+***
+
+## Getting started with the Raspberry Pi
+[Instructions](https://github.com/NTIG-Uppsala/Cafeteria-skylt/blob/main/Documentations/raspberrySetup.md)
+
+***
+
+## Enviroments and Languages 
+[Documentation](https://github.com/NTIG-Uppsala/Cafeteria-skylt/blob/main/Documentations/Enviroments_Languages.md)
+***
 
 ### How to add a slide:
 
@@ -23,46 +74,6 @@ To create a new slide, copy the code above and put it under the existing "carous
 Note: Images should have a width between 950-1000px and a height of 600-700px.
 
 ***
-
-### Introduction
-
-##### Basics of booting up RaspberryPi.
-The Pi's power cable uses a USB-C port so make sure it is connected to whatever electrical grid you are using.
-The Pi's micro-HDMI port also needs to be connected to a screen as to make sure the Pi's boot-up script goes accordingly.
-
-##### Basics of interface
-To access the interface, press your '⊞ Win' or homekey button. 
-From here you can select three relevant categories (all listed below) of the Pi when making changes.
-
-##### Basics of 'Preferences'
-in 'Preferences' you will find 'Raspberry Pi Configuration'.
-In 'Raspberry Pi Configuration', you have: | System | Interfaces | Performance | Localisation |
-
-System is primarily for changing the username and password.
-
-Interfaces, in this example, is used for toggling VNC, which allows screen connect through other devices via IP.
-
-Performance has the selection of overclocking (*NOT RECOMMENDED*) and GPU memory, 
-which may be adjusted accordingly in order to avoid overheating.
-
-Localisation allows you to set the Locale, Timezone, Keyboard and WiFi Country, not relevant in this example.
-
-##### Basics of 'Accessories'
-In 'Accessories' you will find 'File Manager' and 'Terminal'.
-'File Manager' is where you access the 'Cafeteria-skylt' folder, which is located on the SD-card of this Pi. 
-The folder location: PUT THE PATH HERE
-
-'Terminal' is the command prompt of the Pi, here you will use many useful commands.
-Some basic commands include: Lorem Ipsum...
-
-##### Basics of 'Shutdown...'
-'Shutdown...' uses 'Shutdown', 'Reboot' and 'Logout'.
-'Shutdown' shuts down the Pi, allowing you to safely pull the cable, 'sudo shutdown -h now' in 'Terminal' also works.
-'Reboot' reboots the Pi, 'sudo shutdown -r now' in 'Terminal' also works.
-'Logout' logs you out from the currently active user.
-
-***
-
 ### Change Timezone on Pi
 
     Open Terminal -> type: sudo raspi-config -> Select Timezone -> Press Finish -> Reboot Pi
@@ -132,112 +143,6 @@ Some basic commands include: Lorem Ipsum...
     class="toast-text" and class"price" determines what font-size the text is.
     The same font-size should be used on all products and prices.
     
-
-***
-
-
-## Development:
-
-Windows 10 Education
-
-[GitBash 2.33.0 64-bit](https://git-scm.com/download/win)
-
-Type in these commands in GitBash to clone down the files onto your computer:
-   
-     git clone https://github.com/NTI-Gymnasieingenjor/Cafeteria-skylt
-
-***
-## Tests:
-    Programs: 
-
-[Python 3.9.7](https://www.python.org/downloads/)
-
-[chromedriver 94.0.4606.61](https://chromedriver.chromium.org/downloads)
-
-[Java 8 update 221](https://www.java.com/sv/download/)		
-
-***
-## Plugins:
-        Selenium 3.141.0				
-    	        pip install selenium==3.141.0
-    	Unittest
-    	html5validator 0.3.1				
-    	        pip install html5validator==0.3.1
-***    
-## Coding Language:
-	Python
-
-***
-## Website:
-
-Programs:
-
-[Visual Studio Code - (Version 1.59.1)](https://code.visualstudio.com/updates/v1_59)
-	
-Browser:
-        
-        Google Chrome - (Version 94.0.4606.81)
-        Microsoft Edge - (Version 94.0.992.38)
-
-Coding Language:
-        
-        HTML5
-        CSS3
-	
-Framework:  (Compiled CSS and JS)
-        
-[Bootstrap 4.3.1](https://getbootstrap.com/docs/4.3/getting-started/download/)  
-
-For the website to work you need to link to bootstraps css.
-    Using these lines:
-        
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-        
-
-Use these lines to link to bootstraps Javascript in the following order:
-
-    <script type='text/javascript' src="js/jquery-3.3.1.slim.min.js"></script>
-    <script type='text/javascript' src="js/popper.min.js"></script>
-    <script type='text/javascript' src="js/bootstrap.min.js"></script>
-***
-## Raspberry:
-
-*Tool and OS that are necessary:*
-
-[SD formatting tool](https://www.sdcard.org/downloads/formatter/eula_windows/)
-
-[NOOBS OS](https://www.raspberrypi.org/downloads/noobs/)
-
-[Vnc Viewer](https://www.realvnc.com/en/connect/download/viewer/)
-
-***
-### Tutorial for NOOBS installation:
-		1. Install SD card formatting tool
-		2. Insert SD card in computer
-		3. Format SD card with installed tool	
-		4. Download NOOBS from raspberry website
-		5. Unzip and transfer NOOBS directory content to SD card boot folder
-		6. Plug in SD card into raspberry pi and connect to a Wi-Fi
-		7. After connecting select Raspian and select install
-		8. Follow install wizard to install Raspian on SD card
-
-***
-### Configuration
-
-To start configuring your Raspberry Pi 3B+, Create a directory named "Git" in /home/pi/. 
-
-Change active directory to the Git directory with the command 
-    "cd /home/pi/Git"
-
-and then clone the git repostitory with the command
-    "git clone https://github.com/NTI-Gymnasieingenjor/Cafeteria-skylt"
-
-change directory to python using the command 
-    "cd /home/pi/Git/cafeteria-skylt/Raspberry/python"
-
-and then enter the command 
-    "python symconfig.py"
-to run a script that will configure your Raspberry Pi 3B+. 
 
 ***
 ### Disable Black Border around Screen
@@ -383,37 +288,6 @@ The autopull script will still run as intended.
         example: 0 10 * * * vcgencmd display_power 0
                  5 10 * * * vcgencmd display_power 1
                  this will turn of HDMI output at 10:00 and start it agian at 10:05
-***
-## Coding Standard:
-	Standard for indents , one indents 
-	<html>
-
-	    <body> 
-		    <div>
-	            </div>
-	    </body>
-	    
-	</html>
-
-The standard language for variable names, class names and such is english.
-
-Comments in html are written this way:
-    \<!-- this is a comment -->.
-
-Comments in css are written this way:
-    /* this is a comment */
-
-Comments in Python are written with hashtags at the beginning of the line.
-    #This is a comment
-
-HTML5 Style Guide is to be followed.
-
- [W3Schools HTML5 STyle Guide](https://www.w3schools.com/html/html5_syntax.asp)
-
-
-Variables should match in indentation.
-    if (var1, var2,
-        var3, var4)
 
 
 
