@@ -65,8 +65,7 @@ pip install html5validator==0.3.1
 
 ### How to add a slide:
 
-```
-html
+```html
 <div class="carousel-item slide" data-interval="10000" style= "background-color: #190f27;">
 	<img src="images/small-toast.png" alt="..." class="productslide " id="toast" >
 	<img src="images/dot.png" alt="..." class="productslide" id="dot">
@@ -86,17 +85,17 @@ Note: Images should have a width between 950-1000px and a height of 600-700px.
 
 
 ### API key
-    ```
-    If the tests or the opening hours on the website aren't working, it's possible that you will need to generate a new API key.
-    To do so, enter the google developers console (https://console.cloud.google.com/), log into a non-school google account, create a project and go to credentials.
-    Click on create credentials and select API key. After this go into the search bar, search for google sheets api and enable it.
-    When this is done, all you need to do is copy the API key and put it after ?key= in the links found in main.js and tests.py, making sure to replace the previous key.
-    ```
+```
+If the tests or the opening hours on the website aren't working, it's possible that you will need to generate a new API key.
+To do so, enter the google developers console (https://console.cloud.google.com/), log into a non-school google account, create a project and go to credentials.
+Click on create credentials and select API key. After this go into the search bar, search for google sheets api and enable it.
+When this is done, all you need to do is copy the API key and put it after ?key= in the links found in main.js and tests.py, making sure to replace the previous key.
+```
 
 ### data-interval
-    ```
-    data-interval="10000" determines how many milliseconds have to pass before it changes to the next slide, 10000ms is 10 seconds
-    ```
+```
+data-interval="10000" determines how many milliseconds have to pass before it changes to the next slide, 10000ms is 10 seconds
+```
 
 ### id
  
