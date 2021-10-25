@@ -47,6 +47,8 @@ Some basic commands include:
 ## Getting started with the Raspberry Pi
 [Instructions](https://github.com/NTIG-Uppsala/Cafeteria-skylt/blob/main/Documentations/raspberrySetup.md)
 
+[Autostart](https://github.com/NTIG-Uppsala/Cafeteria-skylt/blob/main/Documentations/Autostart.md)
+
 ***
 
 ## Enviroments and Languages 
