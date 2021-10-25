@@ -2,7 +2,8 @@
 
 ## Setting the Raspberry up
 
-*These steps are already done so to say if you are not starting with a new Raspberry, you don´t need to follow these steps.*
+*The Tool ans OS steps are already done so to say if you are not starting with a new Raspberry, you don´t need to follow these steps.*
+
 *Tool and OS that are necessary:*
 
 [SD formatting tool](https://www.sdcard.org/downloads/formatter/eula_windows/)
@@ -50,14 +51,13 @@ Change active directory to the Git directory with the command
 
 and then clone the git repostitory with the command
     ```
-    git clone https://github.com/NTIG-Uppsala/Cafeteria-skylt.git"
+    git clone https://github.com/NTIG-Uppsala/Cafeteria-skylt.git
     ```
 
 To keep the cloned repo in Rasberry Pi up to date with the Github repo:
 + Code locally and push to the Github repo
 + Pull from the Rasberry Pi -> By changing active directory to Cafeteria-skylt 
-```
- cd /home/pi/Git/Cafeteria-skylt
-
- git pull 
-```
+    ```
+    cd /home/pi/Git/Cafeteria-skylt
+    git pull 
+    ```
