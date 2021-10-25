@@ -2,7 +2,7 @@
 
 ## Setting the Raspberry up
 
-*The Tool ans OS steps are already done so to say if you are not starting with a new Raspberry, you don´t need to follow these steps.*
+*The Tool and OS steps are already done so to say if you are not starting with a new Raspberry, you don´t need to follow these steps.*
 
 *Tool and OS that are necessary:*
 
@@ -25,7 +25,7 @@
 ## How to Remote Control Raspberry Pi
 
 ### Download/Install VNC Viewer
-1. Go to [Vnc Viewer](https://www.realvnc.com/en/connect/download/viewer/)
+1. Go to [VNC Viewer](https://www.realvnc.com/en/connect/download/viewer/)
 2. Download and install VNC viewer on the computer or phone that you want to control the RPI from.
     
 ### Connect to the Raspberry Pi 
