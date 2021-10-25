@@ -29,7 +29,7 @@ def Convert_to_usable_list(string):
 
 
 async def main():
-
+        #Function that gets the data from the sheet.
     async with aiohttp.ClientSession() as session:
         async with session.get('https://sheets.googleapis.com/v4/spreadsheets/1x-orVp4FAC1rCucW2jtH5WTWgBSbgAaDLp23wa-V2fQ/values/B4:E8?key=AIzaSyBPtjjvvCJ5Jy88dPjtlPXlsYCxGO8Kw7Q') as response:
             html = await response.text()
