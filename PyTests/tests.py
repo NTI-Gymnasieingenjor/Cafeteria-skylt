@@ -29,11 +29,11 @@ def ConvertToCleanList(string):
 
 
 async def main():
-        #Function that gets the data from the sheet.
+        #Function that gets timestamps from the sheet.
     async with aiohttp.ClientSession() as session:
         async with session.get('https://sheets.googleapis.com/v4/spreadsheets/1x-orVp4FAC1rCucW2jtH5WTWgBSbgAaDLp23wa-V2fQ/values/B4:C8?key=AIzaSyBPtjjvvCJ5Jy88dPjtlPXlsYCxGO8Kw7Q') as response:
             html = await response.text()
-            rawData = html[80:430]
+            rawData = html[80:430] #Sets rawData to be a string containing all characters of the data, between symbol 80 and symbol 430.
             processedData = ConvertToCleanList(rawData)
     return processedData
 
@@ -53,11 +53,11 @@ codePath = str(cwd) + '/public/index.html'
 def checkForText(text):
     assert text in driver.find_element_by_xpath("/html/body").text
 
-def TestWeekday():
+# tests that time is correct on Monday-Friday and that it's closed on weekends
+def TestWeekdays():
     driver.get(codePath)
     loop = asyncio.get_event_loop()
     timeList = loop.run_until_complete(main())
-    
 
     for i in range(0, 7):
         # sets the day in the javascript code
@@ -71,8 +71,8 @@ def TestWeekday():
             checkForText(dayStart)
         else:
             checkForText("Måndag - Fredag")
-        
+
         driver.refresh()
     driver.close()
 
-TestWeekday()
+TestWeekdays()
