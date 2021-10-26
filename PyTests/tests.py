@@ -59,11 +59,14 @@ def TestWeekday():
     timeList = loop.run_until_complete(main())
     
 
-    for i in range(7):
-        driver.execute_script("day = " + str(i + 1) + "; GetOpenHours();")
+    for i in range(0, 6):
+        # sets the day in the javascript code
+        driver.execute_script("day = " + str(i) + "; GetOpenHours();")
         time.sleep(1)
-        if i <= 4:
-            dayIndex = i * 4
+        # number 0 is sunday and 6 is saturday
+        if i <= 5 and i > 0:
+            # every fourth index in the list is a new day from the sheets
+            dayIndex = (i - 1) * 4
 
             day_start = str(timeList[dayIndex] + " - " + timeList[dayIndex+1])
             day_end = str(timeList[dayIndex+2] + " - " + timeList[dayIndex+3])
