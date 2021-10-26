@@ -1,5 +1,7 @@
 # Instructions for usage
 
+#### Link to Cafeteria Data Google Sheets
+http://tiny.cc/uxokuz
 ## Introduction
 
 #### Basics of booting up RaspberryPi.
