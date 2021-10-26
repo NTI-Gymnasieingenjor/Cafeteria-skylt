@@ -7,7 +7,7 @@ The Pi's power cable uses a USB-C port so make sure it is connected to the elect
 The Pi's micro-HDMI port also needs to be connected to a screen as to make sure the Pi's boot-up script works properly.  
 
 #### Basics of interface
-To access the interface, press your '⊞ Win' or homekey button.  
+To access the interface in the RaspberryPi OS, press your '⊞ Win' or homekey button.  
 From here you can select three relevant categories (all listed below) of the Pi when making changes.  
 | Preferences | Accessories | Logout |  
 
