@@ -54,7 +54,10 @@ and then clone the git repostitory with the command
     git clone https://github.com/NTIG-Uppsala/Cafeteria-skylt.git
     ```
 
-To keep the cloned repo in Rasberry Pi up to date with the Github repo:
+However, these steps above are already done if you are working with this repository and the same old Raspberry Pi. 
+So to say you don´t need to follow them.
+
+But to keep the cloned repo in Rasberry Pi up to date with the Github repo:
 + Code locally and push to the Github repo
 + Pull from the Rasberry Pi -> By changing active directory to Cafeteria-skylt 
     ```
@@ -64,7 +67,7 @@ To keep the cloned repo in Rasberry Pi up to date with the Github repo:
 
 ***
 
-## Commands-tips: 
+## Tips: 
 
 ### Change Timezone on Pi
 ```

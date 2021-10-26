@@ -27,31 +27,16 @@ function GetOpenHours(){
         type: 'GET',
         url: 'https://sheets.googleapis.com/v4/spreadsheets/1x-orVp4FAC1rCucW2jtH5WTWgBSbgAaDLp23wa-V2fQ/values/B4:E8?key=AIzaSyBPtjjvvCJ5Jy88dPjtlPXlsYCxGO8Kw7Q#gid=1388205127',
         success: function (data) {
-            if(day <= 5){
-                var element = document.getElementById("morningClosedHours");
-                element.innerHTML = data.values[day - 1][0] + " - " + data.values[day - 1][1];
-                element = document.getElementById("eveningClosedHours");
-                element.innerHTML = data.values[day - 1][2] + " - " + data.values[day - 1][3];
+            if(day <= 5 && day > 0){
                 element = document.getElementById("morningOpenHours");
                 element.innerHTML = data.values[day - 1][0] + " - " + data.values[day - 1][1];
                 element = document.getElementById("eveningOpenHours");
                 element.innerHTML = data.values[day - 1][2] + " - " + data.values[day - 1][3];
-                
-                if(time < parseInt(data.values[day-1][0].replace(":","")) || 
-                (time >= parseInt(data.values[day-1][1].replace(":","")) && time < parseInt(data.values[day-1][2].replace(":",""))) ||
-                time >= parseInt(data.values[day-1][3].replace(":",""))){
-                    document.getElementById("closed").classList.remove('hidden');
-                    document.getElementById("weekend").classList.add('hidden');
-                    document.getElementById("open").classList.add('hidden');
-                }
-                else{
-                    document.getElementById("closed").classList.add('hidden');
-                    document.getElementById("weekend").classList.add('hidden');
-                    document.getElementById("open").classList.remove('hidden');
-                }
+
+                document.getElementById("weekend").classList.add('hidden');
+                document.getElementById("open").classList.remove('hidden');
             }
             else{
-                document.getElementById("closed").classList.add('hidden');
                 document.getElementById("weekend").classList.remove('hidden');
                 document.getElementById("open").classList.add('hidden');
             }

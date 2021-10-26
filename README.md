@@ -4,7 +4,7 @@
 
 #### Basics of booting up RaspberryPi.
 The Pi's power cable uses a USB-C port so make sure it is connected to the electrical grid you are using.  
-The Pi's micro-HDMI port also needs to be connected to a screen as to make sure the Pi's boot-up script goes accordingly.  
+The Pi's micro-HDMI port also needs to be connected to a screen as to make sure the Pi's boot-up script works properly.  
 
 #### Basics of interface
 To access the interface, press your '⊞ Win' or homekey button.  
