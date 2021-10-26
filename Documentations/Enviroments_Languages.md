@@ -5,7 +5,7 @@
 - Windows 10 Education
 - [GitBash 2.33.0 64-bit](https://git-scm.com/download/win) -> Type in these commands in GitBash to clone down the files onto your computer:
 ```
-git clone https://github.com/NTI-Gymnasieingenjor/Cafeteria-skylt
+git clone https://github.com/NTIG-Uppsala/Cafeteria-skylt.git
 ```
 - Visual Studio Code - (Version 1.59.1)
 - Google Chrome - (Version 94.0.4606.81)
