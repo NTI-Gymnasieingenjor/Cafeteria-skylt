@@ -38,12 +38,14 @@ class TestChrome(unittest.TestCase):
         screenshot_nr = 1
         self.browser.get(website)
         self.browser.set_window_size(*res)
+        self.browser.execute_script("document.getElementById('weekend').classList.add('hidden');")
         element_present = EC.presence_of_element_located((By.CLASS_NAME, 'carousel-item'))
         WebDriverWait(self.browser, 5).until(element_present)
         for i in range(nr_of_slides):
+            self.browser.save_screenshot("Slide" + str(screenshot_nr) + '.png')
+            time.sleep(1)
             self.browser.execute_script("$('.carousel').carousel('next')")
             time.sleep(1)
-            self.browser.save_screenshot("Slide" + str(screenshot_nr) + '.png')
             screenshot_nr = screenshot_nr + 1
 
 
