@@ -1,6 +1,7 @@
 var d = new Date();
 var day = d.getDay();
 
+//Shows the clock on the website
 function StartTime() {
     var d = new Date();
     var h = d.getHours();
@@ -9,7 +10,7 @@ function StartTime() {
     m = CheckTime(m);
 
     document.getElementById("clock").innerHTML = h + ":" + m;
-    var t = setTimeout(StartTime, 1000);
+    setTimeout(StartTime, 1000); //Updates the clock every second
 }
 
 function CheckTime(i) {
@@ -17,12 +18,8 @@ function CheckTime(i) {
     return i;
 }
 
-function GetOpenHours(){
-    var d = new Date();
-    var hour = d.getHours();
-    var min = d.getMinutes();
-    var time = ConvertTime(hour, min);
-    
+//Shows the openhours on Monday-Friday and a close-text on weekends
+function GetOpenHours(){ 
     $.ajax({
         type: 'GET',
         url: 'https://sheets.googleapis.com/v4/spreadsheets/1x-orVp4FAC1rCucW2jtH5WTWgBSbgAaDLp23wa-V2fQ/values/B4:C8?key=AIzaSyBPtjjvvCJ5Jy88dPjtlPXlsYCxGO8Kw7Q#gid=1388205127',
@@ -40,11 +37,7 @@ function GetOpenHours(){
             }
         }
     });
-    setTimeout(GetOpenHours, 60000);
-}
-
-function ConvertTime(h, m){
-    return parseInt(h.toString() + CheckTime(m.toString()))
+    setTimeout(GetOpenHours, 60000); //Update the openhours-status every minute 
 }
 
 StartTime();
