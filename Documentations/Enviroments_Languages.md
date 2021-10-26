@@ -56,7 +56,7 @@ pip install html5validator==0.3.1
 - Comments in html are written this way: \<!-- this is a comment -->
 - Comments in css are written this way: /* this is a comment */
 - Comments in Python are written with hashtags at the beginning of the line: #This is a comment
-- HTML5 Style Guide is to be followed -> [W3Schools HTML5 STyle Guide](https://www.w3schools.com/html/html5_syntax.asp)
+- HTML5 Style Guide is to be followed -> [W3Schools HTML5 Style Guide](https://www.w3schools.com/html/html5_syntax.asp)
 - Variables should match in indentation -> if (var1, var2, var3, var4)
 
 ***
