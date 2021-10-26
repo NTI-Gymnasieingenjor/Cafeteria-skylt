@@ -49,7 +49,7 @@ Change active directory to the Git directory with the command
     cd /home/pi/Git
     ```
 
-and then clone the git repostitory with the command
+and then clone the git repository with the command
     ```
     git clone https://github.com/NTIG-Uppsala/Cafeteria-skylt.git
     ```
