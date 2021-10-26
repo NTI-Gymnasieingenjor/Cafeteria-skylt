@@ -16,11 +16,11 @@ import asyncio
 
 
 
-def Convert_to_usable_list(string):
+def ConvertToCleanList(string):
     #Removes specified characters from the called string.
-    disallowed_characters = '["] \n'
+    disallowedCharacters = '["] \n'
     for character in string:
-        for symbol in disallowed_characters:
+        for symbol in disallowedCharacters:
             if character == symbol:
                 string = string.replace(character, "")
     li = list(string.split(","))
@@ -33,9 +33,9 @@ async def main():
     async with aiohttp.ClientSession() as session:
         async with session.get('https://sheets.googleapis.com/v4/spreadsheets/1x-orVp4FAC1rCucW2jtH5WTWgBSbgAaDLp23wa-V2fQ/values/B4:E8?key=AIzaSyBPtjjvvCJ5Jy88dPjtlPXlsYCxGO8Kw7Q') as response:
             html = await response.text()
-            raw_data = html[80:430]
-            processed_data = Convert_to_usable_list(raw_data)
-    return processed_data
+            rawData = html[80:430]
+            processedData = ConvertToCleanList(rawData)
+    return processedData
 
 
 # removes non critical bug with browser and visualstudio
