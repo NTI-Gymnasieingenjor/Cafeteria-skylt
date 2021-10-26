@@ -18,7 +18,7 @@ import asyncio
 
 def ConvertToCleanList(string):
     #Removes specified characters from the called string.
-    disallowedCharacters = '["] \n'
+    disallowedCharacters = '["] \n}'
     for character in string:
         for symbol in disallowedCharacters:
             if character == symbol:
@@ -31,7 +31,7 @@ def ConvertToCleanList(string):
 async def main():
         #Function that gets the data from the sheet.
     async with aiohttp.ClientSession() as session:
-        async with session.get('https://sheets.googleapis.com/v4/spreadsheets/1x-orVp4FAC1rCucW2jtH5WTWgBSbgAaDLp23wa-V2fQ/values/B4:E8?key=AIzaSyBPtjjvvCJ5Jy88dPjtlPXlsYCxGO8Kw7Q') as response:
+        async with session.get('https://sheets.googleapis.com/v4/spreadsheets/1x-orVp4FAC1rCucW2jtH5WTWgBSbgAaDLp23wa-V2fQ/values/B4:C8?key=AIzaSyBPtjjvvCJ5Jy88dPjtlPXlsYCxGO8Kw7Q') as response:
             html = await response.text()
             rawData = html[80:430]
             processedData = ConvertToCleanList(rawData)
@@ -59,19 +59,16 @@ def TestWeekday():
     timeList = loop.run_until_complete(main())
     
 
-    for i in range(0, 6):
+    for i in range(0, 7):
         # sets the day in the javascript code
         driver.execute_script("day = " + str(i) + "; GetOpenHours();")
         time.sleep(1)
         # number 0 is sunday and 6 is saturday
         if i <= 5 and i > 0:
             # every fourth index in the list is a new day from the sheets
-            dayIndex = (i - 1) * 4
-
-            day_start = str(timeList[dayIndex] + " - " + timeList[dayIndex+1])
-            day_end = str(timeList[dayIndex+2] + " - " + timeList[dayIndex+3])
-            checkForText(day_start)
-            checkForText(day_end)
+            dayIndex = (i - 1) * 2
+            dayStart = str(timeList[dayIndex] + " - " + timeList[dayIndex+1])
+            checkForText(dayStart)
         else:
             checkForText("Måndag - Fredag")
         
