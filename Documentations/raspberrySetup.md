@@ -55,7 +55,7 @@ and then clone the git repository with the command
     ```
  
 However, these steps above are already done if you are working with this repository and the same old Raspberry Pi. 
-So to say you don´t need to follow them.
+So to say you don't need to follow them.
  
 But to keep the cloned repo in Raspberry Pi up to date with the Github repo:
 + Code locally and push to the Github repo
