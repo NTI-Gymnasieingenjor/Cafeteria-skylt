@@ -21,14 +21,14 @@ body{
 .openhourshead {
 	color: white;
 	text-align: center;
-	font-size: 100px;
+	font-size: 130px;
 	font-family: 'Bebas Neue', cursive;;
 }
 	
 .openhours {
 	color: white;
 	text-align: center;
-	font-size: 60px;
+	font-size: 70px;
 	font-family: 'Bebas Neue', cursive;;
 }
 
@@ -71,7 +71,7 @@ body{
 /* Id's */
 
 #cafeteria {
-	top: 550px;
+	top: 650px;
 }
 
 #lunch {
