@@ -6,10 +6,10 @@ http://tiny.cc/uxokuz
 
 #### Basics of booting up RaspberryPi.
 The Pi's power cable uses a USB-C port so make sure it is connected to the electrical grid you are using.  
-The Pi's micro-HDMI port can also be connected to a screen as to make sure the Pi's boot-up script works properly.  
+The Pi's micro-HDMI port can also be connected to a screen to make sure the Pi's boot-up script works properly.  
 
 #### Basics of interface
-To access the interface in the RaspberryPi OS, press your '⊞ Win' or homekey button.  
+To access the interface in the RaspberryPi OS, press your '⊞ Win' or home key button.  
 From here you can select three relevant categories (all listed below) of the Pi when making changes.  
 | Preferences | Accessories | Logout |  
 
@@ -53,5 +53,8 @@ Some basic commands include:
 
 ***
 
-## Enviroments and Languages 
+## Environments and Languages 
 [Documentation](https://github.com/NTIG-Uppsala/Cafeteria-skylt/blob/main/Documentations/Enviroments_Languages.md)
+
+
+
