@@ -14,18 +14,6 @@ import asyncio
 #pip install selenium
 
 
-def TestProducts(apiLinks):
-    driver.get(codePath)
-    for dataColumns in apiLinks:
-        response = requests.get("https://sheets.googleapis.com/v4/spreadsheets/1x-orVp4FAC1rCucW2jtH5WTWgBSbgAaDLp23wa-V2fQ/values/'Datahantering'!" + dataColumns + "?key=AIzaSyBPtjjvvCJ5Jy88dPjtlPXlsYCxGO8Kw7Q#gid=1816022637")
-        productList = response.json()
-        print(productList)
-        for product in productList["values"]:
-            for item in product:
-                print(item)
-                checkForText(item)
-    driver.close()
-
 
 # removes non critical bug with browser and visualstudio
 options = webdriver.ChromeOptions()
@@ -43,10 +31,11 @@ def checkForText(text):
     assert text in driver.find_element_by_xpath("/html/body").text
 
 # tests that time is correct on Monday-Friday and that it's closed on weekends
-def TestWeekdays(apiLinks):
+def TestWeekdays():
     driver.get(codePath)
-    loop = asyncio.get_event_loop()
-    timeList = loop.run_until_complete(TestProducts(apiLinks))
+    print("Loading site...")
+    response = requests.get("https://sheets.googleapis.com/v4/spreadsheets/1x-orVp4FAC1rCucW2jtH5WTWgBSbgAaDLp23wa-V2fQ/values/'%C3%96ppettider'!B4:C8?key=AIzaSyBPtjjvvCJ5Jy88dPjtlPXlsYCxGO8Kw7Q")
+    timeList = response.json()
 
     for i in range(0, 7):
         # sets the day in the javascript code
@@ -54,16 +43,13 @@ def TestWeekdays(apiLinks):
         time.sleep(1)
         # number 0 is sunday and 6 is saturday
         if i <= 5 and i > 0:
-            # every fourth index in the list is a new day from the sheets
-            dayIndex = (i - 1) * 2
-            dayStart = str(timeList[dayIndex] + " - " + timeList[dayIndex+1])
+            dayStart = str(timeList["values"][i-1][0] + " - " + timeList["values"][i-1][1])
             checkForText(dayStart)
         else:
             checkForText("Måndag - Fredag")
-
+        print("Day " + str(i) + ": success")
         driver.refresh()
     driver.close()
 
-apiLinks = ["B4:C8", "A5:B55", "E5:F55", "M5:N55", "Q5:R55"]
-
-TestWeekdays(apiLinks)
+TestWeekdays()
+print("Test successful!")
