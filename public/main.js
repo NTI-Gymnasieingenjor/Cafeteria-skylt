@@ -40,7 +40,7 @@ function GetOpenHours(){
     setTimeout(GetOpenHours, 60000); //Update the openhours-status every minute 
 }
 
-
+//Gets the products information and puts them in their dev
 function GetData(){
     let apiList = ["A5:A55", "I5:I55", "E5:E55", "M5:M55"];
     let productsList = ["products1", "products2", "products3", "products4"];
@@ -60,6 +60,7 @@ function GetData(){
     }
 }
 
+//Gets the prices information and puts them in their dev
 function GetPrices(){
     let apiList = ["B5:B55", "J5:J55","F5:F55", "N5:N55"];
     let pricesStatusList = ["price/status1", "price/status2", "price/status3", "price/status4"];
