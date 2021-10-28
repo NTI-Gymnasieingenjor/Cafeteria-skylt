@@ -85,15 +85,6 @@ The first div-tag tells you that this is a slide (class="carousel-item slide''),
 To create a new slide, copy the code above and put it under the existing "carousel-item" tags <br>
 Note: Images should have a width between 950-1000px and a height of 600-700px.
 
-
-### API key
-```
-If the tests or the opening hours on the website aren't working, it's possible that you will need to generate a new API key.
-To do so, enter the google developers console (https://console.cloud.google.com/), log into a non-school google account, create a project and go to credentials.
-Click on create credentials and select API key. After this go into the search bar, search for google sheets api and enable it.
-When this is done, all you need to do is copy the API key and put it after ?key= in the links found in main.js and tests.py, making sure to replace the previous key.
-```
-
 ### data-interval
 ```
 data-interval="10000" determines how many milliseconds have to pass before it changes to the next slide, 10000ms is 10 seconds
