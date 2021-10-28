@@ -37,6 +37,7 @@ Some basic commands include:
 - cd <*path*> (changes directory)
 - ls <*path*> (lists the directory)
 - hostname -I (shows the IP-address of the Pi)
+- cat /sys/class/thermal/thermal_zone0/temp (shows the temperature of the Pi in °C (divide by 1000))
 
 #### Basics of 'Logout'
 'Logout' uses | Shutdown | Reboot | Logout |  
