@@ -33,9 +33,6 @@ For testing
 Selenium 3.141.0				
 pip install selenium==3.141.0
 
-AIOHTTP
-pip install aiohttp
-
 Unittest
 html5validator 0.3.1			
 pip install html5validator==0.3.1
