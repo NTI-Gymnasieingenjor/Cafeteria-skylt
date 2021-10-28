@@ -7,7 +7,7 @@ import requests
 #Download the following extensions with these commands:
 #pip install selenium
 
-apiLinks = ["A4:B55", "D4:E55", "G4:H55", "J4:K55"]
+apiLinks = ["A4:B55", "E4:F55", "I4:J55", "M4:N55", "Q4:R55"]
 
 # removes non critical bug with browser and visualstudio
 options = webdriver.ChromeOptions()
@@ -27,7 +27,7 @@ def checkForText(text):
 def TestProducts():
     driver.get(codePath)
     for dataColumns in apiLinks:
-        response = requests.get("https://sheets.googleapis.com/v4/spreadsheets/1x-orVp4FAC1rCucW2jtH5WTWgBSbgAaDLp23wa-V2fQ/values/'Datahantering'!" + dataColumns + "?key=AIzaSyBPtjjvvCJ5Jy88dPjtlPXlsYCxGO8Kw7Q#gid=1388205127")
+        response = requests.get("https://sheets.googleapis.com/v4/spreadsheets/1x-orVp4FAC1rCucW2jtH5WTWgBSbgAaDLp23wa-V2fQ/values/'Priser'!" + dataColumns + "?key=AIzaSyBPtjjvvCJ5Jy88dPjtlPXlsYCxGO8Kw7Q#gid=1408440166")
         productList = response.json()
         print(productList)
         for product in productList["values"]:
