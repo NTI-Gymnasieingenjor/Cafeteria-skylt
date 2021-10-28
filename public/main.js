@@ -42,18 +42,37 @@ function GetOpenHours(){
 
 
 function GetData(){
-    let range = "A16:A19";
-    let idList = ["products1", "products2", "products3, products4"]
-    for(let n = 0; n < idList.length; n++){
+    let apiList = ["A5:A55", "I5:I55", "E5:E55", "M5:M55"];
+    let productsList = ["products1", "products2", "products3", "products4"];
+    for(let i = 0; i < productsList.length; i ++){
         $.ajax({
             type: 'GET',
-            url: "https://sheets.googleapis.com/v4/spreadsheets/1x-orVp4FAC1rCucW2jtH5WTWgBSbgAaDLp23wa-V2fQ/values/'Datahantering'!" + range + "?key=AIzaSyBPtjjvvCJ5Jy88dPjtlPXlsYCxGO8Kw7Q#gid=350188528",
+            url: "https://sheets.googleapis.com/v4/spreadsheets/1x-orVp4FAC1rCucW2jtH5WTWgBSbgAaDLp23wa-V2fQ/values/%27Datahantering%27!" + apiList[i] + "?key=AIzaSyBPtjjvvCJ5Jy88dPjtlPXlsYCxGO8Kw7Q#gid=1816022637",
 
             success: function (data) {
                 let products = data.values;
                 let productFull = products.filter(function (item){ return item != ''});
-                for(let i = 0; i < productFull.length; i++){
-                    document.getElementById(idList[n]).children[i].innerHTML= productFull[i];
+                for(let j = 0; j < productFull.length; j++){
+                    document.getElementById(productsList[i]).children[j].innerHTML= productFull[j];
+                }
+            }
+        });
+    }
+}
+
+function GetPrices(){
+    let apiList = ["B5:B55", "J5:J55","F5:F55", "N5:N55"];
+    let pricesStatusList = ["price/status1", "price/status2", "price/status3", "price/status4"];
+    for(let i = 0; i < pricesStatusList.length; i++){
+        $.ajax({
+            type: 'GET',
+            url: "https://sheets.googleapis.com/v4/spreadsheets/1x-orVp4FAC1rCucW2jtH5WTWgBSbgAaDLp23wa-V2fQ/values/%27Datahantering%27!" + apiList[i] + "?key=AIzaSyBPtjjvvCJ5Jy88dPjtlPXlsYCxGO8Kw7Q#gid=1816022637",
+
+            success: function (data) {
+                let products = data.values;
+                let productFull = products.filter(function (item){ return item != ''});
+                for(let j = 0; j < productFull.length; j++){
+                    document.getElementById(pricesStatusList[i]).children[j].innerHTML= productFull[j];
                 }
             }
         });
@@ -64,3 +83,4 @@ function GetData(){
 StartTime();
 GetOpenHours();
 GetData();
+GetPrices();
