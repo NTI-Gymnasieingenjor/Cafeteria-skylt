@@ -3,6 +3,7 @@ from selenium import webdriver
 from pathlib import Path
 import os
 import requests
+import time
 
 #Download the following extensions with these commands:
 #pip install selenium
@@ -12,6 +13,7 @@ apiLinks = ["A4:B55", "E4:F55", "I4:J55", "M4:N55", "Q4:R55"]
 # removes non critical bug with browser and visualstudio
 options = webdriver.ChromeOptions()
 options.add_experimental_option('excludeSwitches', ['enable-logging'])
+options.add_argument("headless")
 driver = webdriver.Chrome( options = options)
 
 # gets current parent directory
@@ -26,14 +28,15 @@ def checkForText(text):
 
 def TestProducts():
     driver.get(codePath)
+    print("Loading site...")
+    time.sleep(5)
     for dataColumns in apiLinks:
         response = requests.get("https://sheets.googleapis.com/v4/spreadsheets/1x-orVp4FAC1rCucW2jtH5WTWgBSbgAaDLp23wa-V2fQ/values/'Priser'!" + dataColumns + "?key=AIzaSyBPtjjvvCJ5Jy88dPjtlPXlsYCxGO8Kw7Q#gid=1408440166")
         productList = response.json()
-        print(productList)
         for product in productList["values"]:
             for item in product:
-                print(item)
                 checkForText(item)
+                print('Found: ' + item)
     driver.close()
 TestProducts()
 print("Test successful!")
