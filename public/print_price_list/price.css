@@ -1,0 +1,41 @@
+/* *{
+    overflow-y: visible;
+    float:none;
+    display: inline-block;
+} */
+.tables div{
+    display: inline-block;
+}
+th{
+    text-align: left;
+    width: 40vw;
+    height: 25px;
+    font-weight: bold;
+    padding-left: 5px;
+}
+td{
+    text-align: right;
+    float: right;
+    width: 10vw;
+    height: 20px;
+    font-weight: bold;
+    padding-right: 5px;
+    padding-top: 1.5px;
+}
+h2{
+    background-color: darkgray;
+    padding-bottom: 5px;
+}
+
+tr:nth-of-type(odd){
+    background-color: rgb(226, 226, 226);
+}
+
+.logoImage{
+    background-color: gray;
+    width: 100%;
+}
+.logoImage img{
+    height: 75px;
+    margin: 5px;
+}
