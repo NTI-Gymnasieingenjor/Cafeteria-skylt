@@ -17,7 +17,7 @@ from selenium.webdriver.common.by import By
 # pip install selenium
 
 
-class TestHomepageENG(TestCase):
+class TestIndex(TestCase):
     doNotCloseBrowser = False
     hideWindow = True
 
@@ -62,7 +62,7 @@ class TestHomepageENG(TestCase):
 
         for i in range(0, 7):
             # Sets the day in the JavaScript code
-            self.browser.execute_script("day = " + str(i) + "; GetOpenHours();")
+            self.browser.execute_script("day = " + str(i) + "; getOpenHours();")
             time.sleep(1)
             # Number 0 is sunday and 6 is saturday
             if i <= 5 and i > 0:

@@ -1,5 +1,6 @@
 from __future__ import print_function
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 from pathlib import Path
 import os
 import requests
@@ -25,7 +26,7 @@ codePath = str(cwd) + '/public/index.html'
 
 # Checking for text on site
 def checkForText(text):
-    assert text in driver.find_element_by_xpath("/html/body").text
+    assert text in driver.find_element(By.XPATH, "/html/body").text
 
 def TestProducts():
     driver.get(codePath)

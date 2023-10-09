@@ -32,7 +32,7 @@ class TestChrome(unittest.TestCase):
     # Tests resolution and saves a screenshot
     def testSaveScreenshot(self):
         # Gets number of slides on page
-        nr_of_slides = len(browser.find_elements_by_class_name("carousel-item"))
+        nr_of_slides = len(browser.find_elements(By.CLASS_NAME,"carousel-item"))
         print(nr_of_slides)
 
         screenshot_nr = 1
@@ -46,7 +46,7 @@ class TestChrome(unittest.TestCase):
             time.sleep(1)
             self.browser.execute_script("$('.carousel').carousel('next')")
             time.sleep(1)
-            screenshot_nr = screenshot_nr + 1
+            screenshot_nr = screenshot_nr + i
 
 
     # Closes the window after all the tests are done
