@@ -1,5 +1,5 @@
 
-function GetData(dataColumns){
+function getData(dataColumns){
     $.ajax({
         type: 'GET',
         url: "https://sheets.googleapis.com/v4/spreadsheets/1x-orVp4FAC1rCucW2jtH5WTWgBSbgAaDLp23wa-V2fQ/values/'Priser'!" + dataColumns + "?key=AIzaSyBPtjjvvCJ5Jy88dPjtlPXlsYCxGO8Kw7Q#gid=1388205127",
@@ -14,8 +14,8 @@ function GetData(dataColumns){
             
             // Append a h2 to the div as a header for the category
             node = document.createElement("H2");
-            var textnode = document.createTextNode(filteredList[0][0]);
-            node.appendChild(textnode);
+            var textNode = document.createTextNode(filteredList[0][0]);
+            node.appendChild(textNode);
             document.getElementById(filteredList[0][0]).appendChild(node);
             
             // Check if the list(+header) is odd, meaning the content is even
@@ -26,23 +26,23 @@ function GetData(dataColumns){
                     
                     // Create a header(product) on table row(node) with product
                     var product = document.createElement("TH");
-                    var textnode = document.createTextNode(filteredList[i][0]);
-                    product.appendChild(textnode);
+                    var textNode = document.createTextNode(filteredList[i][0]);
+                    product.appendChild(textNode);
                     node.appendChild(product);
                     // Create a table data(price) on table row(node) with price
                     var price = document.createElement("TD");
-                    var textnode = document.createTextNode(filteredList[i][1]);
-                    price.appendChild(textnode);
+                    var textNode = document.createTextNode(filteredList[i][1]);
+                    price.appendChild(textNode);
                     node.appendChild(price);
                     // Create a header on table row with product for the right column
                     var product = document.createElement("TH");
-                    var textnode = document.createTextNode(filteredList[i+(filteredList.length-1)/2][0]);
-                    product.appendChild(textnode);
+                    var textNode = document.createTextNode(filteredList[i+(filteredList.length-1)/2][0]);
+                    product.appendChild(textNode);
                     node.appendChild(product);
                     // Create a table data on table row with price for the right column
                     var price = document.createElement("TD");
-                    var textnode = document.createTextNode(filteredList[i+(filteredList.length-1)/2][1]);
-                    price.appendChild(textnode);
+                    var textNode = document.createTextNode(filteredList[i+(filteredList.length-1)/2][1]);
+                    price.appendChild(textNode);
                     node.appendChild(price);
                     
                     // Lastly append the table row(node) to the div with the header as id
@@ -57,38 +57,38 @@ function GetData(dataColumns){
                     
                     // Create a table data(price) on table row(node) with price
                     var product = document.createElement("TH");
-                    var textnode = document.createTextNode(filteredList[i][0]);
-                    product.appendChild(textnode);
+                    var textNode = document.createTextNode(filteredList[i][0]);
+                    product.appendChild(textNode);
                     node.appendChild(product);
                     // Create a table data(price) on table row(node) with price
                     var price = document.createElement("TD");
-                    var textnode = document.createTextNode(filteredList[i][1]);
-                    price.appendChild(textnode);
+                    var textNode = document.createTextNode(filteredList[i][1]);
+                    price.appendChild(textNode);
                     node.appendChild(price);
                     // On the last item add an empty th and td to fill the blank spot in the right column
                     if (i == (filteredList.length)/2){
                         // Create a header on table row with empty string
                         var product = document.createElement("TH");
-                        var textnode = document.createTextNode('');
-                        product.appendChild(textnode);
+                        var textNode = document.createTextNode('');
+                        product.appendChild(textNode);
                         node.appendChild(product);
                         // Create a table data on table row with empty string
                         var price = document.createElement("TD");
-                        var textnode = document.createTextNode('');
-                        price.appendChild(textnode);
+                        var textNode = document.createTextNode('');
+                        price.appendChild(textNode);
                         node.appendChild(price);
                     }
                     // When not on the last item, add the correct item in the right column
                     else{
                         // Create a header on table row with product
                         var product = document.createElement("TH");
-                        var textnode = document.createTextNode(filteredList[i+(filteredList.length)/2][0]);
-                        product.appendChild(textnode);
+                        var textNode = document.createTextNode(filteredList[i+(filteredList.length)/2][0]);
+                        product.appendChild(textNode);
                         node.appendChild(product);
                         // Create a table data on table row with price
                         var price = document.createElement("TD");
-                        var textnode = document.createTextNode(filteredList[i+(filteredList.length)/2][1]);
-                        price.appendChild(textnode);
+                        var textNode = document.createTextNode(filteredList[i+(filteredList.length)/2][1]);
+                        price.appendChild(textNode);
                         node.appendChild(price);
                     }
                     
@@ -103,8 +103,8 @@ function GetData(dataColumns){
 }
 
 // Get data for different categories of products, delay to make sure the elements load in the correct order
-setTimeout(() => { GetData('A4:B55'); }, 1000);
-setTimeout(() => { GetData('E4:F55'); }, 2000);
-setTimeout(() => { GetData('I4:J55'); }, 3000);
-setTimeout(() => { GetData('M4:N55'); }, 4000);
-setTimeout(() => { GetData('Q4:R55'); }, 5000);
+setTimeout(() => { getData('A4:B55'); }, 1000);
+setTimeout(() => { getData('E4:F55'); }, 2000);
+setTimeout(() => { getData('I4:J55'); }, 3000);
+setTimeout(() => { getData('M4:N55'); }, 4000);
+setTimeout(() => { getData('Q4:R55'); }, 5000);
