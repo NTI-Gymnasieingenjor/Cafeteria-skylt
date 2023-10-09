@@ -60,7 +60,7 @@ function getData(){
     }
 }
 
-//Gets the prices information and puts them in their dev
+//Gets the prices information and puts them in their div
 function getPrices(){
     let apiList = ["B5:B55", "J5:J55","F5:F55", "N5:N55"];
     let pricesStatusList = ["price/status1", "price/status2", "price/status3", "price/status4"];
