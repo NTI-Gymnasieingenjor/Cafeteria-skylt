@@ -5,24 +5,24 @@ import os
 import requests
 import time
 
-#Download the following extensions with these commands:
-#pip install selenium
+# Download the following extensions with these commands:
+# pip install selenium
 
 apiLinks = ["A4:B55", "E4:F55", "I4:J55", "M4:N55", "Q4:R55"]
 
-# removes non critical bug with browser and visualstudio
+# Removes non critical bug with browser and Visual Studio
 options = webdriver.ChromeOptions()
 options.add_experimental_option('excludeSwitches', ['enable-logging'])
 options.add_argument("headless")
 driver = webdriver.Chrome( options = options)
 
-# gets current parent directory
+# Gets current parent directory
 cwd = Path(os.getcwd()).parent
 
-# gets code file path way
+# Gets code file path
 codePath = str(cwd) + '/public/print_price_list/index.html'
 
-# checking for text on site
+# Checking for text on site
 def checkForText(text):
     assert text in driver.find_element_by_xpath("/html/body").text
 
