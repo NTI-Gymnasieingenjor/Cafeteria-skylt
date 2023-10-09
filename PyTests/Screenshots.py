@@ -9,15 +9,15 @@ import time
 import unittest
 import os
 
-#Needs to have Chromedriver.exe in the same folder for the tests to work
+# Needs to have Chromedriver.exe in the same folder for the tests to work
 
-optionsChrome = webdriver.ChromeOptions()  # define options for chrome
-optionsChrome.add_argument("headless")  # pass headless argument to the options (no ui)
+optionsChrome = webdriver.ChromeOptions()  # Define options for chrome
+optionsChrome.add_argument("headless")  # Pass headless argument to the options (no ui)
 browser = webdriver.Chrome(options=optionsChrome)
 
 parentPath = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
 
-website = parentPath + "\public\index.html"   # website all test run on
+website = parentPath + "\public\index.html"   # Website all test run on
 print(website)
 res = 1080, 1920
 
@@ -31,7 +31,7 @@ class TestChrome(unittest.TestCase):
 
     # Tests resolution and saves a screenshot
     def testSaveScreenshot(self):
-        #gets number of slides on page
+        # Gets number of slides on page
         nr_of_slides = len(browser.find_elements_by_class_name("carousel-item"))
         print(nr_of_slides)
 
@@ -54,8 +54,8 @@ class TestChrome(unittest.TestCase):
     def tearDownClass(self):
         self.browser.close()
 
-# starts test
+# Starts test
 if __name__ == '__main__':
     unittest.main()
 
-#Needs to have Chromedriver.exe in the same folder for the tests to work
+# Needs to have Chromedriver.exe in the same folder for the tests to work
