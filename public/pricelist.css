@@ -18,14 +18,14 @@ body{
   	height: 100vh;
 }
 
-.openhourshead {
+.openHoursHead {
 	color: white;
 	text-align: center;
 	font-size: 130px;
 	font-family: 'Bebas Neue', cursive;;
 }
 	
-.openhours {
+.openHours {
 	color: white;
 	text-align: center;
 	font-size: 70px;
@@ -33,16 +33,15 @@ body{
 }
 
 
-.productslide{
+.productSlide{
 	position:absolute;
-
 }
 
 .slide{
 	height: 95vh;
 }
 
-.toast-text{
+.toastText{
 	font-size: 78px;
 	font-family: 'Bebas Neue', cursive;
 }
@@ -52,13 +51,13 @@ body{
 	font-family: 'Bebas Neue', cursive;
 }
 
-.productprice{
+.productPrice{
 	bottom:230px;
 	left: 620px;	
 	z-index:4;
 }
 
-.moneydot{
+.moneyDot{
 	z-index:2;
 	bottom:105px;
 	right:50px;
