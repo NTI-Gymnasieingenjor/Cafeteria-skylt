@@ -86,7 +86,7 @@ body{
 	font-family: 'Bebas Neue', cursive;
 }
 
-.product-image{
+.productImage{
 	z-index:1;
 	bottom:600px;
 	left: 50px;
@@ -105,7 +105,7 @@ body{
 	display: none;
 }
 
-.price-list{
+.priceList{
 	position: static;
 	font-size: 32px;
 	font-family: 'Bebas Neue', cursive;
@@ -113,12 +113,12 @@ body{
 	margin-left: 10px;
 }
 
-.price-list h2{
+.priceList h2{
 	font-size: 46px;
 	margin: 0px;
 }
 
-.price-list p{
+.priceList p{
 	margin: 0px 0px 0px 20px;
 }
 
