@@ -1,11 +1,13 @@
 from __future__ import print_function
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
+
+import time
 from os import getcwd, path
 from unittest import TestCase, main
+
 import requests
-import time
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
 
 # Download the following extensions with these commands:
 # pip install selenium

@@ -1,17 +1,14 @@
 # -*- coding: utf-8 -*-
 from __future__ import print_function
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.chrome.options import Options
-from datetime import datetime
+
 import time
-from pathlib import Path
-import requests
-import asyncio
 from os import getcwd, path
 from unittest import TestCase, main
-from selenium.webdriver.common.by import By
 
+import requests
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
 
 # Download the following extensions with these commands:
 # pip install selenium
