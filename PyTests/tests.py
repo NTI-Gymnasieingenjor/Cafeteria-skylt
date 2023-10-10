@@ -24,7 +24,7 @@ class TestIndex(TestCase):
     @classmethod
     def setUpClass(cls):
         chr_options = Options()
-        
+
         chr_options.add_experimental_option("excludeSwitches", ["enable-logging"])
 
         if cls.doNotCloseBrowser:
@@ -49,7 +49,7 @@ class TestIndex(TestCase):
     def testTitle(self):
         self.assertEqual("Prislista", self.browser.title)
 
-    def checkForText(self,text):
+    def checkForText(self, text):
         self.assertIn(text, self.browser.find_element(By.XPATH, "weekend").text)
 
     # Tests that time is correct on Monday-Friday and that it's closed on weekends
@@ -74,6 +74,7 @@ class TestIndex(TestCase):
                 self.checkForText("Måndag - Fredag")
             print("Day " + str(i) + ": success")
             self.browser.refresh()
+
 
 if __name__ == "__main__":
     main(verbosity=2)

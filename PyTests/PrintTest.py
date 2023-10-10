@@ -12,6 +12,7 @@ import time
 
 apiLinks = ["A4:B55", "E4:F55", "I4:J55", "M4:N55", "Q4:R55"]
 
+
 class TestIndex(TestCase):
     doNotCloseBrowser = False
     hideWindow = True
@@ -19,7 +20,7 @@ class TestIndex(TestCase):
     @classmethod
     def setUpClass(cls):
         chr_options = Options()
-        
+
         chr_options.add_experimental_option("excludeSwitches", ["enable-logging"])
 
         if cls.doNotCloseBrowser:
@@ -48,9 +49,13 @@ class TestIndex(TestCase):
         print("Loading site...")
         time.sleep(5)
         for dataColumns in apiLinks:
-            response = requests.get("https://sheets.googleapis.com/v4/spreadsheets/1x-orVp4FAC1rCucW2jtH5WTWgBSbgAaDLp23wa-V2fQ/values/'Priser'!" + dataColumns + "?key=AIzaSyBPtjjvvCJ5Jy88dPjtlPXlsYCxGO8Kw7Q#gid=1408440166")
+            response = requests.get(
+                "https://sheets.googleapis.com/v4/spreadsheets/1x-orVp4FAC1rCucW2jtH5WTWgBSbgAaDLp23wa-V2fQ/values/'Priser'!"
+                + dataColumns
+                + "?key=AIzaSyBPtjjvvCJ5Jy88dPjtlPXlsYCxGO8Kw7Q#gid=1408440166"
+            )
             productList = response.json()
             for product in productList["values"]:
                 for item in product:
                     self.checkForText(item)
-                    print('Found: ' + item)
+                    print("Found: " + item)

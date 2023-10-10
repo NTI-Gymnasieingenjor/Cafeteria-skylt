@@ -14,6 +14,7 @@ import time
 apiLinks = ["A5:B55", "E5:F55", "I5:J55", "M5:N55"]
 res = 1080, 1920
 
+
 class TestIndex(TestCase):
     doNotCloseBrowser = False
     hideWindow = True
@@ -21,7 +22,7 @@ class TestIndex(TestCase):
     @classmethod
     def setUpClass(cls):
         chr_options = Options()
-        
+
         chr_options.add_experimental_option("excludeSwitches", ["enable-logging"])
 
         if cls.doNotCloseBrowser:
@@ -43,7 +44,7 @@ class TestIndex(TestCase):
         self.browser.get("about:blank")
 
     # Checking for text on site
-    def checkForText(self,text):
+    def checkForText(self, text):
         self.assertIn(self.browser.find_element(By.XPATH, "/html/body").text, text)
 
     def testProducts(self):
@@ -52,9 +53,13 @@ class TestIndex(TestCase):
         print("Loading site...")
         time.sleep(1)
         for dataColumns in apiLinks:
-            response = requests.get("https://sheets.googleapis.com/v4/spreadsheets/1x-orVp4FAC1rCucW2jtH5WTWgBSbgAaDLp23wa-V2fQ/values/'Datahantering'!" + dataColumns + "?key=AIzaSyBPtjjvvCJ5Jy88dPjtlPXlsYCxGO8Kw7Q#gid=1408440166")
+            response = requests.get(
+                "https://sheets.googleapis.com/v4/spreadsheets/1x-orVp4FAC1rCucW2jtH5WTWgBSbgAaDLp23wa-V2fQ/values/'Datahantering'!"
+                + dataColumns
+                + "?key=AIzaSyBPtjjvvCJ5Jy88dPjtlPXlsYCxGO8Kw7Q#gid=1408440166"
+            )
             productList = response.json()
             for product in productList["values"]:
                 for item in product:
                     self.checkForText(item)
-                    print('Found: ' + item)
+                    print("Found: " + item)

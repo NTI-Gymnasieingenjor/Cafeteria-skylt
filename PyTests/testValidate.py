@@ -9,6 +9,7 @@ from selenium.webdriver.support.ui import Select
 
 URL = "https://validator.w3.org/nu/"
 
+
 class TestValidate(TestCase):
     doNotCloseBrowser = True
     hideWindow = False
@@ -16,7 +17,7 @@ class TestValidate(TestCase):
     @classmethod
     def setUpClass(cls):
         chr_options = Options()
-        
+
         if cls.doNotCloseBrowser:
             chr_options.add_experimental_option("detach", True)
 
@@ -26,7 +27,7 @@ class TestValidate(TestCase):
         cls.browser = webdriver.Chrome(options=chr_options)
 
     def testValidation(self):
-    # get all file paths
+        # get all file paths
         paths = []
 
         for root, dirs, files in os.walk("./public", topdown=False):
@@ -40,12 +41,14 @@ class TestValidate(TestCase):
 
         # Loop through file paths and validate the files
         for path in paths:
-            if (path.endswith(".html") or path.endswith(".css")):
-                if ("bootstrap" not in path):
+            if path.endswith(".html") or path.endswith(".css"):
+                if "bootstrap" not in path:
                     # Open a new tab and switch to it
                     self.browser.execute_script("window.open('');")
                     TABS_OPEN += 1
-                    self.browser.switch_to.window(self.browser.window_handles[TABS_OPEN - 1])
+                    self.browser.switch_to.window(
+                        self.browser.window_handles[TABS_OPEN - 1]
+                    )
                     # Open the validation website
                     self.browser.get(URL)
                     # Change dropdown to "file upload"
@@ -53,7 +56,9 @@ class TestValidate(TestCase):
                     select = Select(docselector)
                     select.select_by_visible_text("file upload")
                     # Upload and submit file
-                    self.browser.find_element(By.ID, "doc").send_keys(os.path.abspath(path))
+                    self.browser.find_element(By.ID, "doc").send_keys(
+                        os.path.abspath(path)
+                    )
                     self.browser.find_element(By.ID, "submit").click()
                     # Remove inputmode warning
                     try:
@@ -71,6 +76,6 @@ class TestValidate(TestCase):
                 f"{failed_validations_count} files failed validation. See above for details."
             )
 
+
 if __name__ == "__main__":
     main(verbosity=2)
-
