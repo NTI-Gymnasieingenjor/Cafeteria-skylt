@@ -8,8 +8,8 @@
 git clone https://github.com/NTIG-Uppsala/Cafeteria-skylt.git
 ```
 - Visual Studio Code - (Version 1.83.0)
-- Google Chrome - (Verison 117.0.5938.134)
-- Microsoft Edge - (Verision 117.0.2045.60)
+- Google Chrome - (Version 117.0.5938.134)
+- Microsoft Edge - (Version 117.0.2045.60)
 
 ***
 
@@ -31,11 +31,9 @@ git clone https://github.com/NTIG-Uppsala/Cafeteria-skylt.git
 For testing
 ```
 Selenium 4.13.0				
-pip install selenium==3.13.0
+pip install selenium==4.13.0
 
 Unittest
-html5validator 1.4.0			
-pip install html5validator==1.4.0
 ```
 
 ***
