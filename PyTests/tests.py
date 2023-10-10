@@ -50,10 +50,7 @@ class TestIndex(TestCase):
         self.assertEqual("Prislista", self.browser.title)
 
     def checkForText(self,text):
-        self.browser.execute_script("document.getElementById('open').classList.add('hidden');")
-        self.browser.execute_script("document.getElementById('weekend').classList.remove('hidden');")
-        print(self.browser.find_element(By.XPATH, "/html/body").text)
-        self.assertIn(text, self.browser.find_element(By.ID, "weekend").text)
+        self.assertIn(text, self.browser.find_element(By.XPATH, "weekend").text)
 
     # Tests that time is correct on Monday-Friday and that it's closed on weekends
     def testWeekdays(self):
