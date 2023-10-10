@@ -2,24 +2,24 @@ var d = new Date();
 var day = d.getDay();
 
 //Shows the clock on the website
-function StartTime() {
+function startTime() {
     var d = new Date();
     var h = d.getHours();
     var m = d.getMinutes();
 
-    m = CheckTime(m);
+    m = checkTime(m);
 
     document.getElementById("clock").innerHTML = h + ":" + m;
-    setTimeout(StartTime, 1000); //Updates the clock every second
+    setTimeout(startTime, 1000); //Updates the clock every second
 }
 
-function CheckTime(i) {
+function checkTime(i) {
     if (i < 10) { i = "0" + i }; //Adds a zero infront of numbers < 10
     return i;
 }
 
 //Shows the openhours on Monday-Friday and a close-text on weekends
-function GetOpenHours(){ 
+function getOpenHours(){ 
     $.ajax({
         type: 'GET',
         url: 'https://sheets.googleapis.com/v4/spreadsheets/1x-orVp4FAC1rCucW2jtH5WTWgBSbgAaDLp23wa-V2fQ/values/B4:C8?key=AIzaSyBPtjjvvCJ5Jy88dPjtlPXlsYCxGO8Kw7Q#gid=1388205127',
@@ -37,11 +37,11 @@ function GetOpenHours(){
             }
         }
     });
-    setTimeout(GetOpenHours, 60000); //Update the openhours-status every minute 
+    setTimeout(getOpenHours, 60000); //Update the openhours-status every minute 
 }
 
-//Gets the products information and puts them in their dev
-function GetData(){
+//Gets the products information and puts them in their div
+function getData(){
     let apiList = ["A5:A55", "I5:I55", "E5:E55", "M5:M55"];
     let productsList = ["products1", "products2", "products3", "products4"];
     for(let i = 0; i < productsList.length; i ++){
@@ -60,8 +60,8 @@ function GetData(){
     }
 }
 
-//Gets the prices information and puts them in their dev
-function GetPrices(){
+//Gets the prices information and puts them in their div
+function getPrices(){
     let apiList = ["B5:B55", "J5:J55","F5:F55", "N5:N55"];
     let pricesStatusList = ["price/status1", "price/status2", "price/status3", "price/status4"];
     for(let i = 0; i < pricesStatusList.length; i++){
@@ -81,7 +81,7 @@ function GetPrices(){
 }
 
 
-StartTime();
-GetOpenHours();
-GetData();
-GetPrices();
+startTime();
+getOpenHours();
+getData();
+getPrices();

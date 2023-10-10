@@ -1,174 +1,176 @@
 <!DOCTYPE html>
 
 <html lang="sv">
-	<head>
-		<meta charset="utf-8">
 
-		<title>Prislista</title>
-		<meta name="Lazy Lounge" content="Prislista">
-		<meta http-equiv="refresh" content="3600"/>
-		<!-- CSS -->
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="prislistacss.css">
-		<link rel="stylesheet" href="animation.css">
-		
-		<!-- JavaScript -->
-		<script type='text/javascript' src="js/jquery-3.3.1.js"></script>
-		<script type='text/javascript' src="js/popper.min.js"></script>
-		<script type='text/javascript' src="js/bootstrap.min.js"></script>
+<head>
+	<meta charset="utf-8">
 
-	</head>
+	<title>Prislista</title>
+	<meta name="BitBuddies" content="Prislista">
+	<meta http-equiv="refresh" content="3600">
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="pricelist.css">
+	<link rel="stylesheet" href="animation.css">
 
-	<body>
-		<nav class="navbar" style="background-color: #190f27; height: 5vh;">
-			<a class="navbar-brand" href="#">
-				<img src="images/NTI-logo-transparent.png" width="258" height="60" alt="">
-			</a>
-			<a class="navbar-brand" href="#">
-				<img src="images/TE4-logo-transparent.png" height="60" alt="">
-			</a>
-		</nav>
-		<div class="container layer1"></div>
-		<div class="container layer2"></div>
-		<div class="container layer3"></div>
-		<div class="closed" id="weekend">
-			<p style="font-size: 96px;">Cafeterian har stängt</p>
-			<br>
-			<p>Öppet:</p>
-			<p>Måndag - Fredag</p>
-		</div>
-		<div class="carousel slide" data-ride="carousel" id="open">
-			<div class="carousel-inner">
+	<!-- JavaScript -->
+	<script src="js/jquery-3.3.1.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 
-				<div class="carousel-item slide active" data-interval="10000" style="background-color: #190f27;">
-					<div class="carousel-caption d-none d-md-block" id ="cafeteria">
-						<p class="openhourshead">Cafeterian</p>
-						<p id="openHours" class="openhours">08:30 - 15:45</p>
-					</div>
-					
-				</div>
-				
-				<div class="carousel-item slide" data-interval="5000" style="background-color: #190f27;">
-					<img src="images/toast2NoBoard.png" alt="..." class="productslide product-image">
-					<img src="images/dot.png" alt="..." class="productslide dot">
-					<img src="images/money-dot.png" alt="..." class="productslide moneydot">
-					<div class="carousel-caption d-none d-md-block productprice">
-						<p class="toast-text">Toast</p>
-						<p class="price">20 kr</p>
-					</div>
+</head>
 
+<body>
+	<nav class="navbar" style="background-color: #190f27; height: 5vh;">
+		<a class="navbar-brand" href="#">
+			<img src="images/NTI-logo-transparent.png" width="258" height="60" alt="">
+		</a>
+		<a class="navbar-brand" href="#">
+			<img src="images/TE4-logo-transparent.png" height="60" alt="">
+		</a>
+	</nav>
+	<div class="container layer1"></div>
+	<div class="container layer2"></div>
+	<div class="container layer3"></div>
+	<div class="closed" id="weekend">
+		<p style="font-size: 96px;">Cafeterian har stängt</p>
+		<br>
+		<p>Öppet:</p>
+		<p>Måndag - Fredag</p>
+	</div>
+	<div class="carousel slide" data-ride="carousel" id="open">
+		<div class="carousel-inner">
+
+			<div class="carousel-item slide active" data-interval="10000" style="background-color: #190f27;">
+				<div class="carousel-caption d-none d-md-block" id="cafeteria">
+					<p class="openHoursHead">Cafeterian</p>
+					<p id="openHours" class="openHours">08:30 - 15:45</p>
 				</div>
 
-				<div class="carousel-item slide" data-interval="5000" style="background-color: #190f27;">
-					<img src="images/kaffe2NoPaper.png" alt="..." class="productslide product-image">
-					<img src="images/kaffe2_contents.png" alt="..." class="productslide product-image">
-					<img src="images/kaffe2NoPaper_front.png" alt="..." class="productslide product-image">
-					<img src="images/dot.png" alt="..." class="productslide dot">
-					<img src="images/money-dot.png" alt="..." class="productslide moneydot">
-					<div class="carousel-caption d-none d-md-block productprice">
-						<p class="toast-text">Kaffe</p>
-						<p class="price">10 kr</p>
-					</div>
+			</div>
+
+			<div class="carousel-item slide" data-interval="5000" style="background-color: #190f27;">
+				<img src="images/toast2NoBoard.png" alt="..." class="productSlide productImage">
+				<img src="images/dot.png" alt="..." class="productSlide dot">
+				<img src="images/money-dot.png" alt="..." class="productSlide moneyDot">
+				<div class="carousel-caption d-none d-md-block productPrice">
+					<p class="toastText">Toast</p>
+					<p class="price">20 kr</p>
 				</div>
 
-				<div class="carousel-item slide" data-interval="5000" style="background-color: #190f27;">
-					<img src="images/wiener2NoBoard.png" alt="..." class="productslide product-image">
-					<img src="images/dot.png" alt="..." class="productslide dot">
-					<img src="images/money-dot.png" alt="..." class="productslide moneydot">
-					<div class="carousel-caption d-none d-md-block productprice">
-						<p class="toast-text">Wienerbröd</p>
-						<p class="price">15 kr</p>
-					</div>
-				</div>
+			</div>
 
-				<div class="carousel-item slide" data-interval="10000" style="background-color: #190f27;">
-					<div class="carousel-caption d-none d-md-block price-list" style="margin-top: 26vh;">
-						<div class="container">
-							<!--row 1-->
-							<div class="row mb-5 mt-5">
-								<div class="col-2"></div>
-								<div class="col-7">
-									<h2>Smörgås och fikabröd</h2>
-									<div id="products1">
-										<p>Ostfralla - kalkon & ost, eller ost</p>
-										<p>Wienerbröd</p>
-										<p>Toast - kalkon & ost, eller ost</p>
-										<p>Baguette - kalkon & ost</p>
-									</div>
-								</div>
-								<div id="price/status1" class="col-3 text-right">
-									<p class="aligner">15 kr</p>
-									<p>15 kr</p>
-									<p>20 kr</p>
-									<p>25 kr</p>
+			<div class="carousel-item slide" data-interval="5000" style="background-color: #190f27;">
+				<img src="images/kaffe2NoPaper.png" alt="..." class="productSlide productImage">
+				<img src="images/kaffe2_contents.png" alt="..." class="productSlide productImage">
+				<img src="images/kaffe2NoPaper_front.png" alt="..." class="productSlide productImage">
+				<img src="images/dot.png" alt="..." class="productSlide dot">
+				<img src="images/money-dot.png" alt="..." class="productSlide moneyDot">
+				<div class="carousel-caption d-none d-md-block productPrice">
+					<p class="toastText">Kaffe</p>
+					<p class="price">10 kr</p>
+				</div>
+			</div>
+
+			<div class="carousel-item slide" data-interval="5000" style="background-color: #190f27;">
+				<img src="images/wiener2NoBoard.png" alt="..." class="productSlide productImage">
+				<img src="images/dot.png" alt="..." class="productSlide dot">
+				<img src="images/money-dot.png" alt="..." class="productSlide moneyDot">
+				<div class="carousel-caption d-none d-md-block productPrice">
+					<p class="toastText">Wienerbröd</p>
+					<p class="price">15 kr</p>
+				</div>
+			</div>
+
+			<div class="carousel-item slide" data-interval="10000" style="background-color: #190f27;">
+				<div class="carousel-caption d-none d-md-block priceList" style="margin-top: 26vh;">
+					<div class="container">
+						<!--row 1-->
+						<div class="row mb-5 mt-5">
+							<div class="col-2"></div>
+							<div class="col-7">
+								<h2>Smörgås och fikabröd</h2>
+								<div id="products1">
+									<p>Ostfralla - kalkon & ost, eller ost</p>
+									<p>Wienerbröd</p>
+									<p>Toast - kalkon & ost, eller ost</p>
+									<p>Baguette - kalkon & ost</p>
 								</div>
 							</div>
-							<!--row 2-->
-							<div class="row mb-5">
-								<div class="col-2"></div>
-								<div class="col-7">
-									<h2>Mellanmål</h2>
-									<div id="products2">
-										<p>Frukt</p>
-										<p>Wasa sandwich</p>
-										<p>Billys panpizza</p>
-										<p>Yoggi</p>
-									</div>
-								</div>
-								<div id="price/status2" class="col-3 text-right">
-									<p class="aligner">5 kr</p>
-									<p>10 kr</p>
-									<p>20 kr</p>
-									<p>20 kr</p>
+							<div id="price/status1" class="col-3 text-right">
+								<p class="aligner">15 kr</p>
+								<p>15 kr</p>
+								<p>20 kr</p>
+								<p>25 kr</p>
+							</div>
+						</div>
+						<!--row 2-->
+						<div class="row mb-5">
+							<div class="col-2"></div>
+							<div class="col-7">
+								<h2>Mellanmål</h2>
+								<div id="products2">
+									<p>Frukt</p>
+									<p>Wasa sandwich</p>
+									<p>Billys panpizza</p>
+									<p>Yoggi</p>
 								</div>
 							</div>
-							<!--row 3-->
-							<div class="row mb-5">
-								<div class="col-2"></div>
-								<div class="col-7">
-									<h2>Dryck</h2>
-									<div id="products3">
-										<p>Kaffe/Te/Choklad</p>
-										<p>Aloe Vera</p>
-										<p>Läsk</p>
-										<p>Mer</p>
-									</div>
-								</div>
-								<div id="price/status3" class="col-3 text-right">
-									<p class="aligner">10 kr</p>
-									<p>20 kr</p>
-									<p>20 kr</p>
-									<p>20 kr</p>
+							<div id="price/status2" class="col-3 text-right">
+								<p class="aligner">5 kr</p>
+								<p>10 kr</p>
+								<p>20 kr</p>
+								<p>20 kr</p>
+							</div>
+						</div>
+						<!--row 3-->
+						<div class="row mb-5">
+							<div class="col-2"></div>
+							<div class="col-7">
+								<h2>Dryck</h2>
+								<div id="products3">
+									<p>Kaffe/Te/Choklad</p>
+									<p>Aloe Vera</p>
+									<p>Läsk</p>
+									<p>Mer</p>
 								</div>
 							</div>
-							<!--row 4-->
-							<div class="row mb-5">
-								<div class="col-2"></div>
-								<div class="col-7">
-									<h2>Godis</h2>
-									<div id="products4">
-										<p>Corny big</p>
-										<p>Twix</p>
-										<p>Marabou choklad</p>
-										<p>Ahlgrens bilar</p>
-									</div>
+							<div id="price/status3" class="col-3 text-right">
+								<p class="aligner">10 kr</p>
+								<p>20 kr</p>
+								<p>20 kr</p>
+								<p>20 kr</p>
+							</div>
+						</div>
+						<!--row 4-->
+						<div class="row mb-5">
+							<div class="col-2"></div>
+							<div class="col-7">
+								<h2>Godis</h2>
+								<div id="products4">
+									<p>Corny big</p>
+									<p>Twix</p>
+									<p>Marabou choklad</p>
+									<p>Ahlgrens bilar</p>
 								</div>
-								<div id="price/status4" class="col-3 text-right">
-									<p class="aligner">15 kr</p>
-									<p>15 kr</p>
-									<p>20 kr</p>
-									<p>25 kr</p>
-								</div>
+							</div>
+							<div id="price/status4" class="col-3 text-right">
+								<p class="aligner">15 kr</p>
+								<p>15 kr</p>
+								<p>20 kr</p>
+								<p>25 kr</p>
 							</div>
 						</div>
 					</div>
 				</div>
-
 			</div>
-		</div>
-		<p id="clock">00:00</p>
 
-			
-		<script src="main.js"></script>
-	</body>
+		</div>
+	</div>
+	<p id="clock">00:00</p>
+
+
+	<script src="main.js"></script>
+</body>
+
 </html>

@@ -3,13 +3,13 @@
 ## Development Environments
 
 - Windows 10 Education
-- [GitBash 2.33.0 64-bit](https://git-scm.com/download/win) -> Type in these commands in GitBash to clone down the files onto your computer:
+- [GitBash 2.42.0 64-bit](https://git-scm.com/download/win) -> Type in these commands in GitBash to clone down the files onto your computer:
 ```
 git clone https://github.com/NTIG-Uppsala/Cafeteria-skylt.git
 ```
-- Visual Studio Code - (Version 1.59.1)
-- Google Chrome - (Version 94.0.4606.81)
-- Microsoft Edge - (Version 94.0.992.38)
+- Visual Studio Code - (Version 1.83.0)
+- Google Chrome - (Version 117.0.5938.134)
+- Microsoft Edge - (Version 117.0.2045.60)
 
 ***
 
@@ -17,25 +17,23 @@ git clone https://github.com/NTIG-Uppsala/Cafeteria-skylt.git
 
 ### Programming Languages:
 - JavaScript
--  HTML5
--  CSS3
--  Python3 (for testing)
+- HTML5
+- CSS3
+- Python3 (for testing)
 
 ### Frameworks: (Compiled CSS and JS)
 - [jQuery 3.3.1](https://jquery.com/download/)
-- [Bootstrap 4.3.1](https://getbootstrap.com/docs/4.3/getting-started/download/) 
-- [chromedriver 94.0.4606.61](https://chromedriver.chromium.org/downloads) (for testing)
-- [Java 8 update 221](https://www.java.com/sv/download/) (for testing)	
+- [Bootstrap 5.3.2.](https://getbootstrap.com/docs/4.3/getting-started/download/) 
+- [chromedriver 114.0.5735.90](https://chromedriver.chromium.org/downloads) (for testing)
+- [Java 8 update 381](https://www.java.com/sv/download/) (for testing)	
 
 ### Plugins:
 For testing
 ```
-Selenium 3.141.0				
-pip install selenium==3.141.0
+Selenium 4.13.0				
+pip install selenium==4.13.0
 
 Unittest
-html5validator 0.3.1			
-pip install html5validator==0.3.1
 ```
 
 ***
@@ -55,9 +53,9 @@ pip install html5validator==0.3.1
     ```
 - camelCase
 - The standard language for variable names, class names and such is english.
-- Comments in html are written this way: \<!-- this is a comment -->
-- Comments in css are written this way: /* this is a comment */
-- Comments in Python are written with hashtags at the beginning of the line: #This is a comment
+- Comments in html are written this way: \<!-- This is a comment -->
+- Comments in css are written this way: /* This is a comment */
+- Comments in Python are written with hashtags at the beginning of the line and starts with a blankspace and an uppercase letter: # This is a comment
 - HTML5 Style Guide is to be followed -> [W3Schools HTML5 Style Guide](https://www.w3schools.com/html/html5_syntax.asp)
 - Variables should match in indentation -> if (var1, var2, var3, var4)
 
@@ -74,7 +72,7 @@ pip install html5validator==0.3.1
 	<img src="images/money-dot.png" alt="..." class="productslide" id="moneydot">
 	<div class="carousel-caption d-none d-md-block" id="productprice">
 		<p class="toast-text">Toast</p>
-		<p class="price">15 kr</p>
+		<p class="price">20 kr</p>
 	</div>
 
 </div>
