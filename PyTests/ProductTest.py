@@ -1,8 +1,10 @@
 from __future__ import print_function
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+from unittest import TestCase, main
+from os import getcwd, path
 from pathlib import Path
-import os
 import requests
 import time
 
@@ -12,35 +14,47 @@ import time
 apiLinks = ["A5:B55", "E5:F55", "I5:J55", "M5:N55"]
 res = 1080, 1920
 
-# Removes non critical bug with browser and Visual Studio
-options = webdriver.ChromeOptions()
-options.add_experimental_option('excludeSwitches', ['enable-logging'])
-options.add_argument("headless")
-driver = webdriver.Chrome( options = options)
+class TestIndex(TestCase):
+    doNotCloseBrowser = False
+    hideWindow = True
 
-# Gets current parent directory
-cwd = Path(os.getcwd()).parent
+    @classmethod
+    def setUpClass(cls):
+        chr_options = Options()
+        
+        chr_options.add_experimental_option("excludeSwitches", ["enable-logging"])
 
-# Gets code file path
-codePath = str(cwd) + '/public/index.html'
+        if cls.doNotCloseBrowser:
+            chr_options.add_experimental_option("detach", True)
 
-# Checking for text on site
-def checkForText(text):
-    assert text in driver.find_element(By.XPATH, "/html/body").text
+        if cls.hideWindow:
+            chr_options.add_argument("--headless")
 
-def TestProducts():
-    driver.get(codePath)
-    driver.set_window_size(*res)
-    driver.execute_script("$('.carousel').carousel('prev')")
-    print("Loading site...")
-    time.sleep(1)
-    for dataColumns in apiLinks:
-        response = requests.get("https://sheets.googleapis.com/v4/spreadsheets/1x-orVp4FAC1rCucW2jtH5WTWgBSbgAaDLp23wa-V2fQ/values/'Datahantering'!" + dataColumns + "?key=AIzaSyBPtjjvvCJ5Jy88dPjtlPXlsYCxGO8Kw7Q#gid=1408440166")
-        productList = response.json()
-        for product in productList["values"]:
-            for item in product:
-                checkForText(item)
-                print('Found: ' + item)
-    driver.close()
-TestProducts()
-print("Test successful!")
+        cls.browser = webdriver.Chrome(options=chr_options)
+
+    @classmethod
+    def tearDownClass(cls):
+        pass
+
+    def setUp(self):
+        self.browser.get(path.join(getcwd(), "./public/index.html"))
+
+    def tearDown(self):
+        self.browser.get("about:blank")
+
+    # Checking for text on site
+    def checkForText(self,text):
+        self.assertIn(self.browser.find_element(By.XPATH, "/html/body").text, text)
+
+    def testProducts(self):
+        self.browser.set_window_size(*res)
+        self.browser.execute_script("$('.carousel').carousel('prev')")
+        print("Loading site...")
+        time.sleep(1)
+        for dataColumns in apiLinks:
+            response = requests.get("https://sheets.googleapis.com/v4/spreadsheets/1x-orVp4FAC1rCucW2jtH5WTWgBSbgAaDLp23wa-V2fQ/values/'Datahantering'!" + dataColumns + "?key=AIzaSyBPtjjvvCJ5Jy88dPjtlPXlsYCxGO8Kw7Q#gid=1408440166")
+            productList = response.json()
+            for product in productList["values"]:
+                for item in product:
+                    self.checkForText(item)
+                    print('Found: ' + item)

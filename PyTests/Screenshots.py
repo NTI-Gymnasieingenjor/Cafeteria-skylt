@@ -17,7 +17,7 @@ browser = webdriver.Chrome(options=optionsChrome)
 
 parentPath = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
 
-website = parentPath + "\public\index.html"   # Website all test run on
+website = os.getcwd() + "/public/index.html"   # Website all test run on
 print(website)
 res = 1080, 1920
 
@@ -46,7 +46,7 @@ class TestChrome(unittest.TestCase):
             time.sleep(1)
             self.browser.execute_script("$('.carousel').carousel('next')")
             time.sleep(1)
-            screenshot_nr = screenshot_nr + i
+            screenshot_nr += 1
 
 
     # Closes the window after all the tests are done
