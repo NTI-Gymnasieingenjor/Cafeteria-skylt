@@ -21,7 +21,7 @@ res = 1080, 1920
 
 
 # Runs tests in Chrome
-class TestChrome(unittest.TestCase):
+class TestScreenshots(unittest.TestCase):
     @classmethod
     def setUpClass(self):
         self.browser = browser
