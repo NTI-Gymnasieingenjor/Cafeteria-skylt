@@ -96,7 +96,7 @@ The id for dot.png and money-dot.png is recommended to be used for all slides as
 Id:s that are used to position a product can be created and adjusted but make sure that the whole image is within the bubble.
 Make sure that the product's id has "z-index: 1;" so that it is on the correct layer. 
 
-id="pricetoast" is used to position the text and to put the text on the top layer.
+id="priceToast" is used to position the text and to put the text on the top layer.
 This should not be changed although depending on the length of the text a new id may be necessary.
 Make sure that the price is always in the bubble.
 ```
