@@ -1,3 +1,6 @@
+# This file only works on linux
+# vcgencmd measure_temp and sudo reboot are linux commands and should be change if you are using another OS
+
 import os
 import re
 import subprocess
