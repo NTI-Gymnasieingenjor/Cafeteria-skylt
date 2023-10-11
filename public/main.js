@@ -1,5 +1,6 @@
-var d = new Date();
-var day = d.getDay();
+var date = new Date();
+var day = date.getDay();
+const daysOfWeek = ["Söndag","Måndag","Tisdag","Onsdag","Torsdag","Fredag","Lördag"]
 
 //Shows the clock on the website
 function startTime() {
@@ -16,6 +17,17 @@ function startTime() {
 function checkTime(i) {
     if (i < 10) { i = "0" + i }; //Adds a zero infront of numbers < 10
     return i;
+}
+
+// Shows todays date and year on the website
+function todaysDate() {
+    var date = new Date();
+    var day = date.getDay()
+    var weekdayName = daysOfWeek[day];
+    date = date.toLocaleDateString("sv-SE")
+    document.getElementById("day").innerHTML = weekdayName;
+    document.getElementById("date").innerHTML = date;
+    setTimeout(todaysDate, 3600000); //Updates the date every hour
 }
 
 //Shows the openhours on Monday-Friday and a close-text on weekends
@@ -82,6 +94,7 @@ function getPrices(){
 
 
 startTime();
+todaysDate();
 getOpenHours();
 getData();
 getPrices();

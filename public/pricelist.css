@@ -78,12 +78,30 @@ body{
 }
 
 #clock {
-	position: absolute;
-	left: 25px;
-	bottom: 0;
-	color: white;
-	font-size: 50px;
-	font-family: 'Bebas Neue', cursive;
+    position: absolute;
+    left: 25px;
+    bottom: 0;
+    color: white;
+    font-size: 50px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+#date {
+    position: absolute;
+    right: 25px;
+    bottom: 0;
+    color: white;
+    font-size: 50px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+#day {
+    position: absolute;
+    right: 225px;
+    bottom: 0;
+    color: white;
+    font-size: 50px;
+    font-family: 'Bebas Neue', cursive;
 }
 
 .productImage{
