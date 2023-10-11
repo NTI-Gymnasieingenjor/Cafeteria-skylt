@@ -66,16 +66,16 @@ Unittest
 ### How to add a slide:
 
 ```html
-<div class="carousel-item slide" data-interval="10000" style= "background-color: #190f27;">
-	<img src="images/small-toast.png" alt="..." class="productslide " id="toast" >
-	<img src="images/dot.png" alt="..." class="productslide" id="dot">
-	<img src="images/money-dot.png" alt="..." class="productslide" id="moneydot">
-	<div class="carousel-caption d-none d-md-block" id="productprice">
-		<p class="toast-text">Toast</p>
-		<p class="price">20 kr</p>
-	</div>
+	<div class="carousel-item slide" data-interval="5000" style="background-color: #190f27;">
+		<img src="images/toast2NoBoard.png" alt="..." class="productSlide productImage">
+		<img src="images/dot.png" alt="..." class="productSlide dot">
+		<img src="images/money-dot.png" alt="..." class="productSlide moneyDot">
+		<div class="carousel-caption d-none d-md-block productPrice">
+			<p class="toastText">Toast</p>
+			<p class="price">20 kr</p>
+		</div>
 
-</div>
+	</div>
 ```
 
 The first div-tag tells you that this is a slide (class="carousel-item slide''), everything within this tag is a part of the slide.
