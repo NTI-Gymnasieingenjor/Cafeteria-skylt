@@ -32,24 +32,18 @@ function todaysDate() {
 
 //Shows the openhours on Monday-Friday and a close-text on weekends
 function getOpenHours(){ 
-    $.ajax({
-        type: 'GET',
-        url: 'https://sheets.googleapis.com/v4/spreadsheets/1x-orVp4FAC1rCucW2jtH5WTWgBSbgAaDLp23wa-V2fQ/values/B4:C8?key=AIzaSyBPtjjvvCJ5Jy88dPjtlPXlsYCxGO8Kw7Q#gid=1388205127',
-        success: function (data) {
-            if(day <= 5 && day > 0){
-                element = document.getElementById("openHours");
-                element.innerHTML = data.values[day - 1][0] + " - " + data.values[day - 1][1];
+    if(day <= 5 && day > 0){
+        element = document.getElementById("openHours");
 
-                document.getElementById("weekend").classList.add('hidden');
-                document.getElementById("open").classList.remove('hidden');
-            }
-            else{
-                document.getElementById("weekend").classList.remove('hidden');
-                document.getElementById("open").classList.add('hidden');
-            }
-        }
-    });
-    setTimeout(getOpenHours, 60000); //Update the openhours-status every minute 
+        document.getElementById("weekend").classList.add('hidden');
+        document.getElementById("open").classList.remove('hidden');
+    }
+    else{
+        document.getElementById("weekend").classList.remove('hidden');
+        document.getElementById("open").classList.add('hidden');
+    }
+
+setTimeout(getOpenHours, 60000); //Update the openhours-status every minute 
 }
 
 //Gets the products information and puts them in their div
