@@ -56,15 +56,3 @@ Some basic commands include:
 [Documentation](/Documentations/Enviroments_Languages.md)
 
 ***
-
-## Google Sheets
-
-### Check-Box in google sheets
-
-We use check-boxes to mark which products are going to be shown on the monitor and to mark if some products are out of stock.
-
-However, to protect these boxes and prevent them from getting deleted, we wrote some code in Apps scripts, that will rewrite the check-boxes if they get deleted. The code runs every time the sheet get reloaded, it may take some time but all the boxes will be rewritten.
-
-[Click here to get to the code](https://script.google.com/home/projects/167kzHAXRuEhrH9eFI_F-WbRAiVwfHRVyqKTfJqNPQDEW9ZQWfp6PrioN/edit)
-
-
