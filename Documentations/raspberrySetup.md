@@ -34,12 +34,22 @@
     Run the following code to get the IP address : hostname -I 
     IP adress = 192.168.200.201
     ```
-2. Enter the Raspberry Pi user credentials and all done! You shall now be able to remote access your Raspberry Pi from this workstation or any other devices with VNC Viewer configured.
+2. Enter the Raspberry Pi user credentials. You shall now be able to remote access your Raspberry Pi from this workstation or any other devices with VNC Viewer configured.
     ```
     Follow this link to get the user credentials: 
-    https://docs.google.com/document/d/12H3PxZqX5KyQzI_bMenJc8e9-ervRwzjGU9YXtm6vgU/edit
+    https://docs.google.com/document/d/1SUe4ZNsMlTVBhxBQVailkA7dKPcHfWlFOePT7x4WjLk/edit
     ```
- 
+### Connect to the Raspberry Pi using SSH
+
+1. Open command prompt and write the following command
+    ```
+    ssh <Raspberry pi username>@<Raspberry pi ip adress> 
+    ```
+2. Enter the Raspberry Pi user credentials. You shall now be able to remote access your Raspberry Pi from this workstation.
+    ```
+    Follow this link to get the user credentials(you may need permission): 
+    https://docs.google.com/document/d/1SUe4ZNsMlTVBhxBQVailkA7dKPcHfWlFOePT7x4WjLk/edit
+    ```
 ### Configuration
  
 To start configuring your Raspberry Pi 3B+, Create a directory named "Git" in /home/pi/. 
@@ -160,5 +170,18 @@ The autopull script will still run as intended.
                  this will turn of HDMI output at 10:00 and start it again at 10:05
 ```
  
- 
+### Set up temperature log:
+```   
+    1. SSH into the Raspberry pi
+
+    2. Change directory to home/pi
+
+    3. Open the Command Line Interface and enter the following command:
+        crontab -e
+
+    4. Type 1 to chose nano as your editor
+
+    5. Go to the bottom of the opened document and type in the following command:
+        * * * * * cd ~/Desktop && python3 temeperatureLogger.py
+```   
 

@@ -66,16 +66,16 @@ Unittest
 ### How to add a slide:
 
 ```html
-<div class="carousel-item slide" data-interval="10000" style= "background-color: #190f27;">
-	<img src="images/small-toast.png" alt="..." class="productslide " id="toast" >
-	<img src="images/dot.png" alt="..." class="productslide" id="dot">
-	<img src="images/money-dot.png" alt="..." class="productslide" id="moneydot">
-	<div class="carousel-caption d-none d-md-block" id="productprice">
-		<p class="toast-text">Toast</p>
-		<p class="price">20 kr</p>
-	</div>
+	<div class="carousel-item slide" data-interval="5000" style="background-color: #190f27;">
+		<img src="images/toast2NoBoard.png" alt="..." class="productSlide productImage">
+		<img src="images/dot.png" alt="..." class="productSlide dot">
+		<img src="images/money-dot.png" alt="..." class="productSlide moneyDot">
+		<div class="carousel-caption d-none d-md-block productPrice">
+			<p class="toastText">Toast</p>
+			<p class="price">20 kr</p>
+		</div>
 
-</div>
+	</div>
 ```
 
 The first div-tag tells you that this is a slide (class="carousel-item slide''), everything within this tag is a part of the slide.
@@ -96,7 +96,7 @@ The id for dot.png and money-dot.png is recommended to be used for all slides as
 Id:s that are used to position a product can be created and adjusted but make sure that the whole image is within the bubble.
 Make sure that the product's id has "z-index: 1;" so that it is on the correct layer. 
 
-id="pricetoast" is used to position the text and to put the text on the top layer.
+id="priceToast" is used to position the text and to put the text on the top layer.
 This should not be changed although depending on the length of the text a new id may be necessary.
 Make sure that the price is always in the bubble.
 ```
