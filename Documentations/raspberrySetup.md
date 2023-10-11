@@ -45,8 +45,11 @@
     ```
     ssh <Raspberry pi username>@<Raspberry pi ip adress> 
     ```
+2. Enter the Raspberry Pi user credentials. You shall now be able to remote access your Raspberry Pi from this workstation.
     ```
- 
+    Follow this link to get the user credentials(you may need permission): 
+    https://docs.google.com/document/d/1SUe4ZNsMlTVBhxBQVailkA7dKPcHfWlFOePT7x4WjLk/edit
+    ```
 ### Configuration
  
 To start configuring your Raspberry Pi 3B+, Create a directory named "Git" in /home/pi/. 
