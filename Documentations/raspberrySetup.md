@@ -170,5 +170,18 @@ The autopull script will still run as intended.
                  this will turn of HDMI output at 10:00 and start it again at 10:05
 ```
  
- 
+### Set up temperature log:
+```   
+    1. SSH into the Raspberry pi
+
+    2. Change directory to home/pi
+
+    3. Open the Command Line Interface and enter the following command:
+        crontab -e
+
+    4. Type 1 to chose nano as your editor
+
+    5. Go to the bottom of the opened document and type in the following command:
+        * * * * * cd ~/Desktop && python3 temeperatureLogger.py
+```   
 
