@@ -1,5 +1,6 @@
 .vscode
 __pycache__
+temperature_data.csv
 debug.log
 Slide1.png
 Slide2.png
