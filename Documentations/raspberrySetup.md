@@ -34,10 +34,17 @@
     Run the following code to get the IP address : hostname -I 
     IP adress = 192.168.200.201
     ```
-2. Enter the Raspberry Pi user credentials and all done! You shall now be able to remote access your Raspberry Pi from this workstation or any other devices with VNC Viewer configured.
+2. Enter the Raspberry Pi user credentials. You shall now be able to remote access your Raspberry Pi from this workstation or any other devices with VNC Viewer configured.
     ```
     Follow this link to get the user credentials: 
-    https://docs.google.com/document/d/12H3PxZqX5KyQzI_bMenJc8e9-ervRwzjGU9YXtm6vgU/edit
+    https://docs.google.com/document/d/1SUe4ZNsMlTVBhxBQVailkA7dKPcHfWlFOePT7x4WjLk/edit
+    ```
+### Connect to the Raspberry Pi using SSH
+
+1. Open command prompt and write the following command
+    ```
+    ssh <Raspberry pi username>@<Raspberry pi ip adress> 
+    ```
     ```
  
 ### Configuration
