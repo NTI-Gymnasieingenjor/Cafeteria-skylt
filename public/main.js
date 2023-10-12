@@ -20,6 +20,7 @@ function checkTime(i) {
 function todaysDate(date) {
     const day = date.getDay()
     const weekdayName = daysOfWeek[day];
+    // Changes date to swedish format
     date = date.toLocaleDateString("sv-SE")
     document.getElementById("day").innerHTML = weekdayName;
     document.getElementById("date").innerHTML = date;
@@ -29,7 +30,6 @@ function todaysDate(date) {
 function getOpenHours(date) {
     const day = date.getDay();
     if (day <= 5 && day > 0) {
-
         document.getElementById("weekend").classList.add('hidden');
         document.getElementById("open").classList.remove('hidden');
     }
