@@ -34,7 +34,9 @@ class TestTime(TestCase):
     def tearDown(self):
         self.browser.get("about:blank")
 
+    # A helper test for testTime
     def checkTime(self, date, result):
+        # Runs startTime from main.js to change time
         self.browser.execute_script(f"startTime(new Date('{date}'));")
         shownTime = self.browser.find_element(By.ID, "clock").text
         self.assertEqual(shownTime, result)
@@ -82,7 +84,9 @@ class TestTime(TestCase):
         self.checkTime("2023-05-14T13:00:00", "13:00")
         self.checkTime("2023-05-14T15:00:00", "15:00")
 
+    # A helper test for testDate
     def checkDate(self, date, result):
+        # Runs todaysDate from main.js to change date
         self.browser.execute_script(f"todaysDate(new Date('{date}'));")
         shownDate = self.browser.find_element(By.ID, "date").text
         self.assertEqual(shownDate, result)
@@ -130,7 +134,9 @@ class TestTime(TestCase):
         self.checkDate("2023-05-14T15:45:00", "2023-05-14")
         self.checkDate("2023-05-14T23:59:00", "2023-05-14")
 
+    # A helper test for testWeekday
     def checkWeekday(self, date, result):
+        # Runs todaysDate from main.js to change date
         self.browser.execute_script(f"todaysDate(new Date('{date}'));")
         shownWeekday = self.browser.find_element(By.ID, "day").text
         self.assertEqual(shownWeekday, result)
