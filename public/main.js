@@ -29,7 +29,6 @@ function todaysDate(date) {
 function getOpenHours(date) {
     const day = date.getDay();
     if (day <= 5 && day > 0) {
-        element = document.getElementById("openHours");
 
         document.getElementById("weekend").classList.add('hidden');
         document.getElementById("open").classList.remove('hidden');
@@ -79,17 +78,17 @@ function getPrices() {
         });
     }
 }
-
+// Runs the function every 5 seconds
 var intervalDate = window.setInterval(function () {
     startTime(new Date());
 }, 1000 * 5)
 startTime(new Date());
-
+// Runs the function every hour
 var intervalDate = window.setInterval(function () {
     todaysDate(new Date());
 }, 1000 * 60 * 60)
 todaysDate(new Date());
-
+// Runs the function every minute
 var intervalDate = window.setInterval(function () {
     getOpenHours(new Date());
 }, 1000 * 60)
