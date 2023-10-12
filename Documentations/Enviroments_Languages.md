@@ -30,10 +30,13 @@ git clone https://github.com/NTIG-Uppsala/Cafeteria-skylt.git
 ### Plugins:
 For testing
 ```
+Unittest
+
 Selenium 4.13.0				
 pip install selenium==4.13.0
 
-Unittest
+Requests 2.31.0
+pip install requests 
 ```
 
 ***
@@ -58,6 +61,8 @@ Unittest
 - Comments in Python are written with hashtags at the beginning of the line and starts with a blankspace and an uppercase letter: # This is a comment
 - HTML5 Style Guide is to be followed -> [W3Schools HTML5 Style Guide](https://www.w3schools.com/html/html5_syntax.asp)
 - Variables should match in indentation -> if (var1, var2, var3, var4)
+- Indent using 4 spaces
+- Blackformatter extension for python formatting
 
 ***
 
