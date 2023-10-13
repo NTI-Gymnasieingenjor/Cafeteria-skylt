@@ -76,7 +76,7 @@ pip install requests
 		<img src="images/dot.png" alt="..." class="productSlide dot">
 		<img src="images/money-dot.png" alt="..." class="productSlide moneyDot">
 		<div class="carousel-caption d-none d-md-block productPrice">
-			<p class="toastText">Toast</p>
+			<p class="itemText">Toast</p>
 			<p class="price">20 kr</p>
 		</div>
 
