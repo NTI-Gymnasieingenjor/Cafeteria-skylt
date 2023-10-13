@@ -9,7 +9,7 @@
 
 4. Edit the service account you created and under the keys tab click create a new key. Choose the key type json and a json file will be downloaded to the computer. This json file contains the service account credentials and is required on the raspberry pi for the website to get data from the spreadsheet.
 
-5. Rename the downloaded json file `service_account.json`.
+5. Rename the downloaded json file `serviceAccount.json`.
 
 6. Move the json file to the Cafeteria-display directory. If the json file already exists, replace it.
 
