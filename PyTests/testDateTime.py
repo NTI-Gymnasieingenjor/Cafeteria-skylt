@@ -51,7 +51,7 @@ class TestTime(TestCase):
         self.helperTestClock("2023-05-08T12:54:12", "12:54")
 
     # A helper test for testDate
-    def HelpterTestDateAndWeekday(self, date, result, result2):
+    def HelperTestDateAndWeekday(self, date, result, result2):
         # Runs todaysDate from main.js to change date
         self.browser.execute_script(f"todaysDate(new Date('{date}'));")
         shownDate = self.browser.find_element(By.ID, "date").text
@@ -61,43 +61,43 @@ class TestTime(TestCase):
 
     def testDateAndWeekday(self):
         # Monday
-        self.HelpterTestDateAndWeekday("2023-05-08T00:00:00", "2023-05-08", "Måndag")
-        self.HelpterTestDateAndWeekday("2023-05-08T08:00:00", "2023-05-08", "Måndag")
-        self.HelpterTestDateAndWeekday("2023-05-08T15:45:00", "2023-05-08", "Måndag")
-        self.HelpterTestDateAndWeekday("2023-05-08T23:59:00", "2023-05-08", "Måndag")
+        self.HelperTestDateAndWeekday("2023-05-08T00:00:00", "2023-05-08", "Måndag")
+        self.HelperTestDateAndWeekday("2023-05-08T08:00:00", "2023-05-08", "Måndag")
+        self.HelperTestDateAndWeekday("2023-05-08T15:45:00", "2023-05-08", "Måndag")
+        self.HelperTestDateAndWeekday("2023-05-08T23:59:00", "2023-05-08", "Måndag")
 
         # Tuesday
-        self.HelpterTestDateAndWeekday("2023-05-09T00:00:00", "2023-05-09", "Tisdag")
-        self.HelpterTestDateAndWeekday("2023-05-09T08:00:00", "2023-05-09", "Tisdag")
-        self.HelpterTestDateAndWeekday("2023-05-09T15:45:00", "2023-05-09", "Tisdag")
-        self.HelpterTestDateAndWeekday("2023-05-09T23:59:00", "2023-05-09", "Tisdag")
+        self.HelperTestDateAndWeekday("2023-05-09T00:00:00", "2023-05-09", "Tisdag")
+        self.HelperTestDateAndWeekday("2023-05-09T08:00:00", "2023-05-09", "Tisdag")
+        self.HelperTestDateAndWeekday("2023-05-09T15:45:00", "2023-05-09", "Tisdag")
+        self.HelperTestDateAndWeekday("2023-05-09T23:59:00", "2023-05-09", "Tisdag")
 
         # Wednesday
-        self.HelpterTestDateAndWeekday("2023-05-10T00:00:00", "2023-05-10", "Onsdag")
-        self.HelpterTestDateAndWeekday("2023-05-10T08:00:00", "2023-05-10", "Onsdag")
-        self.HelpterTestDateAndWeekday("2023-05-10T15:45:00", "2023-05-10", "Onsdag")
-        self.HelpterTestDateAndWeekday("2023-05-10T23:59:00", "2023-05-10", "Onsdag")
+        self.HelperTestDateAndWeekday("2023-05-10T00:00:00", "2023-05-10", "Onsdag")
+        self.HelperTestDateAndWeekday("2023-05-10T08:00:00", "2023-05-10", "Onsdag")
+        self.HelperTestDateAndWeekday("2023-05-10T15:45:00", "2023-05-10", "Onsdag")
+        self.HelperTestDateAndWeekday("2023-05-10T23:59:00", "2023-05-10", "Onsdag")
 
         # Thursday
-        self.HelpterTestDateAndWeekday("2023-05-11T00:00:00", "2023-05-11", "Torsdag")
-        self.HelpterTestDateAndWeekday("2023-05-11T08:00:00", "2023-05-11", "Torsdag")
-        self.HelpterTestDateAndWeekday("2023-05-11T15:45:00", "2023-05-11", "Torsdag")
-        self.HelpterTestDateAndWeekday("2023-05-11T23:59:00", "2023-05-11", "Torsdag")
+        self.HelperTestDateAndWeekday("2023-05-11T00:00:00", "2023-05-11", "Torsdag")
+        self.HelperTestDateAndWeekday("2023-05-11T08:00:00", "2023-05-11", "Torsdag")
+        self.HelperTestDateAndWeekday("2023-05-11T15:45:00", "2023-05-11", "Torsdag")
+        self.HelperTestDateAndWeekday("2023-05-11T23:59:00", "2023-05-11", "Torsdag")
 
         # Friday
-        self.HelpterTestDateAndWeekday("2023-05-12T00:00:00", "2023-05-12", "Fredag")
-        self.HelpterTestDateAndWeekday("2023-05-12T08:00:00", "2023-05-12", "Fredag")
-        self.HelpterTestDateAndWeekday("2023-05-12T15:45:00", "2023-05-12", "Fredag")
-        self.HelpterTestDateAndWeekday("2023-05-12T23:59:00", "2023-05-12", "Fredag")
+        self.HelperTestDateAndWeekday("2023-05-12T00:00:00", "2023-05-12", "Fredag")
+        self.HelperTestDateAndWeekday("2023-05-12T08:00:00", "2023-05-12", "Fredag")
+        self.HelperTestDateAndWeekday("2023-05-12T15:45:00", "2023-05-12", "Fredag")
+        self.HelperTestDateAndWeekday("2023-05-12T23:59:00", "2023-05-12", "Fredag")
 
         # Saturday
-        self.HelpterTestDateAndWeekday("2023-05-13T00:00:00", "2023-05-13", "Lördag")
-        self.HelpterTestDateAndWeekday("2023-05-13T08:00:00", "2023-05-13", "Lördag")
-        self.HelpterTestDateAndWeekday("2023-05-13T15:45:00", "2023-05-13", "Lördag")
-        self.HelpterTestDateAndWeekday("2023-05-13T23:59:00", "2023-05-13", "Lördag")
+        self.HelperTestDateAndWeekday("2023-05-13T00:00:00", "2023-05-13", "Lördag")
+        self.HelperTestDateAndWeekday("2023-05-13T08:00:00", "2023-05-13", "Lördag")
+        self.HelperTestDateAndWeekday("2023-05-13T15:45:00", "2023-05-13", "Lördag")
+        self.HelperTestDateAndWeekday("2023-05-13T23:59:00", "2023-05-13", "Lördag")
 
         # Sunday
-        self.HelpterTestDateAndWeekday("2023-05-14T00:00:00", "2023-05-14", "Söndag")
-        self.HelpterTestDateAndWeekday("2023-05-14T08:00:00", "2023-05-14", "Söndag")
-        self.HelpterTestDateAndWeekday("2023-05-14T15:45:00", "2023-05-14", "Söndag")
-        self.HelpterTestDateAndWeekday("2023-05-14T23:59:00", "2023-05-14", "Söndag")
+        self.HelperTestDateAndWeekday("2023-05-14T00:00:00", "2023-05-14", "Söndag")
+        self.HelperTestDateAndWeekday("2023-05-14T08:00:00", "2023-05-14", "Söndag")
+        self.HelperTestDateAndWeekday("2023-05-14T15:45:00", "2023-05-14", "Söndag")
+        self.HelperTestDateAndWeekday("2023-05-14T23:59:00", "2023-05-14", "Söndag")
