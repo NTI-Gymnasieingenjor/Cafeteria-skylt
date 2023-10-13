@@ -26,7 +26,7 @@
  
 ### Download/Install VNC Viewer
 1. Go to [VNC Viewer](https://www.realvnc.com/en/connect/download/viewer/)
-2. Download and install VNC viewer on the computer or phone that you want to control the RPI from.
+2. Download and install VNC viewer on the computer or phone that you want to control the RaspberryPi from.
     
 ### Connect to the Raspberry Pi 
 1. Open VNC Viewer, enter the IP Address of the Raspberry Pi in the top of the VNC application. If you’ve entered the correct IP Address, you will be prompted for your Raspberry Pi user credentials.
