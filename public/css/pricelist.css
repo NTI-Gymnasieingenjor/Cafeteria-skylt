@@ -1,0 +1,145 @@
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url("../fonts/BebasNeue-Regular.ttf");
+}
+
+/* Classes */
+body{
+	background-color: #190f27;
+	overflow: hidden;
+}
+
+.logo{
+	height: 60px;
+	width: 258px;
+}
+
+.carousel-item {
+  	height: 100vh;
+}
+
+.openHoursHead {
+	color: white;
+	text-align: center;
+	font-size: 130px;
+	font-family: 'Bebas Neue', cursive;;
+}
+	
+.openHours {
+	color: white;
+	text-align: center;
+	font-size: 70px;
+	font-family: 'Bebas Neue', cursive;;
+}
+
+
+.productSlide{
+	position:absolute;
+}
+
+.slide{
+	height: 95vh;
+}
+
+.itemText{
+	font-size: 78px;
+	font-family: 'Bebas Neue', cursive;
+}
+
+.price{
+	font-size: 50px;
+	font-family: 'Bebas Neue', cursive;
+}
+
+.productPrice{
+	bottom:230px;
+	left: 620px;	
+	z-index:4;
+}
+
+.moneyDot{
+	z-index:2;
+	bottom:105px;
+	right:50px;
+}
+
+.dot{
+	z-index:0;
+}
+
+/* Id's */
+
+#cafeteria {
+	top: 650px;
+}
+
+#lunch {
+	bottom: 550px;
+}
+
+#clock {
+    position: absolute;
+    left: 25px;
+    bottom: 0;
+    color: white;
+    font-size: 50px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+#date {
+    position: absolute;
+    right: 25px;
+    bottom: 0;
+    color: white;
+    font-size: 50px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+#day {
+    position: absolute;
+    right: 225px;
+    bottom: 0;
+    color: white;
+    font-size: 50px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.productImage{
+	z-index:1;
+	bottom:600px;
+	left: 50px;
+	
+}
+
+.closed{
+	text-align: center;
+	margin-top: 750px;
+	color: white;
+	font-size: 64px;
+	font-family: 'Bebas Neue', cursive;
+}
+
+.hidden{
+	display: none;
+}
+
+.priceList{
+	position: static;
+	font-size: 32px;
+	font-family: 'Bebas Neue', cursive;
+	text-align: left;
+	margin-left: 10px;
+}
+
+.priceList h2{
+	font-size: 46px;
+	margin: 0px;
+}
+
+.priceList p{
+	margin: 0px 0px 0px 20px;
+}
+
+.aligner{
+	margin-top: 55px !important;
+}

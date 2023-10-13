@@ -73,6 +73,7 @@ But to keep the cloned repo in Raspberry Pi up to date with the Github repo:
     ```
     cd /home/pi/Git/Cafeteria-skylt
     git pull 
+    sudo reboot
     ```
  
 ***
@@ -154,7 +155,7 @@ The autopull script will still run as intended.
  
         2. Type 1 to chose nano as your editor
         3. Go to the bottom of the opened document and type in the two following commands:
-                * 18 * * * vcgencmd display_power 0
+                * 19 * * * vcgencmd display_power 0
                 30 6 * * * vcgencmd display_power 1
                 
         ----------------------------------------------------------------------------------------
@@ -183,5 +184,7 @@ The autopull script will still run as intended.
 
     5. Go to the bottom of the opened document and type in the following command:
         * * * * * cd ~/Desktop && python3 temeperatureLogger.py
+
+    * Temperature logger will restart the raspberry pi if temperature rises over 80°C
 ```   
 
