@@ -26,19 +26,6 @@ function todaysDate(date) {
     document.getElementById("date").innerHTML = date;
 }
 
-//Shows the openhours on Monday-Friday and a close-text on weekends
-function getOpenHours(date) {
-    const day = date.getDay();
-    if (day <= 5 && day > 0) {
-        document.getElementById("weekend").classList.add('hidden');
-        document.getElementById("open").classList.remove('hidden');
-    }
-    else {
-        document.getElementById("weekend").classList.remove('hidden');
-        document.getElementById("open").classList.add('hidden');
-    }
-}
-
 //Gets the products information and puts them in their div
 function getData() {
     let apiList = ["A5:A55", "I5:I55", "E5:E55", "M5:M55"];
