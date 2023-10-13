@@ -42,18 +42,6 @@ pip install requests
 ***
 
 ## Coding Standard 
-
-- Standard for indents is one indent 
-	```
-    <html>
-
-	    <body> 
-		    <div>
-	            </div>
-	    </body>
-	    
-	</html>
-    ```
 - camelCase
 - The standard language for variable names, class names and such is english.
 - Comments in html are written this way: \<!-- This is a comment -->
