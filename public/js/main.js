@@ -70,16 +70,12 @@ var intervalDate = window.setInterval(function () {
     startTime(new Date());
 }, 1000 * 5)
 startTime(new Date());
+
 // Runs the function every hour
 var intervalDate = window.setInterval(function () {
     todaysDate(new Date());
 }, 1000 * 60 * 60)
 todaysDate(new Date());
-// Runs the function every minute
-var intervalDate = window.setInterval(function () {
-    getOpenHours(new Date());
-}, 1000 * 60)
-getOpenHours(new Date());
 
 getData();
 getPrices();
