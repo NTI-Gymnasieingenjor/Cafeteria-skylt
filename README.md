@@ -1,58 +1,53 @@
-# Instructions for usage
+# Cafeteria display
 
 ## Introduction
 
-#### Basics of booting up RaspberryPi.
-The Pi's power cable uses a USB-C port so make sure it is connected to the electrical grid you are using.  
-The Pi's micro-HDMI port can also be connected to a screen to make sure the Pi's boot-up script works properly.  
+This project is a raspberry pi driven "Cafeteria display" which runs a website with the café´s opening hours, items and menu.
 
-#### Basics of interface
-To access the interface in the RaspberryPi OS, press your '⊞ Win' or home key button.  
-From here you can select three relevant categories (all listed below) of the Pi when making changes.  
-| Preferences | Accessories | Logout |  
 
-#### Basics of 'Preferences'
-In 'Preferences' you will find 'Raspberry Pi Configuration'.  
-In 'Raspberry Pi Configuration' you have: | System | Interfaces | Performance | Localisation |  
+[Link to Google Drive](https://drive.google.com/drive/folders/1Yf2ABcoPqGIK5E88mXdyQchkGVjTMYVt)
 
-System is primarily for changing the username and password.  
+![Cafeteria-skylten](../Cafeteria-skylt/Documentations/images/Cafeteria-skylten.png)
 
-Interfaces, in this example, is used for toggling VNC, which allows screen connect through other devices via IP.  
+This screen uses a 1080 x 1920 resolution
 
-Performance has the selection of overclocking (*NOT RECOMMENDED*) and GPU memory,  
-which may be adjusted accordingly in order to avoid overheating.  
+To view the website on this resolution use the inspect tool by pressing right click on website
 
-Localisation allows you to set the Locale, Timezone, Keyboard and WiFi Country, not relevant in this example.  
+![Inspekt image](../Cafeteria-skylt/Documentations/images/inspekt-img.png)
 
-#### Basics of 'Accessories'
-In 'Accessories' you will find 'File Manager' and 'Terminal'.  
-'File Manager' is where you access the 'Cafeteria-skylt' folder, which is located on the SD-card of this Pi.   
-The folder location: '/home/pi/Git/Cafeteria-skylt'
+Then click on this icon to change to your desiered resolution
 
-'Terminal' is the command prompt of Pi, here you will use many useful commands.  
-Some basic commands include:
-- sudo raspi-config (opens up base configuration)
-- cd <*path*> (changes directory)
-- ls <*path*> (lists the directory)
-- hostname -I (shows the IP-address of the Pi)
-- cat /sys/class/thermal/thermal_zone0/temp (shows the temperature of the Pi in °C (divide by 1000))
+![Res image](../Cafeteria-skylt/Documentations/images/click1.png)
 
-#### Basics of 'Logout'
-'Logout' uses | Shutdown | Reboot | Logout |  
-'Shutdown' shuts down the Pi, allowing you to safely pull the cable, or you can write 'sudo shutdown -h now' in 'Terminal'.  
-'Reboot' reboots the Pi, or you can write 'sudo shutdown -r now' in 'Terminal'.  
-'Logout' logs you out from the currently active user.  
+Then change to the right resolution
 
-***
+![Input image](../Cafeteria-skylt/Documentations/images/res-input.png)
+
+## Useful configuration tips
+
+[Tips](/Documentations/configuration.md)
+
+## Licence
+
+[Licences](/Documentations/licence.md)
+
+## Tests
+
+There is automated tests made with selenium. 
+
+[Tests](/Documentations/tests.md)
 
 ## Getting started with the Raspberry Pi
 [Instructions](/Documentations/raspberrySetup.md)
 
-[Autostart](/Documentations/Autostart.md)
+[Using Raspberry pi](/Documentations/usingRaspberryPi.md)
+
+[Autostart](/Documentations/autostart.md)
+
 
 ***
 
 ## Environments and Languages 
-[Documentation](/Documentations/Enviroments_Languages.md)
+[Documentation](/Documentations/enviromentsLanguages.md)
 
 ***
