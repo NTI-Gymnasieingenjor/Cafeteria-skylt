@@ -155,7 +155,7 @@ The autopull script will still run as intended.
  
         2. Type 1 to chose nano as your editor
         3. Go to the bottom of the opened document and type in the two following commands:
-                * 18 * * * vcgencmd display_power 0
+                * 19 * * * vcgencmd display_power 0
                 30 6 * * * vcgencmd display_power 1
                 
         ----------------------------------------------------------------------------------------
