@@ -60,7 +60,6 @@ class TestValidate(TestCase):
                         os.path.abspath(path)
                     )
                     self.browser.find_element(By.ID, "submit").click()
-                    # Remove inputmode warning
                     try:
                         # Checks if messages filtering is available
                         self.browser.find_element(
