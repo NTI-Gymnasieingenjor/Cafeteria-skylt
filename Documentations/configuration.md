@@ -16,7 +16,7 @@
 	</div>
 ```
 
-The first div-tag tells you that this is a slide (class="carousel-item slide''), everything within this tag is a part of the slide.
+The first div-tag tells you that this is a slide (class="carousel-item slide"), everything within this tag is a part of the slide.
 
 To create a new slide, copy the code above and put it under the existing "carousel-item" tags <br>
 Note: Images should have a width between 950-1000px and a height of 600-700px.
