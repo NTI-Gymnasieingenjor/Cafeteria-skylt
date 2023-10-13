@@ -1,6 +1,6 @@
-# Raspberry:
+# Raspberry Pi
  
-## Setting the Raspberry up
+## Setting the Raspberry Pi up
  
 *The Tool and OS steps are already done so to say if you are not starting with a new Raspberry, you don't need to follow these steps.*
  
@@ -29,7 +29,7 @@
 2. Download and install VNC viewer on the computer or phone that you want to control the RPI from.
     
 ### Connect to the Raspberry Pi 
-1. Open VNC Viewer, enter the IP Address of the RPI in the top of the VNC application. If you’ve entered the correct IP Address, you will be prompted for your Raspberry Pi user credentials.
+1. Open VNC Viewer, enter the IP Address of the Raspberry Pi in the top of the VNC application. If you’ve entered the correct IP Address, you will be prompted for your Raspberry Pi user credentials.
     ```
     Run the following code to get the IP address : hostname -I 
     IP adress = 192.168.200.201
