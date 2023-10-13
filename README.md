@@ -9,7 +9,7 @@ This project is a raspberry pi driven "Cafeteria display" which runs a website w
 
 ![Cafeteria-skylten](../Cafeteria-skylt/Documentations/images/Cafeteria-skylten.png)
 
-This project is based on 1080 x 1920 resolution 
+This project is based on a 1080 x 1920 resolution 
 
 To view the website on this resolution use the inspect tool by pressing right click on website
 
