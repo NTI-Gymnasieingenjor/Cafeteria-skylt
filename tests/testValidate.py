@@ -60,9 +60,8 @@ class TestValidate(TestCase):
                         os.path.abspath(path)
                     )
                     self.browser.find_element(By.ID, "submit").click()
-                    # Remove inputmode warning
                     try:
-                        # Checks if messages filtering is available
+                        # Checks if messages filtering is available to see if a warning or error was found
                         self.browser.find_element(
                             By.XPATH, '//*[@id="filters"]/h2/button'
                         )
