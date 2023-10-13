@@ -23,7 +23,7 @@ git clone https://github.com/NTIG-Uppsala/Cafeteria-skylt.git
 
 ### Frameworks: (Compiled CSS and JS)
 - [jQuery 3.3.1](https://jquery.com/download/)
-- [Bootstrap 5.3.2.](https://getbootstrap.com/docs/4.3/getting-started/download/) 
+- [Bootstrap 4.3.1.](https://getbootstrap.com/docs/4.3/getting-started/download/) 
 - [chromedriver 114.0.5735.90](https://chromedriver.chromium.org/downloads) (for testing)
 - [Java 8 update 381](https://www.java.com/sv/download/) (for testing)	
 
