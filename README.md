@@ -33,7 +33,7 @@ Then change to the right resolution
 
 ## Tests
 
-There is automated tests made with selenium. 
+There are automated tests made with selenium. 
 
 [Tests](Documentations/tests.md)
 
@@ -42,7 +42,7 @@ There is automated tests made with selenium.
 
 [Using Raspberry pi](Documentations/usingRaspberryPi.md)
 
-[Autostart](Documentations/autostart.md)
+[Configure autostart](Documentations/autostart.md)
 
 
 ***
