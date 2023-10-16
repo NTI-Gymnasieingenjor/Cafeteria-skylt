@@ -15,7 +15,7 @@ To view the website on this resolution use the inspect tool by pressing right cl
 
 ![Inspekt image](Documentations/images/inspectImg.png)
 
-Then click on this icon to change to your desiered resolution
+Then click on this icon to change to your desired resolution
 
 ![Res image](Documentations/images/click1.png)
 
