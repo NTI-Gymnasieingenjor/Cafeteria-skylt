@@ -35,7 +35,7 @@ Then change to the right resolution
 
 There are automated tests made with selenium. 
 
-[Tests](Documentations/tests.md)
+[To run tests](Documentations/tests.md)
 
 ## Getting started with the Raspberry Pi
 [Instructions](Documentations/raspberrySetup.md)
