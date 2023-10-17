@@ -49,22 +49,30 @@ function getData() {
             const rows = data.split("\n");
             let items = rows.map(row => row.split(','));
             const cleanItems = items.map(row => row.filter(value => value !== ""));
-            const container = document.createElement("div");
+            let container = document.createElement("div");
             container.className = "container"
             let counter = 0;
 
             for (let i = 0; i < 6; i++) {
                 const showList = cleanItems[2 + i * 4];
-                let divHasBeenMade = false;
+                let headerHasBeenMade = false;
                 let section;
                 let itemDiv;
                 let priceDiv;
-
                 for (let y = 0; y < showList.length; y++) {
                     if (showList[y] === "FALSE") {
                         continue;
                     } else if (showList[y] === "TRUE") {
-                        if (!divHasBeenMade) {
+                        if (!headerHasBeenMade && counter >= 22) {
+                            container.appendChild(section);
+                            newMenuSlide(container);
+                            counter = 0;
+                            headerHasBeenMade = false;
+                            container = document.createElement("div");
+                            container.className = "container"
+
+                        }
+                        if (!headerHasBeenMade) {
                             section = document.createElement("div");
                             section.className = "row mb-5 mt-5";
                             let div1 = document.createElement("div");
@@ -82,7 +90,9 @@ function getData() {
                             div2.appendChild(header2);
                             div2.appendChild(itemDiv);
                             section.appendChild(priceDiv);
-                            divHasBeenMade = true;
+                            headerHasBeenMade = true;
+                            counter += 2;
+                            console.log(counter)
                         }
                         const itemPara = document.createElement("p");
                         const itemNode = document.createTextNode(cleanItems[0 + i * 4][y]);
@@ -94,11 +104,18 @@ function getData() {
                         priceDiv.appendChild(pricePara);
                         counter += 1;
                         console.log(counter)
-
+                        if (counter >= 24)  {
+                            container.appendChild(section);
+                            newMenuSlide(container);
+                            counter = 0;
+                            headerHasBeenMade = false;
+                            container = document.createElement("div");
+                            container.className = "container"
+                        }
                     }
                 }
 
-                if (divHasBeenMade) {
+                if (headerHasBeenMade) {
                     container.appendChild(section)
                 }
             }
