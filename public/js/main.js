@@ -52,7 +52,6 @@ function getData() {
             let container = document.createElement("div");
             container.className = "container"
             let counter = 0;
-
             for (let i = 0; i < 6; i++) {
                 const showList = cleanItems[2 + i * 4];
                 let headerHasBeenMade = false;
@@ -64,13 +63,11 @@ function getData() {
                         continue;
                     } else if (showList[y] === "TRUE") {
                         if (!headerHasBeenMade && counter >= 22) {
-                            container.appendChild(section);
                             newMenuSlide(container);
                             counter = 0;
                             headerHasBeenMade = false;
                             container = document.createElement("div");
                             container.className = "container"
-
                         }
                         if (!headerHasBeenMade) {
                             section = document.createElement("div");
@@ -114,7 +111,6 @@ function getData() {
                         }
                     }
                 }
-
                 if (headerHasBeenMade) {
                     container.appendChild(section)
                 }
