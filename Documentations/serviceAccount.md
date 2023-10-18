@@ -15,6 +15,6 @@
 
 7. Go to the Google Sheets sheet you want to use and share the sheet with the service account email which you can find either on the [Service Accounts](https://console.cloud.google.com/iam-admin/serviceaccounts) tab in your project or in the json file.
 
-8. Copy the ID in the url from the Google Sheets sheet you want to upload data to. The ID is the part of the url after the `/spreadsheets/d/`. In this example: `docs.google.com/spreadsheets/d/123456789/edit#gid=0`, the ID is `123456789`. The Google Sheets sheet url ID is used in `main.js` to specify which sheet you want to upload data to.
+8. Copy the ID in the url from the Google Sheets sheet you want to upload data to. The ID is the part of the url after the `/spreadsheets/d/`. In this example: `docs.google.com/spreadsheets/d/123456789/edit#gid=0`, the ID is `123456789`. The Google Sheets sheet url ID is used in `googleSheetDownloader.py` to specify which sheet you want to upload data to.
 
-9. After this the `main.js` should run correctly. You may have to install the packages `gspread` and `oauth2client` with pip for the file to run correctly.
+9. After this `googleSheetDownloader.py` should run correctly. You may have to install the packages `gspread` and `oauth2client` with pip for the file to run correctly.
