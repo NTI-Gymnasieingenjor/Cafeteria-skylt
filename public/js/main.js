@@ -29,17 +29,51 @@ function todaysDate(date) {
 function newMenuSlide(container) {
     const slide = document.createElement("div")
     slide.className = "carousel-item slide"
-    slide.setAttribute("data-interval", "10000")
-    slide.setAttribute("style", "background-color: #190f27;")
+    slide.setAttribute("data-interval","10000")
+    slide.setAttribute("style","background-color: #190f27;")
     const slideCap = document.createElement("div")
     slideCap.className = "carousel-caption d-none d-md-block priceList"
-    slideCap.setAttribute("style", "margin-top: 26vh;")
+    slideCap.setAttribute("style","margin-top: 26vh;")
     slide.appendChild(slideCap)
     slideCap.appendChild(container)
     const carousel = document.getElementById("menu")
     carousel.appendChild(slide)
 }
 
+
+function resetContainer(){
+    container = document.createElement("div");
+    container.className = "container"
+    return container
+}
+
+function getItemAndPrice(cleanItems, i, y){
+    const itemP = document.createElement("p");
+    const itemText = document.createTextNode(cleanItems[0 + i * 4][y]);
+    itemP.appendChild(itemText);
+    const priceP = document.createElement("p");
+    const priceText = document.createTextNode(cleanItems[1 + i * 4][y]);
+    priceP.appendChild(priceText);
+    return [itemP, priceP]
+}
+
+function makeNewSection(section, itemDiv, priceDiv, cleanItems, i){
+    section = document.createElement("div");
+    section.className = "row mb-5 mt-5";
+    let div1 = document.createElement("div");
+    div1.className = "col-2";
+    let div2 = document.createElement("div");
+    div2.className = "col-7";
+    let header2 = document.createElement("h2");
+    let header2Text = document.createTextNode(cleanItems[0 + i * 4][0]);
+    header2.appendChild(header2Text);
+    itemDiv = document.createElement("div"); // Initialize 'itemDiv'
+    priceDiv = document.createElement("div"); // Initialize 'priceDiv'
+    priceDiv.className = "col-3 text-right aligner"
+    section.appendChild(div1);
+    div2.appendChild(header2);
+    return [section, div2, itemDiv, priceDiv]
+}
 //Gets the products information and puts them in their div
 function getData() {
     $.ajax({
@@ -49,15 +83,12 @@ function getData() {
             const rows = data.split("\n");
             let items = rows.map(row => row.split(','));
             const cleanItems = items.map(row => row.filter(value => value !== ""));
-            let container = document.createElement("div");
-            container.className = "container"
+            let container = resetContainer();
             let counter = 0;
             for (let i = 0; i < 6; i++) {
                 const showList = cleanItems[2 + i * 4];
                 let headerHasBeenMade = false;
-                let section;
-                let itemDiv;
-                let priceDiv;
+                let section, itemDiv, priceDiv;
                 for (let y = 0; y < showList.length; y++) {
                     if (showList[y] === "FALSE") {
                         continue;
@@ -66,48 +97,28 @@ function getData() {
                             newMenuSlide(container);
                             counter = 0;
                             headerHasBeenMade = false;
-                            container = document.createElement("div");
-                            container.className = "container"
+                            container = resetContainer();
                         }
                         if (!headerHasBeenMade) {
-                            section = document.createElement("div");
-                            section.className = "row mb-5 mt-5";
-                            let div1 = document.createElement("div");
-                            div1.className = "col-2";
-                            let div2 = document.createElement("div");
-                            div2.className = "col-7";
-                            let header2 = document.createElement("h2");
-                            let header2Text = document.createTextNode(cleanItems[0 + i * 4][0]);
-                            header2.appendChild(header2Text);
-                            itemDiv = document.createElement("div"); // Initialize 'itemDiv'
-                            priceDiv = document.createElement("div"); // Initialize 'priceDiv'
-                            priceDiv.className = "col-3 text-right aligner"
-                            section.appendChild(div1);
-                            section.appendChild(div2);
-                            div2.appendChild(header2);
+                            section = makeNewSection(section, itemDiv, priceDiv,cleanItems, i)[0]
+                            div2 = makeNewSection(section, itemDiv, priceDiv,cleanItems, i)[1]
+                            itemDiv = makeNewSection(section, itemDiv, priceDiv,cleanItems, i)[2]
+                            priceDiv = makeNewSection(section, itemDiv, priceDiv,cleanItems, i)[3]
                             div2.appendChild(itemDiv);
+                            section.appendChild(div2);
                             section.appendChild(priceDiv);
                             headerHasBeenMade = true;
                             counter += 2;
-                            console.log(counter)
                         }
-                        const itemPara = document.createElement("p");
-                        const itemNode = document.createTextNode(cleanItems[0 + i * 4][y]);
-                        itemPara.appendChild(itemNode);
-                        const pricePara = document.createElement("p");
-                        const priceNode = document.createTextNode(cleanItems[1 + i * 4][y]);
-                        pricePara.appendChild(priceNode);
-                        itemDiv.appendChild(itemPara);
-                        priceDiv.appendChild(pricePara);
+                        itemDiv.appendChild(getItemAndPrice(cleanItems, i, y)[0]);
+                        priceDiv.appendChild(getItemAndPrice(cleanItems, i, y)[1]);
                         counter += 1;
-                        console.log(counter)
-                        if (counter >= 24) {
+                        if (counter >= 24)  {
                             container.appendChild(section);
                             newMenuSlide(container);
+                            container = resetContainer();
                             counter = 0;
                             headerHasBeenMade = false;
-                            container = document.createElement("div");
-                            container.className = "container"
                         }
                     }
                 }
