@@ -85,7 +85,7 @@ function getMenu() {
             const items = rawItems.map(row => row.filter(value => value !== ""));
             let container = resetContainer();
             let counter = 0;
-            for (let foodCategory = 0; foodCategory < 6; foodCategory++) {
+            for (let foodCategory = 0; foodCategory < items.length/4; foodCategory++) {
                 const booleanList = items[2 + foodCategory * 4];
                 let headerHasBeenMade = false;
                 let section, itemDiv, priceDiv;
