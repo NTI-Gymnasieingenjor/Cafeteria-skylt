@@ -85,14 +85,14 @@ function getMenu() {
             const items = rawItems.map(row => row.filter(value => value !== ""));
             let container = resetContainer();
             let counter = 0;
-            for (let i = 0; i < 6; i++) {
-                const showList = items[2 + i * 4];
+            for (let foodCategory = 0; foodCategory < 6; foodCategory++) {
+                const booleanList = items[2 + foodCategory * 4];
                 let headerHasBeenMade = false;
                 let section, itemDiv, priceDiv;
-                for (let y = 0; y < showList.length; y++) {
-                    if (showList[y] === "FALSE") {
+                for (let itemIndex = 0; itemIndex < booleanList.length; itemIndex++) {
+                    if (booleanList[itemIndex] === "FALSE") {
                         continue;
-                    } else if (showList[y] === "TRUE") {
+                    } else if (booleanList[itemIndex] === "TRUE") {
                         if (!headerHasBeenMade && counter >= 22) {
                             newMenuSlide(container);
                             counter = 0;
@@ -100,18 +100,18 @@ function getMenu() {
                             container = resetContainer();
                         }
                         if (!headerHasBeenMade) {
-                            section = makeNewSection(section, itemDiv, priceDiv, items, i)[0]
-                            productDiv = makeNewSection(section, itemDiv, priceDiv, items, i)[1]
-                            itemDiv = makeNewSection(section, itemDiv, priceDiv, items, i)[2]
-                            priceDiv = makeNewSection(section, itemDiv, priceDiv, items, i)[3]
+                            section = makeNewSection(section, itemDiv, priceDiv, items, foodCategory)[0]
+                            productDiv = makeNewSection(section, itemDiv, priceDiv, items, foodCategory)[1]
+                            itemDiv = makeNewSection(section, itemDiv, priceDiv, items, foodCategory)[2]
+                            priceDiv = makeNewSection(section, itemDiv, priceDiv, items, foodCategory)[3]
                             productDiv.appendChild(itemDiv);
                             section.appendChild(productDiv);
                             section.appendChild(priceDiv);
                             headerHasBeenMade = true;
                             counter += 2;
                         }
-                        itemDiv.appendChild(getItemAndPrice(items, i, y)[0]);
-                        priceDiv.appendChild(getItemAndPrice(items, i, y)[1]);
+                        itemDiv.appendChild(getItemAndPrice(items, foodCategory, itemIndex)[0]);
+                        priceDiv.appendChild(getItemAndPrice(items, foodCategory, itemIndex)[1]);
                         counter += 1;
                         if (counter >= 24)  {
                             container.appendChild(section);
