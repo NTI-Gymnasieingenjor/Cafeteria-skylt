@@ -47,32 +47,32 @@ function resetContainer(){
     return container
 }
 
-function getItemAndPrice(cleanItems, i, y){
+function getItemAndPrice(items, i, y){
     const itemP = document.createElement("p");
-    const itemText = document.createTextNode(cleanItems[0 + i * 4][y]);
+    const itemText = document.createTextNode(items[0 + i * 4][y]);
     itemP.appendChild(itemText);
     const priceP = document.createElement("p");
-    const priceText = document.createTextNode(cleanItems[1 + i * 4][y]);
+    const priceText = document.createTextNode(items[1 + i * 4][y]);
     priceP.appendChild(priceText);
     return [itemP, priceP]
 }
 
-function makeNewSection(section, itemDiv, priceDiv, cleanItems, i){
+function makeNewSection(section, itemDiv, priceDiv, items, i){
     section = document.createElement("div");
     section.className = "row mb-5 mt-5";
-    let div1 = document.createElement("div");
-    div1.className = "col-2";
-    let div2 = document.createElement("div");
-    div2.className = "col-7";
+    let paddingDiv = document.createElement("div");
+    paddingDiv.className = "col-2";
+    let productDiv = document.createElement("div");
+    productDiv.className = "col-7";
     let header2 = document.createElement("h2");
-    let header2Text = document.createTextNode(cleanItems[0 + i * 4][0]);
+    let header2Text = document.createTextNode(items[0 + i * 4][0]);
     header2.appendChild(header2Text);
-    itemDiv = document.createElement("div"); // Initialize 'itemDiv'
-    priceDiv = document.createElement("div"); // Initialize 'priceDiv'
+    itemDiv = document.createElement("div");
+    priceDiv = document.createElement("div");
     priceDiv.className = "col-3 text-right aligner"
-    section.appendChild(div1);
-    div2.appendChild(header2);
-    return [section, div2, itemDiv, priceDiv]
+    section.appendChild(paddingDiv);
+    productDiv.appendChild(header2);
+    return [section, productDiv, itemDiv, priceDiv]
 }
 //Gets the products information and puts them in their div
 function getMenu() {
@@ -81,12 +81,12 @@ function getMenu() {
         url: "http://localhost:8000/productList.csv",
         success: function (data) {
             const rows = data.split("\n");
-            let items = rows.map(row => row.split(','));
-            const cleanItems = items.map(row => row.filter(value => value !== ""));
+            let rawItems = rows.map(row => row.split(','));
+            const items = rawItems.map(row => row.filter(value => value !== ""));
             let container = resetContainer();
             let counter = 0;
             for (let i = 0; i < 6; i++) {
-                const showList = cleanItems[2 + i * 4];
+                const showList = items[2 + i * 4];
                 let headerHasBeenMade = false;
                 let section, itemDiv, priceDiv;
                 for (let y = 0; y < showList.length; y++) {
@@ -100,18 +100,18 @@ function getMenu() {
                             container = resetContainer();
                         }
                         if (!headerHasBeenMade) {
-                            section = makeNewSection(section, itemDiv, priceDiv,cleanItems, i)[0]
-                            div2 = makeNewSection(section, itemDiv, priceDiv,cleanItems, i)[1]
-                            itemDiv = makeNewSection(section, itemDiv, priceDiv,cleanItems, i)[2]
-                            priceDiv = makeNewSection(section, itemDiv, priceDiv,cleanItems, i)[3]
-                            div2.appendChild(itemDiv);
-                            section.appendChild(div2);
+                            section = makeNewSection(section, itemDiv, priceDiv, items, i)[0]
+                            productDiv = makeNewSection(section, itemDiv, priceDiv, items, i)[1]
+                            itemDiv = makeNewSection(section, itemDiv, priceDiv, items, i)[2]
+                            priceDiv = makeNewSection(section, itemDiv, priceDiv, items, i)[3]
+                            productDiv.appendChild(itemDiv);
+                            section.appendChild(productDiv);
                             section.appendChild(priceDiv);
                             headerHasBeenMade = true;
                             counter += 2;
                         }
-                        itemDiv.appendChild(getItemAndPrice(cleanItems, i, y)[0]);
-                        priceDiv.appendChild(getItemAndPrice(cleanItems, i, y)[1]);
+                        itemDiv.appendChild(getItemAndPrice(items, i, y)[0]);
+                        priceDiv.appendChild(getItemAndPrice(items, i, y)[1]);
                         counter += 1;
                         if (counter >= 24)  {
                             container.appendChild(section);
@@ -144,3 +144,5 @@ var intervalDate = window.setInterval(function () {
     getDate(new Date());
 }, 1000 * 60 * 60)
 getDate(new Date());
+
+getMenu();
