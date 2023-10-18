@@ -183,7 +183,7 @@ The autopull script will still run as intended.
     4. Type 1 to chose nano as your editor
 
     5. Go to the bottom of the opened document and type in the following command:
-        * * * * * cd ~/Desktop && python3 temeperatureLogger.py
+        * * * * * cd ~/Git/Cafeteria-skylt/RaspberryPi && python3 temperatureLogger.py
 
     * Temperature logger will restart the raspberry pi if temperature rises over 80°C
 ```   
