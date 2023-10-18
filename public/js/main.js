@@ -29,11 +29,11 @@ function todaysDate(date) {
 function newMenuSlide(container) {
     const slide = document.createElement("div")
     slide.className = "carousel-item slide"
-    slide.setAttribute("data-interval","10000")
-    slide.setAttribute("style","background-color: #190f27;")
+    slide.setAttribute("data-interval", "10000")
+    slide.setAttribute("style", "background-color: #190f27;")
     const slideCap = document.createElement("div")
     slideCap.className = "carousel-caption d-none d-md-block priceList"
-    slideCap.setAttribute("style","margin-top: 26vh;")
+    slideCap.setAttribute("style", "margin-top: 26vh;")
     slide.appendChild(slideCap)
     slideCap.appendChild(container)
     const carousel = document.getElementById("menu")
@@ -101,7 +101,7 @@ function getData() {
                         priceDiv.appendChild(pricePara);
                         counter += 1;
                         console.log(counter)
-                        if (counter >= 24)  {
+                        if (counter >= 24) {
                             container.appendChild(section);
                             newMenuSlide(container);
                             counter = 0;
