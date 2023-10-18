@@ -1,7 +1,7 @@
 const daysOfWeek = ["Söndag", "Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag"]
 
 //Shows the clock on the website
-function startTime(date) {
+function getTime(date) {
     let h = date.getHours();
     let m = date.getMinutes();
 
@@ -17,7 +17,7 @@ function checkTime(i) {
 }
 
 // Shows todays date and year on the website
-function todaysDate(date) {
+function getDate(date) {
     const day = date.getDay()
     const weekdayName = daysOfWeek[day];
     // Changes date to swedish format
@@ -26,56 +26,128 @@ function todaysDate(date) {
     document.getElementById("date").innerHTML = date;
 }
 
-//Gets the products information and puts them in their div
-function getData() {
-    let apiList = ["A5:A55", "I5:I55", "E5:E55", "M5:M55"];
-    let productsList = ["products1", "products2", "products3", "products4"];
-    for (let i = 0; i < productsList.length; i++) {
-        $.ajax({
-            type: 'GET',
-            url: "https://sheets.googleapis.com/v4/spreadsheets/1x-orVp4FAC1rCucW2jtH5WTWgBSbgAaDLp23wa-V2fQ/values/%27Datahantering%27!" + apiList[i] + "?key=AIzaSyBPtjjvvCJ5Jy88dPjtlPXlsYCxGO8Kw7Q#gid=1816022637",
-
-            success: function (data) {
-                let products = data.values;
-                let productFull = products.filter(function (item) { return item != '' });
-                for (let j = 0; j < productFull.length; j++) {
-                    document.getElementById(productsList[i]).children[j].innerHTML = productFull[j];
-                }
-            }
-        });
-    }
+function newMenuSlide(container) {
+    const slide = document.createElement("div")
+    slide.className = "carousel-item slide"
+    slide.setAttribute("data-interval","10000")
+    slide.setAttribute("style","background-color: #190f27;")
+    const slideCap = document.createElement("div")
+    slideCap.className = "carousel-caption d-none d-md-block priceList"
+    slideCap.setAttribute("style","margin-top: 26vh;")
+    slide.appendChild(slideCap)
+    slideCap.appendChild(container)
+    const carousel = document.getElementById("menu")
+    carousel.appendChild(slide)
 }
 
-//Gets the prices information and puts them in their div
-function getPrices() {
-    let apiList = ["B5:B55", "J5:J55", "F5:F55", "N5:N55"];
-    let pricesStatusList = ["price/status1", "price/status2", "price/status3", "price/status4"];
-    for (let i = 0; i < pricesStatusList.length; i++) {
-        $.ajax({
-            type: 'GET',
-            url: "https://sheets.googleapis.com/v4/spreadsheets/1x-orVp4FAC1rCucW2jtH5WTWgBSbgAaDLp23wa-V2fQ/values/%27Datahantering%27!" + apiList[i] + "?key=AIzaSyBPtjjvvCJ5Jy88dPjtlPXlsYCxGO8Kw7Q#gid=1816022637",
 
-            success: function (data) {
-                let products = data.values;
-                let productFull = products.filter(function (item) { return item != '' });
-                for (let j = 0; j < productFull.length; j++) {
-                    document.getElementById(pricesStatusList[i]).children[j].innerHTML = productFull[j];
+function resetContainer(){
+    container = document.createElement("div");
+    container.className = "container"
+    return container
+}
+
+function getItemAndPrice(items, i, y){
+    const itemP = document.createElement("p");
+    const itemText = document.createTextNode(items[0 + i * 4][y]);
+    itemP.appendChild(itemText);
+    const priceP = document.createElement("p");
+    const priceText = document.createTextNode(items[1 + i * 4][y]);
+    priceP.appendChild(priceText);
+    return [itemP, priceP]
+}
+
+function makeNewSection(section, itemDiv, priceDiv, items, i){
+    section = document.createElement("div");
+    section.className = "row mb-5 mt-5";
+    let paddingDiv = document.createElement("div");
+    paddingDiv.className = "col-2";
+    let productDiv = document.createElement("div");
+    productDiv.className = "col-7";
+    let header2 = document.createElement("h2");
+    let header2Text = document.createTextNode(items[0 + i * 4][0]);
+    header2.appendChild(header2Text);
+    itemDiv = document.createElement("div");
+    priceDiv = document.createElement("div");
+    priceDiv.className = "col-3 text-right aligner"
+    section.appendChild(paddingDiv);
+    productDiv.appendChild(header2);
+    return [section, productDiv, itemDiv, priceDiv]
+}
+function getMenuHelper(data) {
+    const rows = data.split("\n");
+    let rawItems = rows.map(row => row.split(','));
+    const items = rawItems.map(row => row.filter(value => value !== ""));
+    let container = resetContainer();
+    let counter = 0;
+    for (let foodCategory = 0; foodCategory < items.length/4; foodCategory++) {
+        const booleanList = items[2 + foodCategory * 4];
+        let headerHasBeenMade = false;
+        let section, itemDiv, priceDiv;
+        for (let itemIndex = 0; itemIndex < booleanList.length; itemIndex++) {
+            if (booleanList[itemIndex] === "FALSE") {
+                continue;
+            } else if (booleanList[itemIndex] === "TRUE") {
+                if (!headerHasBeenMade && counter >= 22) {
+                    newMenuSlide(container);
+                    counter = 0;
+                    headerHasBeenMade = false;
+                    container = resetContainer();
+                }
+                if (!headerHasBeenMade) {
+                    section = makeNewSection(section, itemDiv, priceDiv, items, foodCategory)[0]
+                    productDiv = makeNewSection(section, itemDiv, priceDiv, items, foodCategory)[1]
+                    itemDiv = makeNewSection(section, itemDiv, priceDiv, items, foodCategory)[2]
+                    priceDiv = makeNewSection(section, itemDiv, priceDiv, items, foodCategory)[3]
+                    productDiv.appendChild(itemDiv);
+                    section.appendChild(productDiv);
+                    section.appendChild(priceDiv);
+                    headerHasBeenMade = true;
+                    counter += 2;
+                }
+                itemDiv.appendChild(getItemAndPrice(items, foodCategory, itemIndex)[0]);
+                priceDiv.appendChild(getItemAndPrice(items, foodCategory, itemIndex)[1]);
+                counter += 1;
+                if (counter >= 24)  {
+                    container.appendChild(section);
+                    newMenuSlide(container);
+                    container = resetContainer();
+                    counter = 0;
+                    headerHasBeenMade = false;
                 }
             }
-        });
+        }
+        if (headerHasBeenMade) {
+            container.appendChild(section)
+        }
+    }
+    if (counter !== 0) {
+        newMenuSlide(container)
     }
 }
-// Runs the function every 5 seconds
+function getMenu() {
+    $.ajax({
+        type: 'GET',
+        url: "http://localhost:8000/productList.csv",
+        success: function (data) {getMenuHelper(data)}
+    });
+    $.ajax({
+        type: 'GET',
+        url: "http://0.0.0.0:8000/productList.csv",
+        success: function (data) {getMenuHelper(data)}
+    });
+}
+
+// Runs getTime() every 5 seconds
 var intervalDate = window.setInterval(function () {
-    startTime(new Date());
+    getTime(new Date());
 }, 1000 * 5)
-startTime(new Date());
+getTime(new Date());
 
-// Runs the function every hour
+// Runs getDate() every hour
 var intervalDate = window.setInterval(function () {
-    todaysDate(new Date());
+    getDate(new Date());
 }, 1000 * 60 * 60)
-todaysDate(new Date());
+getDate(new Date());
 
-getData();
-getPrices();
+getMenu();

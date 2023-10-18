@@ -3,3 +3,5 @@ __pycache__
 temperature_data.csv
 debug.log
 screenshots
+serviceAccount.json
+productList.csv

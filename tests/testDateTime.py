@@ -37,7 +37,7 @@ class TestTime(TestCase):
     # A helper test for testTime
     def helperTestClock(self, date, result):
         # Runs startTime from main.js to change time
-        self.browser.execute_script(f"startTime(new Date('{date}'));")
+        self.browser.execute_script(f"getTime(new Date('{date}'));")
         shownTime = self.browser.find_element(By.ID, "clock").text
         self.assertEqual(shownTime, result)
 
@@ -53,7 +53,7 @@ class TestTime(TestCase):
     # A helper test for testDate
     def HelperTestDateAndWeekday(self, date, result, result2):
         # Runs todaysDate from main.js to change date
-        self.browser.execute_script(f"todaysDate(new Date('{date}'));")
+        self.browser.execute_script(f"getDate(new Date('{date}'));")
         shownDate = self.browser.find_element(By.ID, "date").text
         shownWeekday = self.browser.find_element(By.ID, "day").text
         self.assertEqual(shownDate, result)
