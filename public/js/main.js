@@ -114,10 +114,10 @@ function getMenuHelper(data) {
                 }
                 // This happens if no header has been made, it makes a new section
                 if (!headerHasBeenMade) {
-                    section = makeNewSection(section, itemDiv, priceDiv, menuList, foodCategory)[0]
-                    productDiv = makeNewSection(section, itemDiv, priceDiv, menuList, foodCategory)[1]
-                    itemDiv = makeNewSection(section, itemDiv, priceDiv, menuList, foodCategory)[2]
-                    priceDiv = makeNewSection(section, itemDiv, priceDiv, menuList, foodCategory)[3]
+                    section = makeNewCategory(section, itemDiv, priceDiv, menuList, foodCategory)[0]
+                    productDiv = makeNewCategory(section, itemDiv, priceDiv, menuList, foodCategory)[1]
+                    itemDiv = makeNewCategory(section, itemDiv, priceDiv, menuList, foodCategory)[2]
+                    priceDiv = makeNewCategory(section, itemDiv, priceDiv, menuList, foodCategory)[3]
                     productDiv.appendChild(itemDiv);
                     section.appendChild(productDiv);
                     section.appendChild(priceDiv);
