@@ -23,8 +23,8 @@ Localisation allows you to set the Locale, Timezone, Keyboard and WiFi Country, 
 
 ## Basics of 'Accessories'
 In 'Accessories' you will find 'File Manager' and 'Terminal'.  
-'File Manager' is where you access the 'Cafeteria-skylt' folder, which is located on the SD-card of this Pi.   
-The folder location: '/home/pi/Git/Cafeteria-skylt'
+'File Manager' is where you access the 'Cafeteria-display' folder, which is located on the SD-card of this Pi.   
+The folder location: '/home/pi/Git/Cafeteria-display'
 
 'Terminal' is the command prompt of Pi, here you will use many useful commands.  
 Some basic commands include:
