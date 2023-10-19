@@ -14,19 +14,19 @@
 
 .layer1 
 {
-	background-image: url("../images/layer_1.png");
+	background-image: url("../images/layer1.png");
 	z-index: 1;
 	animation-name: keyframes1;
 }
 .layer2 
 {
-	background-image: url("../images/layer_2.png");
+	background-image: url("../images/layer2.png");
 	z-index: 2;
 	animation-name: keyframes2;
 }
 .layer3 
 {
-	background-image: url("../images/layer_3.png");
+	background-image: url("../images/layer3.png");
 	z-index: 3;
 	animation-name: keyframes3;
 }

@@ -10,7 +10,7 @@ The Raspberry Pi gets the menu and items from a Google Spreadsheets sheet where 
 
 [Link to spreadsheet](https://docs.google.com/spreadsheets/d/1wN90DoWtkIRofBl3Jm_UkQMeDUDMMIszM-5tlwlPICA/)
 
-![Cafeteria-skylten](Documentations/images/CafeteriaSkylten.png)
+![Cafeteria-skylten](Documentations/images/cafeteriaDisplay.png)
 
 This project is based on a 1080 x 1920 resolution 
 
@@ -20,7 +20,7 @@ To view the website on this resolution use the inspect tool by pressing right cl
 
 Then click on this icon to change to your desired resolution
 
-![Res image](Documentations/images/click1.png)
+![Res image](Documentations/images/click.png)
 
 Then change to the right resolution
 
