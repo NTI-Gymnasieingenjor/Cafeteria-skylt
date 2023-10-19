@@ -1,6 +1,10 @@
+# !IMPORTANT!
+# Run py -m http.server in terminal before running this test
+
+import os
 import time
 import unittest
-from os import getcwd, mkdir, path
+from os import mkdir, path
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -11,25 +15,24 @@ optionsChrome = webdriver.ChromeOptions()  # Define options for chrome
 optionsChrome.add_argument("headless")  # Pass headless argument to the options (no ui)
 browser = webdriver.Chrome(options=optionsChrome)
 
-website = path.join(getcwd(), "public/index.html")
-# Resolution of the screen in the cafeteria
+website = "http://localhost:8000"
 res = 1080, 1920
-
 
 # Runs tests in Chrome
 class TestScreenshots(unittest.TestCase):
     @classmethod
     def setUpClass(self):
         self.browser = browser
-        self.browser.get(website)
+        browser.get(website)
+        browser.get(website)
+        browser.set_window_size(*res)
 
     # Sets resolution and saves a screenshot
     def testSaveScreenshot(self):
         # Gets number of slides on page
         nr_of_slides = len(browser.find_elements(By.CLASS_NAME, "carousel-item"))
         screenshot_nr = 1
-        self.browser.get(website)
-        self.browser.set_window_size(*res)
+        time.sleep(2)
         element_present = EC.presence_of_element_located(
             (By.CLASS_NAME, "carousel-item")
         )
