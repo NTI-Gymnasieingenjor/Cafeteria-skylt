@@ -29,7 +29,7 @@ data-interval="10000" determines how many milliseconds have to pass before it ch
 ## id
  
  ```
-id="ImageName" is only used to position images.
+id="productImage" is only used to position images.
 The id for dot.png and money-dot.png is recommended to be used for all slides as they position the purple bubbles with the price on.
 Id:s that are used to position a product can be created and adjusted but make sure that the whole image is within the bubble.
 Make sure that the product's id has "z-index: 1;" so that it is on the correct layer. 

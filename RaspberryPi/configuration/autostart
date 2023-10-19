@@ -5,5 +5,6 @@
 @xset -dpms
 @xset s noblank
 @xset s off
-@chromium-browser --kiosk --new-window  /home/pi/Git/Cafeteria-skylt/public/index.html --incognito
+@python3 /home/pi/Git/Cafeteria-skylt/RaspberryPi/configuration/startServer.py
+@chromium-browser --kiosk --new-window  http://0.0.0.0:8000 --incognito
 @unclutter -idle 3

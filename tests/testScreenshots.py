@@ -12,6 +12,7 @@ optionsChrome.add_argument("headless")  # Pass headless argument to the options 
 browser = webdriver.Chrome(options=optionsChrome)
 
 website = path.join(getcwd(), "public/index.html")
+# Resolution of the screen in the cafeteria
 res = 1080, 1920
 
 
@@ -22,7 +23,7 @@ class TestScreenshots(unittest.TestCase):
         self.browser = browser
         self.browser.get(website)
 
-    # Tests resolution and saves a screenshot
+    # Sets resolution and saves a screenshot
     def testSaveScreenshot(self):
         # Gets number of slides on page
         nr_of_slides = len(browser.find_elements(By.CLASS_NAME, "carousel-item"))
@@ -48,8 +49,6 @@ class TestScreenshots(unittest.TestCase):
         self.browser.close()
 
 
-# Starts test
+# Starts test if run as python file
 if __name__ == "__main__":
     unittest.main()
-
-# Needs to have Chromedriver.exe in the same folder for the tests to work
