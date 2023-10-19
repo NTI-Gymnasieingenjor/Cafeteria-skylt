@@ -8,6 +8,6 @@ if platform.system() == "Windows":
     os.chdir(cwd + "/public")
 elif platform.system() == "Linux":
     os.chdir("../../public")
-serverAddress = ("", 8080)
+serverAddress = ("", 8000)
 httpd = HTTPServer(serverAddress, SimpleHTTPRequestHandler)
 httpd.serve_forever()
