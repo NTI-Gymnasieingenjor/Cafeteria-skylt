@@ -101,3 +101,7 @@ class TestTime(TestCase):
         self.HelperTestDateAndWeekday("2023-05-14T08:00:00", "2023-05-14", "Söndag")
         self.HelperTestDateAndWeekday("2023-05-14T15:45:00", "2023-05-14", "Söndag")
         self.HelperTestDateAndWeekday("2023-05-14T23:59:00", "2023-05-14", "Söndag")
+
+# Starts test if run as python file
+if __name__ == "__main__":
+    main(verbosity=2)
