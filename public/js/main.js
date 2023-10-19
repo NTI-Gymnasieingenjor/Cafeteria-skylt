@@ -85,7 +85,7 @@ function makeNewCategory(category, itemDiv, priceDiv, items, i) {
     productDiv.appendChild(header2);
     return [category, productDiv, itemDiv, priceDiv]
 }
-// This cretes slides for the menu
+// This creates slides for the menu
 function getMenuHelper(data) {
     // This splits data into lists
     const rows = data.split("\n");
@@ -151,13 +151,13 @@ function getMenuHelper(data) {
 function getMenu() {
     $.ajax({
         type: 'GET',
-        // The server adress for Windows
+        // The server address for Windows
         url: "http://localhost:8000/productList.csv",
         success: function (data) { getMenuHelper(data) }
     });
     $.ajax({
         type: 'GET',
-        // The server adress for Linux
+        // The server address for Linux
         url: "http://0.0.0.0:8000/productList.csv",
         success: function (data) { getMenuHelper(data) }
     });
