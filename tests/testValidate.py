@@ -39,7 +39,7 @@ class TestValidate(TestCase):
         TABS_OPEN = 1
         failed_validations_count = 0
 
-        # Loop through file paths and validate the files
+        # Loop through file paths and validate the files that ends with html or css
         for path in paths:
             if path.endswith(".html") or path.endswith(".css"):
                 if "bootstrap" not in path:
@@ -70,11 +70,12 @@ class TestValidate(TestCase):
                     else:
                         failed_validations_count += 1
 
+        # Writes out amount of files that failed validation
         if failed_validations_count > 0:
             self.fail(
                 f"{failed_validations_count} files failed validation. See above for details."
             )
 
-
+# Starts test if run as python file
 if __name__ == "__main__":
     main(verbosity=2)
