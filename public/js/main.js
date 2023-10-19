@@ -25,30 +25,36 @@ function getDate(date) {
     document.getElementById("day").innerHTML = weekdayName;
     document.getElementById("date").innerHTML = date;
 }
-
+// Adds a new slide to the carousel
 function newMenuSlide(container) {
+    // Creates a new div for the slide and adds classes and attributes
     const slide = document.createElement("div")
     slide.className = "carousel-item slide"
-    slide.setAttribute("data-interval","10000")
-    slide.setAttribute("style","background-color: #190f27;")
-    const slideCap = document.createElement("div")
-    slideCap.className = "carousel-caption d-none d-md-block priceList"
-    slideCap.setAttribute("style","margin-top: 26vh;")
-    slide.appendChild(slideCap)
-    slideCap.appendChild(container)
+    slide.setAttribute("data-interval", "10000")
+    slide.setAttribute("style", "background-color: #190f27;")
+    // SlideCaption adds the div that the container is in
+    const slideCaption = document.createElement("div")
+    slideCaption.className = "carousel-caption d-none d-md-block priceList"
+    slideCaption.setAttribute("style", "margin-top: 26vh;")
+    slide.appendChild(slideCaption)
+    slideCaption.appendChild(container)
+    // Adds the slide to the carousel
     const carousel = document.getElementById("menu")
     carousel.appendChild(slide)
 }
 
 
-function resetContainer(){
+function resetContainer() {
+    // Makes container epmty
     container = document.createElement("div");
     container.className = "container"
     return container
 }
 
-function getItemAndPrice(items, i, y){
+function getItemAndPrice(items, i, y) {
+    // Creates a new p for the item and price 
     const itemP = document.createElement("p");
+    // Takes the item and price of the current item
     const itemText = document.createTextNode(items[0 + i * 4][y]);
     itemP.appendChild(itemText);
     const priceP = document.createElement("p");
@@ -56,59 +62,74 @@ function getItemAndPrice(items, i, y){
     priceP.appendChild(priceText);
     return [itemP, priceP]
 }
-
-function makeNewSection(section, itemDiv, priceDiv, items, i){
-    section = document.createElement("div");
-    section.className = "row mb-5 mt-5";
+// This makes a new category and puts it in the container
+function makeNewCategory(category, itemDiv, priceDiv, items, i) {
+    // Creates a new div for the items and prices
+    category = document.createElement("div");
+    category.className = "row mb-5 mt-5";
+    // paddingDiv creates a div that is 2 columns wide
     let paddingDiv = document.createElement("div");
     paddingDiv.className = "col-2";
     let productDiv = document.createElement("div");
     productDiv.className = "col-7";
+    // h2 is title for each category
     let header2 = document.createElement("h2");
+    // Takes the category title of the current category
     let header2Text = document.createTextNode(items[0 + i * 4][0]);
     header2.appendChild(header2Text);
+    // Creates a new div for the items and prices and add their classes
     itemDiv = document.createElement("div");
     priceDiv = document.createElement("div");
     priceDiv.className = "col-3 text-right aligner"
-    section.appendChild(paddingDiv);
+    category.appendChild(paddingDiv);
     productDiv.appendChild(header2);
-    return [section, productDiv, itemDiv, priceDiv]
+    return [category, productDiv, itemDiv, priceDiv]
 }
+// This cretes slides for the menu
 function getMenuHelper(data) {
+    // This splits data into lists
     const rows = data.split("\n");
-    let rawItems = rows.map(row => row.split(','));
-    const items = rawItems.map(row => row.filter(value => value !== ""));
+    let rawMenuList = rows.map(row => row.split(','));
+    // This removes empty items
+    const menuList = rawMenuList.map(row => row.filter(value => value !== ""));
     let container = resetContainer();
+    // This counts items on the slide to make sure it fits
     let counter = 0;
-    for (let foodCategory = 0; foodCategory < items.length/4; foodCategory++) {
-        const booleanList = items[2 + foodCategory * 4];
+    // This loops through the categories 
+    for (let foodCategory = 0; foodCategory < menuList.length / 4; foodCategory++) {
+        // List of booleans for each category
+        const booleanList = menuList[2 + foodCategory * 4];
         let headerHasBeenMade = false;
         let section, itemDiv, priceDiv;
         for (let itemIndex = 0; itemIndex < booleanList.length; itemIndex++) {
             if (booleanList[itemIndex] === "FALSE") {
                 continue;
             } else if (booleanList[itemIndex] === "TRUE") {
+                // This makes a new slide if the if() statement is true
                 if (!headerHasBeenMade && counter >= 22) {
                     newMenuSlide(container);
                     counter = 0;
                     headerHasBeenMade = false;
                     container = resetContainer();
                 }
+                // This happens if no header has been made, it makes a new section
                 if (!headerHasBeenMade) {
-                    section = makeNewSection(section, itemDiv, priceDiv, items, foodCategory)[0]
-                    productDiv = makeNewSection(section, itemDiv, priceDiv, items, foodCategory)[1]
-                    itemDiv = makeNewSection(section, itemDiv, priceDiv, items, foodCategory)[2]
-                    priceDiv = makeNewSection(section, itemDiv, priceDiv, items, foodCategory)[3]
+                    section = makeNewSection(section, itemDiv, priceDiv, menuList, foodCategory)[0]
+                    productDiv = makeNewSection(section, itemDiv, priceDiv, menuList, foodCategory)[1]
+                    itemDiv = makeNewSection(section, itemDiv, priceDiv, menuList, foodCategory)[2]
+                    priceDiv = makeNewSection(section, itemDiv, priceDiv, menuList, foodCategory)[3]
                     productDiv.appendChild(itemDiv);
                     section.appendChild(productDiv);
                     section.appendChild(priceDiv);
                     headerHasBeenMade = true;
                     counter += 2;
                 }
-                itemDiv.appendChild(getItemAndPrice(items, foodCategory, itemIndex)[0]);
-                priceDiv.appendChild(getItemAndPrice(items, foodCategory, itemIndex)[1]);
+                // This gets the item and price and adds it to the item/price div
+                itemDiv.appendChild(getItemAndPrice(menuList, foodCategory, itemIndex)[0]);
+                priceDiv.appendChild(getItemAndPrice(menuList, foodCategory, itemIndex)[1]);
                 counter += 1;
-                if (counter >= 24)  {
+                // If counter is 24 or bigger it makes a new slide
+                if (counter >= 24) {
                     container.appendChild(section);
                     newMenuSlide(container);
                     container = resetContainer();
@@ -117,10 +138,12 @@ function getMenuHelper(data) {
                 }
             }
         }
+        // Adds category to the container
         if (headerHasBeenMade) {
             container.appendChild(section)
         }
     }
+    // Create a new menuslide with the remaining items
     if (counter !== 0) {
         newMenuSlide(container)
     }
@@ -128,13 +151,15 @@ function getMenuHelper(data) {
 function getMenu() {
     $.ajax({
         type: 'GET',
+        // The server adress for Windows
         url: "http://localhost:8000/productList.csv",
-        success: function (data) {getMenuHelper(data)}
+        success: function (data) { getMenuHelper(data) }
     });
     $.ajax({
         type: 'GET',
+        // The server adress for Linux
         url: "http://0.0.0.0:8000/productList.csv",
-        success: function (data) {getMenuHelper(data)}
+        success: function (data) { getMenuHelper(data) }
     });
 }
 
