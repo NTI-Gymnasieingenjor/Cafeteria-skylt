@@ -162,6 +162,14 @@ function getMenu() {
         success: function (data) { getMenuHelper(data) }
     });
 }
+// if 10 minutes has passed, then refresh site on opening hours slide 
+$('#open').on('slide.bs.carousel', function(event) {
+    if (willRefresh){
+        if ($(event.relatedTarget).hasClass('refreshSlide')) {
+            location.reload()
+        }
+    }
+});
 
 // Runs getTime() every 5 seconds
 var intervalDate = window.setInterval(function () {
@@ -174,5 +182,11 @@ var intervalDate = window.setInterval(function () {
     getDate(new Date());
 }, 1000 * 60 * 60)
 getDate(new Date());
+
+let willRefresh = false
+
+var refreshSite = window.setInterval(function(){
+    willRefresh = true
+}, 1000 * 60 * 10)
 
 getMenu();
