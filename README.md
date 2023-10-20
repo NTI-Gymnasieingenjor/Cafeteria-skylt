@@ -6,7 +6,7 @@ This project is a raspberry pi driven "Cafeteria display" which runs a website w
 
 [Link to Google Drive](https://drive.google.com/drive/folders/1Yf2ABcoPqGIK5E88mXdyQchkGVjTMYVt)
 
-The Raspberry Pi gets the menu and items from a Google Spreadsheets sheet where you can configure the products and prices shown on the screen.
+The Raspberry Pi gets the menu and items from a Google Spreadsheets sheet where you can configure the products and prices shown on the screen. Changes in the spreadsheet takes up to 10 minutes before showing on the screen. 
 
 [Link to spreadsheet](https://docs.google.com/spreadsheets/d/1wN90DoWtkIRofBl3Jm_UkQMeDUDMMIszM-5tlwlPICA/)
 
