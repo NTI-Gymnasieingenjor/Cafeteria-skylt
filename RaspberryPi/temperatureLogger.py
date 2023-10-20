@@ -7,7 +7,7 @@ import subprocess
 from datetime import datetime
 
 now = datetime.now()
-currentTime = now.strftime("%H:%M:%S")
+currentTime = now.strftime("%Y-%m-%d %H:%M:%S")
 cmd = ["vcgencmd", "measure_temp"]
 proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
