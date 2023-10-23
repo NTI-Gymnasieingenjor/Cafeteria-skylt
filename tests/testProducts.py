@@ -1,8 +1,8 @@
 # !IMPORTANT!
 # Run startServer.py before running this test
 
-import unittest
 import csv
+import unittest
 
 from selenium import webdriver
 
