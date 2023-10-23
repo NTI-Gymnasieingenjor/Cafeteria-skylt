@@ -104,7 +104,7 @@ function getMenuHelper(data) {
         for (let itemIndex = 0; itemIndex < booleanList.length; itemIndex++) {
             if (booleanList[itemIndex] === "FALSE") {
                 continue;
-            } else if (booleanList[itemIndex] === "TRUE") {
+            } else if (booleanList[itemIndex] === "TRUE" || booleanList[itemIndex] === "TRUE\r") {
                 // This makes a new slide if the if() statement is true
                 if (!headerHasBeenMade && counter >= 22) {
                     newMenuSlide(container);
