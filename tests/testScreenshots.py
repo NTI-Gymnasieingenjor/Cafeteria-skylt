@@ -1,5 +1,5 @@
 # !IMPORTANT!
-# Run py -m http.server in terminal before running this test
+# Run startServer.py in terminal before running this test
 
 import os
 import time
@@ -27,7 +27,7 @@ class TestScreenshots(unittest.TestCase):
         browser.get(website)
         browser.set_window_size(*res)
 
-    # Sets resolution and saves a screenshot
+    # Scrolls to every slide and saves a screenshot
     def testSaveScreenshot(self):
         # Gets number of slides on page
         nr_of_slides = len(browser.find_elements(By.CLASS_NAME, "carousel-item"))
