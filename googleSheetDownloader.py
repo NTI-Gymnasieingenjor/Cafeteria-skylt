@@ -15,9 +15,20 @@ credentials = ServiceAccountCredentials.from_json_keyfile_name(
 client = gspread.authorize(credentials)
 sh = client.open_by_key("1wN90DoWtkIRofBl3Jm_UkQMeDUDMMIszM-5tlwlPICA")
 # Gets all values from the spreadsheet
-csvContent = sh.sheet1.get_all_values()
+
+csvProduct = sh.get_worksheet(0).get_all_values()
+csvImageSlide = sh.get_worksheet(1).get_all_values()
+csvOpenHours = sh.get_worksheet(2).get_all_values()
 
 # Writes the values into a csv file with the correct encoding
 with open("public/productList.csv", "w", encoding="utf8") as file:
-    for row in csvContent:
+    for row in csvProduct:
+        file.write(",".join(row) + "\n")
+
+with open("public/imageList.csv", "w", encoding="utf8") as file:
+    for row in csvImageSlide:
+        file.write(",".join(row) + "\n")
+    
+with open("public/openHoursList.csv", "w", encoding="utf8") as file:
+    for row in csvOpenHours:
         file.write(",".join(row) + "\n")

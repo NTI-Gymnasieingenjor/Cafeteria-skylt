@@ -5,3 +5,5 @@ debug.log
 screenshots
 serviceAccount.json
 productList.csv
+imageList.csv
+openHoursList.csv
