@@ -5,7 +5,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Prislista</title>
-	
+
 	<!-- Refreshes the page once every hour -->
 	<meta http-equiv="refresh" content="3600">
 
@@ -35,10 +35,15 @@
 	<div class="carousel slide" data-ride="carousel" id="open">
 		<div class="carousel-inner" id="menu">
 
-			<div class="carousel-item slide active refreshSlide" data-interval="10000" style="background-color: #190f27;">
+			<div class="carousel-item slide active refreshSlide" data-interval="10000"
+				style="background-color: #190f27;">
 				<div class="carousel-caption d-none d-md-block" id="cafeteria">
-					<p class="openHoursHead">Cafeterian</p>
-					<p id="openHours" class="openHours">08:30-11:30 <br> 12:00-15:30</p>
+					<p id="openHoursHead" class="openHoursHead">Cafeterian</p>
+					<p id="openHours" class="openHours">
+						<span id="morningHours"> 08:30-11:30</span>
+						<br>
+						<span id="afternoonHours">12:00-15:30</span>
+					</p>
 				</div>
 
 			</div>
@@ -76,10 +81,12 @@
 				</div>
 			</div>
 			<!-- Dev controls -->
-			<button class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev" style="opacity: 0%;">
-			  </button>
-			  <button class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next" style="opacity: 0%;">
-			  </button>
+			<button class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev"
+				style="opacity: 0%;">
+			</button>
+			<button class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next"
+				style="opacity: 0%;">
+			</button>
 		</div>
 	</div>
 	<!-- Time, date and day of week  -->

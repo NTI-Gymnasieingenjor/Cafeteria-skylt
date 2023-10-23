@@ -1,4 +1,5 @@
 const daysOfWeek = ["Söndag", "Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag"]
+let isclosed = false;
 
 //Shows the clock on the website
 function getTime(date) {
@@ -18,37 +19,37 @@ function checkTime(i) {
 
 // Shows todays date and year on the website
 function getDate(date) {
-    const day = date.getDay()
+    const day = date.getDay();
     const weekdayName = daysOfWeek[day];
     // Changes date to swedish format
-    date = date.toLocaleDateString("sv-SE")
+    date = date.toLocaleDateString("sv-SE");
     document.getElementById("day").innerHTML = weekdayName;
     document.getElementById("date").innerHTML = date;
 }
 // Adds a new slide to the carousel
 function newMenuSlide(container) {
     // Creates a new div for the slide and adds classes and attributes
-    const slide = document.createElement("div")
-    slide.className = "carousel-item slide"
-    slide.setAttribute("data-interval", "10000")
-    slide.setAttribute("style", "background-color: #190f27;")
+    const slide = document.createElement("div");
+    slide.className = "carousel-item slide";
+    slide.setAttribute("data-interval", "10000");
+    slide.setAttribute("style", "background-color: #190f27;");
     // SlideCaption adds the div that the container is in
-    const slideCaption = document.createElement("div")
-    slideCaption.className = "carousel-caption d-none d-md-block priceList"
-    slideCaption.setAttribute("style", "margin-top: 26vh;")
-    slide.appendChild(slideCaption)
-    slideCaption.appendChild(container)
+    const slideCaption = document.createElement("div");
+    slideCaption.className = "carousel-caption d-none d-md-block priceList";
+    slideCaption.setAttribute("style", "margin-top: 26vh;");
+    slide.appendChild(slideCaption);
+    slideCaption.appendChild(container);
     // Adds the slide to the carousel
-    const carousel = document.getElementById("menu")
-    carousel.appendChild(slide)
+    const carousel = document.getElementById("menu");
+    carousel.appendChild(slide);
 }
 
 
 function resetContainer() {
     // Makes container epmty
     container = document.createElement("div");
-    container.className = "container"
-    return container
+    container.className = "container";
+    return container;
 }
 
 function getItemAndPrice(items, i, y) {
@@ -60,7 +61,7 @@ function getItemAndPrice(items, i, y) {
     const priceP = document.createElement("p");
     const priceText = document.createTextNode(items[1 + i * 4][y]);
     priceP.appendChild(priceText);
-    return [itemP, priceP]
+    return [itemP, priceP];
 }
 // This makes a new category and puts it in the container
 function makeNewCategory(category, itemDiv, priceDiv, items, i) {
@@ -80,10 +81,10 @@ function makeNewCategory(category, itemDiv, priceDiv, items, i) {
     // Creates a new div for the items and prices and add their classes
     itemDiv = document.createElement("div");
     priceDiv = document.createElement("div");
-    priceDiv.className = "col-3 text-right aligner"
+    priceDiv.className = "col-3 text-right aligner";
     category.appendChild(paddingDiv);
     productDiv.appendChild(header2);
-    return [category, productDiv, itemDiv, priceDiv]
+    return [category, productDiv, itemDiv, priceDiv];
 }
 // This creates slides for the menu
 function getMenuHelper(data) {
@@ -114,10 +115,10 @@ function getMenuHelper(data) {
                 }
                 // This happens if no header has been made, it makes a new section
                 if (!headerHasBeenMade) {
-                    section = makeNewCategory(section, itemDiv, priceDiv, menuList, foodCategory)[0]
-                    productDiv = makeNewCategory(section, itemDiv, priceDiv, menuList, foodCategory)[1]
-                    itemDiv = makeNewCategory(section, itemDiv, priceDiv, menuList, foodCategory)[2]
-                    priceDiv = makeNewCategory(section, itemDiv, priceDiv, menuList, foodCategory)[3]
+                    section = makeNewCategory(section, itemDiv, priceDiv, menuList, foodCategory)[0];
+                    productDiv = makeNewCategory(section, itemDiv, priceDiv, menuList, foodCategory)[1];
+                    itemDiv = makeNewCategory(section, itemDiv, priceDiv, menuList, foodCategory)[2];
+                    priceDiv = makeNewCategory(section, itemDiv, priceDiv, menuList, foodCategory)[3];
                     productDiv.appendChild(itemDiv);
                     section.appendChild(productDiv);
                     section.appendChild(priceDiv);
@@ -140,12 +141,12 @@ function getMenuHelper(data) {
         }
         // Adds category to the container
         if (headerHasBeenMade) {
-            container.appendChild(section)
+            container.appendChild(section);
         }
     }
     // Create a new menuslide with the remaining items
     if (counter !== 0) {
-        newMenuSlide(container)
+        newMenuSlide(container);
     }
 }
 function getMenu() {
@@ -163,13 +164,65 @@ function getMenu() {
     });
 }
 // if 10 minutes has passed, then refresh site on opening hours slide 
-$('#open').on('slide.bs.carousel', function(event) {
-    if (willRefresh){
+$('#open').on('slide.bs.carousel', function (event) {
+    if (willRefresh) {
         if ($(event.relatedTarget).hasClass('refreshSlide')) {
-            location.reload()
+            location.reload();
         }
     }
 });
+
+function tempClose(reason) {
+    const openingHoursSlide = document.getElementById("cafeteria");
+    let header = document.getElementById("openHoursHead");
+    const openingHours = document.getElementById("openHours");
+    openingHours.remove();
+    header.style.fontSize = 90 + "px";
+    header.innerText = "Cafeterian har tillfälligt stängt";
+
+    const reasoning = document.createElement("p");
+    reasoning.className = "openHours";
+    let reasoningText = document.createTextNode("");
+    if (reason != "\r") {
+        reasoningText = document.createTextNode('På grund av ' + reason);
+    };
+    reasoning.appendChild(reasoningText);
+    openingHoursSlide.appendChild(reasoning);
+    isclosed == true;
+    $(".carousel").carousel({ interval: 6000000 });
+
+
+}
+
+function getOpeningHoursHelper(data) {
+    const rows = data.split("\n");
+    let rawopeningHoursList = rows.map(row => row.split(','));
+    // This removes empty items
+    const openingHoursList = rawopeningHoursList.map(row => row.filter(value => value !== ""));
+    const isTempClose = openingHoursList[2][1];
+    const morningHours = document.getElementById("morningHours");
+    const afternoonHours = document.getElementById("afternoonHours");
+    morningHours.innerHTML = openingHoursList[0][1];
+    afternoonHours.innerHTML = openingHoursList[1][1];
+    if (isTempClose === "TRUE\r") {
+        tempClose(openingHoursList[3][1]);
+    };
+}
+
+function getOpeningHours() {
+    $.ajax({
+        type: 'GET',
+        // The server address for Windows
+        url: "http://localhost:8000/openHoursList.csv",
+        success: function (data) { getOpeningHoursHelper(data) }
+    });
+    $.ajax({
+        type: 'GET',
+        // The server address for Linux
+        url: "http://0.0.0.0:8000/openHoursList.csv",
+        success: function (data) { getOpeningHoursHelper(data) }
+    });
+}
 
 // Runs getTime() every 5 seconds
 var intervalDate = window.setInterval(function () {
@@ -185,8 +238,12 @@ getDate(new Date());
 
 let willRefresh = false
 
-var refreshSite = window.setInterval(function(){
+var refreshSite = window.setInterval(function () {
+    if (ifClosed) {
+        location.reload();
+    }
     willRefresh = true
 }, 1000 * 60 * 10)
 
 getMenu();
+getOpeningHours();
