@@ -231,9 +231,9 @@ function getImageSlide(){
 
 function helperGetImageSlide(data){
     const rows = data.split("\n");
-    let rawimageList = rows.map(row => row.split(','));
+    let rawImageList = rows.map(row => row.split(','));
     // This removes empty items
-    const imageList = rawimageList.map(row => row.filter(value => value !== ""));
+    const imageList = rawImageList.map(row => row.filter(value => value !== ""));
     const carousel = document.getElementById("menu");
     for (let currentSlide = 1; currentSlide < imageList[4].length; currentSlide++) {
         if (imageList[4][currentSlide] === "TRUE" || imageList[4][currentSlide] === "TRUE\r") {
@@ -256,13 +256,13 @@ function helperGetImageSlide(data){
             imageText.className =  "carousel-caption d-none d-md-block productPrice";
             const product = document.createElement("p");
             product.className = "itemText";
-            const productnode = document.createTextNode(imageList[0][currentSlide]);
-            product.append(productnode) 
+            const productNode = document.createTextNode(imageList[0][currentSlide]);
+            product.append(productNode) 
             const price = document.createElement("p");
             price.className = "price";
-            const pricenode = document.createTextNode(imageList[3][currentSlide]);
-            price.append(pricenode);
-            
+            const priceNode = document.createTextNode(imageList[3][currentSlide]);
+            price.append(priceNode);
+
             imageText.append(product);
             imageText.append(price);
             imageSlide.append(productImage);
