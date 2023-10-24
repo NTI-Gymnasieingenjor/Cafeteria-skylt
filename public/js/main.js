@@ -214,6 +214,65 @@ function getOpeningHoursHelper(data) {
     };
 }
 
+function getImageSlide(){
+    $.ajax({
+        type: 'GET',
+        // The server address for Windows
+        url: "http://localhost:8000/imageList.csv",
+        success: function (data) { helperGetImageSlide(data) }
+    });
+    $.ajax({
+        type: 'GET',
+        // The server address for Linux
+        url: "http://0.0.0.0:8000/imageList.csv",
+        success: function (data) { helperGetImageSlide(data) }
+    });
+}
+
+function helperGetImageSlide(data){
+    const rows = data.split("\n");
+    let rawImageList = rows.map(row => row.split(','));
+    // This removes empty items
+    const imageList = rawImageList.map(row => row.filter(value => value !== ""));
+    const carousel = document.getElementById("menu");
+    for (let currentSlide = 1; currentSlide < imageList[4].length; currentSlide++) {
+        if (imageList[4][currentSlide] === "TRUE" || imageList[4][currentSlide] === "TRUE\r") {
+            const imageSlide = document.createElement("div");
+            imageSlide.className = "carousel-item slide";
+            imageSlide.setAttribute("data-interval", "5000");
+            imageSlide.setAttribute("style", "background-color: #190f27;");
+            const productImage = document.createElement("img");
+            productImage.className = "productSlide productImage";  
+            productImage.setAttribute("referrerPolicy", "no-referrer");
+            productImage.setAttribute("src", `${imageList[2][currentSlide]}`);
+            productImage.setAttribute("height", "700");
+            const dotImage = document.createElement("img")
+            dotImage.className = "productSlide dot";
+            dotImage.setAttribute("src", "images/dot.png")
+            const moneyDot = document.createElement("img")
+            moneyDot.className = "productSlide moneyDot"; 
+            moneyDot.setAttribute("src", "images/moneyDot.png")
+            const imageText = document.createElement("div");
+            imageText.className =  "carousel-caption d-none d-md-block productPrice";
+            const product = document.createElement("p");
+            product.className = "itemText";
+            const productNode = document.createTextNode(imageList[0][currentSlide]);
+            product.append(productNode) 
+            const price = document.createElement("p");
+            price.className = "price";
+            const priceNode = document.createTextNode(imageList[3][currentSlide]);
+            price.append(priceNode);
+
+            imageText.append(product);
+            imageText.append(price);
+            imageSlide.append(productImage);
+            imageSlide.append(dotImage)
+            imageSlide.append(moneyDot)
+            imageSlide.append(imageText)
+            carousel.append(imageSlide)    
+        }
+}};
+
 // Runs getOpeningHours() depending on the os
 function getOpeningHours() {
     $.ajax({
@@ -251,5 +310,6 @@ var refreshSite = window.setInterval(function () {
     willRefresh = true
 }, 1000 * 60 * 10)
 
-getMenu();
+getImageSlide();
 getOpeningHours();
+getMenu();
