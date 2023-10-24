@@ -1,5 +1,5 @@
 const daysOfWeek = ["Söndag", "Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag"]
-let isclosed = false;
+let isClosed = false;
 
 //Shows the clock on the website
 function getTime(date) {
@@ -188,9 +188,8 @@ function tempClose(reason) {
     };
     reasoning.appendChild(reasoningText);
     openingHoursSlide.appendChild(reasoning);
-    isclosed == true;
-    $(".carousel").carousel({ interval: 6000000 });
-
+    isClosed == true;
+    $(".carousel").carousel('pause');
 
 }
 
@@ -239,7 +238,7 @@ getDate(new Date());
 let willRefresh = false
 
 var refreshSite = window.setInterval(function () {
-    if (ifClosed) {
+    if (isClosed) {
         location.reload();
     }
     willRefresh = true
