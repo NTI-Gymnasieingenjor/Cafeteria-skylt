@@ -198,10 +198,10 @@ function tempClose(reason) {
 
 function getOpeningHoursHelper(data) {
     const rows = data.split("\n");
-    let rawopeningHoursList = rows.map(row => row.split(','));
+    let rawOpeningHoursList = rows.map(row => row.split(','));
     // This removes empty items
-    const openingHoursList = rawopeningHoursList.map(row => row.filter(value => value !== ""));
-    // Checks if the cafeteria is temporary closed
+    const openingHoursList = rawOpeningHoursList.map(row => row.filter(value => value !== ""));
+    // Checks if the cafeteria is temporarily closed
     const isTempClose = openingHoursList[2][1];
     // Adds the opening hours to the website
     const morningHours = document.getElementById("morningHours");
