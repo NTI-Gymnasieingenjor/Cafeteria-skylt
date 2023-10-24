@@ -214,6 +214,7 @@ function getOpeningHoursHelper(data) {
     };
 }
 
+// Gets csv file either on windows or linus 
 function getImageSlide(){
     $.ajax({
         type: 'GET',
@@ -229,21 +230,26 @@ function getImageSlide(){
     });
 }
 
+
 function helperGetImageSlide(data){
+    // This splits data into lists
     const rows = data.split("\n");
     let rawImageList = rows.map(row => row.split(','));
     // This removes empty items
     const imageList = rawImageList.map(row => row.filter(value => value !== ""));
     const carousel = document.getElementById("menu");
+    // This loops through the slides 
     for (let currentSlide = 1; currentSlide < imageList[4].length; currentSlide++) {
+        // checks if slide should be shown or not 
         if (imageList[4][currentSlide] === "TRUE" || imageList[4][currentSlide] === "TRUE\r") {
+            // genererates HTML code for slides
             const imageSlide = document.createElement("div");
             imageSlide.className = "carousel-item slide";
             imageSlide.setAttribute("data-interval", "5000");
             imageSlide.setAttribute("style", "background-color: #190f27;");
             const productImage = document.createElement("img");
             productImage.className = "productSlide productImage";  
-            productImage.setAttribute("referrerPolicy", "no-referrer");
+            productImage.setAttribute("referrerPolicy", "no-referrer"); // enables loading of google user content images 
             productImage.setAttribute("src", `${imageList[2][currentSlide]}`);
             productImage.setAttribute("height", "700");
             const dotImage = document.createElement("img")
@@ -262,7 +268,6 @@ function helperGetImageSlide(data){
             price.className = "price";
             const priceNode = document.createTextNode(imageList[3][currentSlide]);
             price.append(priceNode);
-
             imageText.append(product);
             imageText.append(price);
             imageSlide.append(productImage);
