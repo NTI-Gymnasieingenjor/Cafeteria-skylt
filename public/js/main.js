@@ -243,7 +243,9 @@ function helperGetImageSlide(data){
             imageSlide.setAttribute("style", "background-color: #190f27;");
             const productImage = document.createElement("img");
             productImage.className = "productSlide productImage";  
+            productImage.setAttribute("referrerPolicy", "no-referrer");
             productImage.setAttribute("src", `${imageList[2][currentSlide]}`);
+            productImage.setAttribute("height", "700");
             const dotImage = document.createElement("img")
             dotImage.className = "productSlide dot";
             dotImage.setAttribute("src", "images/dot.png")
@@ -259,17 +261,14 @@ function helperGetImageSlide(data){
             const price = document.createElement("p");
             price.className = "price";
             const pricenode = document.createTextNode(imageList[3][currentSlide]);
-            console.log(pricenode)
             price.append(pricenode);
             
             imageText.append(product);
             imageText.append(price);
-
             imageSlide.append(productImage);
             imageSlide.append(dotImage)
             imageSlide.append(moneyDot)
             imageSlide.append(imageText)
-
             carousel.append(imageSlide)    
         }
 }};
@@ -312,5 +311,5 @@ var refreshSite = window.setInterval(function () {
 }, 1000 * 60 * 10)
 
 getImageSlide();
-getMenu();
 getOpeningHours();
+getMenu();
