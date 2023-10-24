@@ -188,9 +188,8 @@ function tempClose(reason) {
     };
     reasoning.appendChild(reasoningText);
     openingHoursSlide.appendChild(reasoning);
-    $(".carousel").carousel({ interval: 6000000 });
-
     isClosed == true;
+    $(".carousel").carousel('pause');
 
 }
 
