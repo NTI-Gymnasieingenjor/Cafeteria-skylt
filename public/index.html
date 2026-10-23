@@ -1,74 +1,80 @@
 <!DOCTYPE html>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
+<html lang="sv">
 
-		<title>Prislista</title>
-		<meta name="Lazy Lounge" content="Prislista">
-		<meta http-equiv="refresh" content="3600"/>
-		<!-- CSS -->
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="prislistacss.css">
-		<link rel="stylesheet" href="animation.css">
-		
-		<!-- JavaScript -->
-		<script type='text/javascript' src="js/jquery-3.3.1.slim.min.js"></script>
-		<script type='text/javascript' src="js/popper.min.js"></script>
-		<script type='text/javascript' src="js/bootstrap.min.js"></script>
+<head>
 
-	</head>
+	<meta charset="utf-8">
+	<title>Prislista</title>
 
-	<body>
-		<nav class="navbar" style="background-color: #190f27; height: 5vh;">
-			<a class="navbar-brand" href="#">
-				<img src="images/NTI-logo-transparent.png" width="258" height="60" alt="">
-			</a>
-			<a class="navbar-brand" href="#">
-				<img src="images/TE4-logo-transparent.png" height="60" alt="">
-			</a>
-		</nav>
+	<!-- Refreshes the page once every hour -->
+	<meta http-equiv="refresh" content="3600">
 
-		<div class="carousel slide" data-ride="carousel">
-			<div class="carousel-inner">
+	<!-- CSS -->
+	<link rel="stylesheet" href="libraries/bootstrap.min.css">
+	<link rel="stylesheet" href="css/priceList.css">
+	<link rel="stylesheet" href="css/animation.css">
 
-				<div class="carousel-item slide active" data-interval="10000" style="background-color: #190f27;">
-					<div class="carousel-caption d-none d-md-block" id ="cafeteria">
-						<p class="openhourshead">Caféterian</p>
-						<p class="openhours">08:30 - 12:00</p>
-						<p class="openhours">13:00 - 16:00</p>
-					</div>
-					
-					<div class="container layer1"></div>
-					<div class="container layer2"></div>
-					<div class="container layer3"></div>
-				</div>
-				
-				<div class="carousel-item slide" data-interval="5000" style="background-color: #190f27;">
-					<img src="images/small-toast.png" alt="..." class="productslide" id="toast" >
-					<img src="images/dot.png" alt="..." class="productslide dot">
-					<img src="images/money-dot.png" alt="..." class="productslide moneydot">
-					<div class="carousel-caption d-none d-md-block productprice">
-						<p class="toast-text">Toast</p>
-						<p class="price">15 kr</p>
-					</div>
+	<!-- JavaScript -->
+	<script src="libraries/jquery-3.3.1.js"></script>
+	<script src="libraries/bootstrap.bundle.min.js"></script>
 
-				</div>
+	<!-- Preload JavaScript -->
+	<link rel="preload" href="js/main.js" as="script">
+	<link rel="preload" href="js/openingHours.js" as="script">
 
-				<div class="carousel-item slide" data-interval="5000" style="background-color: #190f27;">
-					<img src="images/korv.png" alt="..." class="productslide " id="korv" >
-					<img src="images/dot.png" alt="..." class="productslide dot">
-					<img src="images/money-dot.png" alt="..." class="productslide moneydot">
-					<div class="carousel-caption d-none d-md-block productprice">
-						<p class="toast-text">Varmkorv</p>
-						<p class="price">10 kr</p>
-					</div>
+</head>
+
+<body>
+
+	<!-- Page header -->
+	<nav class="navbar" style="background-color: rgb(0,35,96); height: 5vh;">
+		<a class="navbar-brand" href="#">
+			<img src="images/nti_logga_liggande_ljusbeige.svg" width="258" height="60" alt="">
+		</a>
+		<a class="navbar-brand" href="#">
+			<img src="images/te4LogoTransparent.png" height="60" alt="">
+		</a>
+	</nav>
+
+
+	<!-- Carousel -->
+	<div class="carousel slide" data-ride="carousel" id="carousel">
+		<div class="carousel-inner" id="menu">
+			<div class="carousel-item slide active refreshSlide" data-interval="10000"
+				style="background-color: rgb(0,35,96);">
+				<div class="carousel-caption d-none d-md-block" id="cafeteria">
+					<p id="openHoursHead" class="openHoursHead">Cafeterian</p>
+					<p id="openHours" class="openHours">
+						<span id="morningHours"></span>
+						<br>
+						<span id="afternoonHours"></span>
+					</p>
 				</div>
 			</div>
-			<p id="clock">00:00</p>
 		</div>
+		
+		<!-- Dev controls -->
+		<button class="carousel-control-prev" type="button" data-target="#carousel" data-slide="prev"
+		style="opacity: 0%; z-index: 100;">
+		</button>
+		<button class="carousel-control-next" type="button" data-target="#carousel" data-slide="next"
+			style="opacity: 0%; z-index: 100;">
+		</button>
+	</div>
 
-			
-		<script src="main.js"></script>
-	</body>
+	<!-- Time, date and day of week  -->
+	<p id="clock"></p>
+	<p id="day"></p>
+	<p id="date"></p>
+
+	<script src="js/dateAndTime.js"></script>
+	<script src="js/openingHours.js"></script>
+	<script src="js/csvParser.js"></script>
+	<script src="js/imageSlideCreator.js"></script>
+	<script src="js/menuSlideCreator.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+
 </html>

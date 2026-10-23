@@ -1,0 +1,23 @@
+Fika,Wienerbröd,Mazariner,Dammsugare,Kärleksmums,Munk,Morotskaka,Skumraket,Chokladbollar,Muffins,Bullar,Småkakor,,,,,
+Pris,15 kr,12 kr,12 kr,12 kr,12 kr,12 kr,10 kr,12 kr,15 kr,15 kr,2 kr,,,,,
+Visa,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,,,,,
+,,,,,,,,,,,,,,,,
+Dryck,Kaffe/Te/Choklad,Smakis,Ramlösa,Läsk,Kiviks Apelsin/Äpple,Froosh Liten,Mer,Aloe Vera,Vitamin Well,ProPud Milkshake,Liten Pucko,Stor Pucko,Starbucks,,,
+Pris,10 kr,10 kr,13 kr,20 kr,10 kr,25 kr,20 kr,20 kr,20 kr,25 kr,15 kr,25 kr,25 kr,,,
+Visa,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,,,
+,,,,,,,,,,,,,,,,
+Färdigmat,Grillad panini,Grillad wrap,Thailåda,Snackpot,Billys panpizza,Gorbys pirog,Paj,,,,,,,,,
+Pris,40 kr,40 kr,40 kr,20 kr,20 kr,20 kr,40 kr,,,,,,,,,
+Visa,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,,,,,,,,,
+,,,,,,,,,,,,,,,,
+Baguette,Köttbullar-potatis,Kycklingröra,Rostbiff-potatis,Kalkon-Ost,,,,,,,,,,,,
+Pris,30 kr,30 kr,30 kr,30 kr,,,,,,,,,,,,
+Visa,TRUE,TRUE,TRUE,FALSE,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+Mellanmål,Frukt,Wasa Sandwich,Yoggi,Risifrutti,Tekaka Kalkon/ost eller ost,Ostfralla Kalkon/ost eller ost,Toast Kalkon/ost eller ost,Rågsiktsmacka,Polarklämma ost/ren,,,,,,,
+Pris,5 kr,10 kr,20 kr,15 kr,15 kr,15 kr,20 kr,25 kr,12 kr,,,,,,,
+Visa,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,,,,,,,
+,,,,,,,,,,,,,,,,
+Godis,Daim(enkel-dubbel),Kit Kat,Twix,Corny big,Kexchoklad,Marabou choklad,Dragster,S Märke,Sura/cola nappar,Ahlgrens bilar,Polly,Bananaskids,Mini refreshers,Klubbor,Mentos,Dextro
+Pris,10 kr / 15 kr,15 kr,15 kr,15 kr,15 kr,20 kr,10 kr,15 kr,15 kr,25 kr,25 kr,2 kr,2 kr,3 kr,10 kr,15 kr
+Visa,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE

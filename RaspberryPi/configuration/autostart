@@ -1,9 +1,0 @@
-@lxpanel --profile LXDE-pi
-@pcmanfm --desktop --profile LXDE-pi
-#@xscreensaver -no-splash
-@point-rpi
-@xset -dpms
-@xset s noblank
-@xset s off
-@chromium-browser --kiosk --new-window  /home/pi/Git/Cafeteria-Skylt/public/index.html --incognito
-@unclutter -idle 3
